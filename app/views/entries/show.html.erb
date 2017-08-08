@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @entry.subject %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @entry.link %>
+</p>
+
+<p>
+  <strong>Data:</strong>
+  <%= @entry.data %>
+</p>
+
+<p>
+  <strong>Read:</strong>
+  <%= @entry.read %>
+</p>
+
+<p>
+  <strong>Post date:</strong>
+  <%= @entry.post_date %>
+</p>
+
+<p>
+  <strong>Feed:</strong>
+  <%= @entry.feed %>
+</p>
+
+<%= link_to 'Edit', edit_entry_path(@entry) %> |
+<%= link_to 'Back', entries_path %>

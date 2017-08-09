@@ -1,17 +1,14 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+default: &default
+  subject: MyString
+  link: MyString
+  data: <%= {}.to_json.inspect %>
+  read: false
+  post_date: 2016-08-16
+  feed_id: 
 
 one:
-  subject: MyString
-  link: MyString
-  data: MyString
-  read: false
-  post_date: 2016-08-16
-  feed_id: 
+  <<: *default
 
 two:
-  subject: MyString
-  link: MyString
-  data: MyString
-  read: false
-  post_date: 2016-08-16
-  feed_id: 
+  <<: *default

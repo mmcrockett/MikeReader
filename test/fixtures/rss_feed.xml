@@ -1,0 +1,736 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	xmlns:georss="http://www.georss.org/georss" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" xmlns:media="http://search.yahoo.com/mrss/"
+	>
+
+<channel>
+	<title>FiveThirtyEight</title>
+	<atom:link href="https://fivethirtyeight.com/all/feed" rel="self" type="application/rss+xml" />
+	<link>https://fivethirtyeight.com</link>
+	<description>Nate Silver’s FiveThirtyEight uses statistical analysis — hard numbers — to tell compelling stories about politics, sports, science, economics and culture.</description>
+	<lastBuildDate>Wed, 09 Aug 2017 17:15:48 +0000</lastBuildDate>
+	<language>en</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.com/</generator>
+<cloud domain='fivethirtyeight.com' port='80' path='/?rsscloud=notify' registerProcedure='' protocol='http-post' />
+<atom:link rel="search" type="application/opensearchdescription+xml" href="https://fivethirtyeight.com/osd.xml" title="FiveThirtyEight" />
+	<atom:link rel='hub' href='https://fivethirtyeight.com/?pushpress=hub'/>
+
+	<image>
+		<url>https://s0.wp.com/wp-content/themes/vip/espn-fivethirtyeight/assets/images/fivethirtyeight-logo-rss.png</url>
+		<title>FiveThirtyEight</title>
+		<link>https://fivethirtyeight.com</link>
+		<width>250</width>
+		<height>29</height>
+	</image> 
+	<item>
+		<title>Trump Picks A Favorite In Alabama&#8217;s GOP Senate Primary</title>
+		<link>https://fivethirtyeight.com/features/trump-picks-a-favorite-in-alabamas-gop-senate-primary/</link>
+		<pubDate>Tue, 08 Aug 2017 15:06:47 +0000</pubDate>
+		<dc:creator><![CDATA[Harry Enten]]></dc:creator>
+				<category><![CDATA[Alabama]]></category>
+		<category><![CDATA[Congress]]></category>
+		<category><![CDATA[Luther Strange]]></category>
+		<category><![CDATA[Special Elections]]></category>
+
+		<guid isPermaLink="false">https://fivethirtyeight.com/?post_type=fte_features&#038;p=160087</guid>
+		<description><![CDATA[President Trump’s approval rating is hovering around an all-time low, but you wouldn’t know that by following the Republican primary for Alabama’s U.S. Senate seat. Alabama Republicans will go to the polls next Tuesday to fill the seat left vacant by now Attorney General Jeff Sessions, and the three main candidates in the race &#8212; [&#8230;]<img alt="" border="0" src="https://pixel.wp.com/b.gif?host=fivethirtyeight.com&#038;blog=64146350&#038;post=160087&#038;subd=espnfivethirtyeight&#038;ref=&#038;feed=1" width="1" height="1" />]]></description>
+				<content:encoded><![CDATA[<p>President Trump’s <a href="https://projects.fivethirtyeight.com/trump-approval-ratings/">approval rating</a> is hovering around an all-time low, but you wouldn’t know that by following the Republican primary for Alabama’s U.S. Senate seat. Alabama Republicans will go to the polls next Tuesday to fill the seat left vacant by now <a href="http://www.cnn.com/2017/04/20/politics/alabama-special-election-us-senate/index.html">Attorney General Jeff Sessions</a>, and the three main candidates in the race &#8212; incumbent Sen. Luther Strange (he was appointed), Rep. Mo Brooks and former State Supreme Court Chief Justice Roy Moore &#8212; all are <a href="https://www.nytimes.com/2017/07/09/us/politics/alabama-senate-election-trump-mo-brooks-luther-strange.html">trying to tie themselves</a> to Trump as tightly as possible.</p>
+<p>That’s somewhat of a reversal for Strange, Brooks and Moore &#8212; <a href="http://www.politico.com/story/2017/05/27/alabama-strange-senate-238868">all</a> <a href="http://www.breitbart.com/big-government/2017/07/12/yellowhammer-heat-snake-in-the-grass-luther-strange-falsely-attacks-pro-trump-mo-brooks-as-alabama-race-intensifies/">three</a> declined to endorse Trump during the 2016 presidential primary. But times change; Trump is incredibly popular in Alabama. The president’s approval rating is at 85 percent <a href="http://rrhelections.com/index.php/2017/08/04/rrh-elections-al-sen-r-primary-poll-moore-leads-strange-31-29/">among likely primary voters</a>. Through Tuesday, none of these primary candidates had seemed to convince Republican voters that he was the person to best carry out the president’s agenda. That may change with Trump’s <a href="https://twitter.com/realdonaldtrump/status/895091395379245056">Tuesday night endorsement of Strange</a>.</p>
+<p>Trump’s backing of Strange could have a big effect, but for now, Tuesday’s primary looks like it will go down to the wire. Any of the three candidates could finish first or second, which would get them into a September runoff if, as expected, no candidate reaches 50 percent on Tuesday. Moore and Strange have traded first and second place in the <a href="https://en.wikipedia.org/wiki/United_States_Senate_special_election_in_Alabama,_2017#Primary_Polling">limited polling</a> we have, but Brooks is close enough that any two candidates could conceivably make the runoff.</p>
+<p>If Moore advances to the runoff, it will be because of strong backing from religious conservatives. Although Moore is <a href="http://www.montgomeryadvertiser.com/story/news/politics/southunionstreet/2017/07/10/alabama-senate-race-luther-strange-ties-his-fortunes-donald-trumps/465033001/">seen as a Trump-like populist</a>, he&#8217;s best known not for his economic message, but for his religious one. As chief justice of the state supreme court, he <a href="http://www.cnn.com/2003/LAW/11/13/moore.tencommandments/">refused to remove</a> a monument to the Ten Commandments from the rotunda of the Alabama State Judicial Building, even though he was <a href="https://berkleycenter.georgetown.edu/cases/glassroth-v-moore">ordered</a> by a federal court to do so. He&#8217;s been endorsed mostly by religious conservatives such as <a href="http://www.conservativemajoritypac.com/roy_moore.php">Alan Keyes</a>, <a href="http://www.washingtonexaminer.com/chuck-norris-endorses-ten-commandments-judge-roy-moore-for-senate-in-alabama-special-election/article/2630826">Chuck Norris</a> and <a href="https://twitter.com/SteveDeaceShow/status/893548645827715072">radio talk show host Steve Deace</a>, who once <a href="http://www.msnbc.com/msnbc-news/watch/deace-on-trump-nom-sad-day-for-america-680083523925">said Trump’s nomination</a> was a “sad day for America.”</p>
+<p>Indeed, the few polls we do have show that Moore&#8217;s base is heavily evangelical Christian. In the latest <a href="http://winwithjmc.com/wp-content/uploads/2017/08/Alabama-Senate-Republican-Executive-Summary-Release.pdf">JMC Analytics and Polling survey</a>, Moore is well ahead of the pack among self-described evangelical Christians, with 38 percent. He&#8217;s in a distant third place among those who say they aren&#8217;t evangelical, with just 14 percent. Trump, for comparison, won about an equal share of the vote among born-again/evangelical Christians and non-evangelicals in the <a href="http://www.cnn.com/election/primaries/polls/al/Rep">2016 Alabama presidential primary</a>. Moore&#8217;s support looks a lot more like that of another recent populist Republican president nominee: Mike Huckabee in 2008. Huckabee also had a greater than 20-point gap <a href="http://abcnews.go.com/images/PollingUnit/08RepPrimaryKeyGroups.pdf">in vote share</a> among evangelicals and non-evangelicals in Alabama. He also happened to be endorsed by <a href="https://www.mediamatters.org/blog/2015/05/07/the-honeymoon-is-over-iowa-radio-host-steve-dea/203572">Deace</a> and <a href="https://www.youtube.com/watch?v=MDUQW8LUMs8">Norris</a> in 2008.</p>
+<p>If Strange advances to the runoff, it will be in no small part because of the backing he’s gotten from the GOP establishment. He&#8217;s been endorsed by <a href="http://www.politico.com/story/2017/07/31/mcconnell-alabama-moore-brooks-strange-241138">Senate Majority Leader Mitch McConnell and has the backing</a> of McConnell&#8217;s Senate Leadership Fund PAC, which has spent millions on the race. Of course, being seen as the establishment figure isn&#8217;t necessarily helpful these days. Not only was Strange appointed to the seat by <a href="http://www.al.com/news/index.ssf/2017/08/can_luther_strange_wash_away_b.html">former Gov. Robert Bentley</a>, who had to resign in disgrace, but McConnell is generally not well liked by <a href="https://d25d2506sfb94s.cloudfront.net/cumulus_uploads/document/tn9k94h20u/econTabReport.pdf">Trump voters nationally</a>. Interestingly, however, the establishment label doesn’t seem to be hurting Strange with Trump supporters or Trump himself, despite Trump&#8217;s <a href="https://www.washingtonpost.com/news/the-fix/wp/2017/07/29/trump-erupts-at-gop-senators-they-look-like-fools/?utm_term=.5670d63cd737">recent lashing-out at Senate Republicans</a>. Not only did Trump endorse Strange, but the <a href="http://rrhelections.com/index.php/2017/08/04/rrh-elections-al-sen-r-primary-poll-moore-leads-strange-31-29/">Red Racing Horses poll</a> reveals that Strange&#8217;s greatest support is among Republicans who strongly approve of the job Trump is doing.</p>
+<p>Additionally, the National Rifle Association, which Brooks had hoped to <a href="http://www.washingtonexaminer.com/mo-brooks-works-to-outmaneuver-luther-strange-among-conservatives-in-alabama-race/article/2629291">corral earlier in the primary season</a>, is <a href="http://www.al.com/news/index.ssf/2017/06/sean_hannity_mike_rogers_endor.html">with Strange</a>. He&#8217;s also been endorsed by <a href="http://www.nationalrighttolifenews.org/news/2017/08/national-right-to-life-endorses-luther-strange-for-alabama-senate-special-election/#.WYnNGtPytZo">National Right To Life</a>. The <a href="http://winwithjmc.com/wp-content/uploads/2017/08/Alabama-Senate-Republican-Executive-Summary-Release.pdf">JMC Analytics and Polling poll</a> found Strange with an equal amount of support from both evangelical and very conservative voters as among non-evangelical and somewhat conservative voters, respectively.</p>
+<p>If Brooks advances to the runoff, it&#8217;ll be quite astounding given the onslaught of negative ads he&#8217;s faced. Most of McConnell&#8217;s fire <a href="http://www.politico.com/story/2017/07/31/mcconnell-alabama-moore-brooks-strange-241138">has been trained on Brooks</a> for being insufficiently pro-Trump. A McConnell ally has even been advising a candidate who wants to primary Brooks next year for his congressional seat. The negative ads seem to be working given that Brooks, despite being close, hasn&#8217;t gotten into either first or second place <a href="https://en.wikipedia.org/wiki/United_States_Senate_special_election_in_Alabama,_2017#Primary_Polling">in any public poll</a>.</p>
+<p>The effectiveness of these anti-Brooks ads can also be seen in the type of voter who is backing him. You&#8217;d expect Brooks to be well liked among conservative voters. He has a <a href="https://voteview.com/person/21193/mo-brooks">very conservative record</a> in Congress, is a <a href="https://www.usatoday.com/story/news/politics/2017/03/24/alabamas-freedom-caucus-members-split-gop-health-plan/99581078/">member of the Freedom Caucus</a>, has the <a href="http://www.al.com/news/index.ssf/2017/06/sean_hannity_mike_rogers_endor.html">backing of Sean Hannity</a> and has <a href="http://www.washingtonexaminer.com/mo-brooks-works-to-outmaneuver-luther-strange-among-conservatives-in-alabama-race/article/2629291">courted conservative outside groups</a> during the campaign. Yet the <a href="http://winwithjmc.com/wp-content/uploads/2017/08/Alabama-Senate-Republican-Executive-Summary-Release.pdf">JMC Analytics and Polling survey</a> showed he&#8217;s running weakest among self-described “very conservative” primary voters. The <a href="http://rrhelections.com/index.php/2017/08/04/rrh-elections-al-sen-r-primary-poll-moore-leads-strange-31-29/">Red Racing Horses survey</a> also showed Brooks in a distant third place among those who approve of the job Trump is doing as president, while in first place among the much smaller group of Republicans who don&#8217;t approve of the job Trump is doing.</p>
+<p>Whomever emerges next Tuesday will have more than a month to fight it out.<a class="espn-footnote-link" data-footnote-id="1" href="#fn-1" data-footnote-content="&lt;p&gt;Again, assuming no candidate wins a majority.&lt;/p&gt;
+"><sup id="ss-1">1</sup></a> There&#8217;s been very little runoff polling, and it’s not entirely clear what might happen. The good news for the Republican who emerges from that skirmish is he will be a heavy favorite in December’s general election in deep-red Alabama.</p><img alt="" border="0" src="https://pixel.wp.com/b.gif?host=fivethirtyeight.com&#038;blog=64146350&#038;post=160087&#038;subd=espnfivethirtyeight&#038;ref=&#038;feed=1" width="1" height="1" />]]></content:encoded>
+		<dc:contributor><![CDATA[By Harry Enten]]></dc:contributor>
+
+		<atom:author>
+			<atom:name>Harry Enten</atom:name>
+			<atom:uri>https://fivethirtyeight.com/contributors/harry-enten/</atom:uri>
+			<atom:email>harry.j.enten@fivethirtyeight.com</atom:email>
+		</atom:author>
+
+		<media:thumbnail url="https://espnfivethirtyeight.files.wordpress.com/2017/08/ap_17173778424484.jpg" />
+		<media:content url="http://espnfivethirtyeight.files.wordpress.com/2017/08/ap_17173778424484.jpg" medium="image">
+			<media:title type="html">Luther Strange</media:title>
+		</media:content>
+
+		<media:content url="http://1.gravatar.com/avatar/a26fad23742e906c3f881ae92c6178cb?s=96&#38;d=https%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=G" medium="image">
+			<media:title type="html">poughies</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>We Asked Two Eclipse Chasers What Keeps Them Hooked</title>
+		<link>https://fivethirtyeight.com/features/we-asked-two-eclipse-chasers-what-keeps-them-hooked/</link>
+		<pubDate>Tue, 08 Aug 2017 16:51:24 +0000</pubDate>
+		<dc:creator><![CDATA[Gus Wezerek]]></dc:creator>
+				<category><![CDATA[Space]]></category>
+
+		<guid isPermaLink="false">https://fivethirtyeight.com/?post_type=fte_features&#038;p=159967</guid>
+		<description><![CDATA[Later this month, millions of Americans will be a tank of gas away from the total solar eclipse that will sweep across America from Oregon to South Carolina. It’s a moment that husband and wife Michael Zeiler and Polly White have been anticipating for decades. Together they’ve traveled the world chasing solar eclipses in places [&#8230;]<img alt="" border="0" src="https://pixel.wp.com/b.gif?host=fivethirtyeight.com&#038;blog=64146350&#038;post=159967&#038;subd=espnfivethirtyeight&#038;ref=&#038;feed=1" width="1" height="1" />]]></description>
+				<content:encoded><![CDATA[<p>Later this month, millions of Americans will be <a href="https://fivethirtyeight.com/features/eclipse-towns-planning/">a tank of gas away</a> from the total solar eclipse that will sweep across America from Oregon to South Carolina. It’s a moment that husband and wife Michael Zeiler and Polly White have been anticipating for decades. Together they’ve traveled the world chasing solar eclipses in places such as Austria, Indonesia and Gabon. In 2014, they launched <a href="https://www.greatamericaneclipse.com/">GreatAmericanEclipse.com</a>, a one-stop resource offering hundreds of maps of the eclipse and tips for viewing the event on August 21.</p>
+<p>Zeiler works for ESRI, a mapping software company, and served as the cartographer on a 2015 eclipse-watching expedition to the islands of Svalbard in the Arctic Ocean. White manages the business side of GreatAmericanEclipse.com. The two talked to FiveThirtyEight about what has made chasing solar eclipses a lifelong obsession for them. An edited and condensed version of the interview is below.</p>
+<p><b>Why is a total solar eclipse such a big deal? How does it compare to a partial eclipse or a lunar eclipse?</b></p>
+<p>Zeiler: On a scale of 1 to 10, a partial solar eclipse is probably a 3. You’ll see a nibble of the sun taken out by the moon and you’ll need solar filters to look at it.</p>
+<p>White: A lunar eclipse is effectively the reverse [of a solar eclipse]. It’s the shadow of the Earth projected on the moon. They’re quite beautiful to watch &#8212; especially the dramatic ones, when the moon can turn a dark red. But a lunar eclipse is nothing in comparison to a total solar eclipse.</p>
+<p>Zeiler: A total solar eclipse has got to be a least a 1,000 [on a scale of 1 to 10]. For a couple of minutes it’s like you’re standing on the surface of an alien planet. There’s a 360-degree sunset all around you. You’re in a deep twilight &#8212; you’ll see the brighter stars and planets. But the sight that will be most amazing is the sight of the sun’s corona. There’s an incredible light show that happens in the sky around you &#8212; the remaining sunlight is electric. The corona beautifully frames the disc of the moon. The contrast makes for an incredibly black hole.</p>
+<p><b>Together you’ve seen eight solar eclipses over the past 25 years. What keeps you coming back?</b></p>
+<p>Zeiler: Eclipses connect you to the universe. In our daily lives, we don’t really perceive and understand the solar system in motion. But during a total solar eclipse, you see the solar system moving in real time. It’s an amazing cosmic coincidence that the moon and the sun [appear to be] just about the same size [in Earth’s sky]. We refer to it as the cosmic billiard shot. You’re lifted out of the Earth and sense that we’re part of a bigger universe.</p>
+<p>White: You feel grateful after an eclipse. People celebrate &#8212; they’re wired, they’re partying. Most people <a href="https://vimeo.com/78960856">hoot and holler</a>, more than once people have cried. It’s that amazing, it’s that intense. Champagne is traditional among eclipse chasers.</p>
+<p>It’s not, “You’ve seen one you’ve seen them all.” The corona is different each time. The inner corona is something we only really get to see during a total solar eclipse. The outer corona is the streamers and the flowers. Michael’s got names for all of them.</p>
+<p>Zeiler: My first corona in 1991 had a pair of big beautiful wings to the side, so I call that the wing eclipse. The eclipse of 1999, in Europe, was very symmetric, like many petals. I call that the sunflower eclipse. The corona that we saw in 2013 in Africa was amazing because we saw two explosions of plasma being ejected from the sun.</p>
+<p>White: Coronal mass ejections.</p>
+<p>Zeiler: We saw those in real time with our binoculars. The one in 2015 in Svalbard, that was the lotus flower eclipse. The one in Indonesia, that’s the butterfly corona. Each corona will be indelibly imprinted in your memory.</p>
+		<figure id="attachment_159965" class="wp-caption aligncenter "
+				style="max-width: 575px">
+							<img class="size-full wp-image-159965" src="https://espnfivethirtyeight.files.wordpress.com/2017/08/dsc_2457.jpg?quality=90&#038;strip=info&#038;w=575&#038;ssl=1" alt="" width="575" height="384" srcset="https://espnfivethirtyeight.files.wordpress.com/2017/08/dsc_2457.jpg?quality=90&amp;strip=info&amp;w=575&amp;ssl=1 1x, https://espnfivethirtyeight.files.wordpress.com/2017/08/dsc_2457.jpg?quality=90&amp;strip=info&amp;w=1150&amp;ssl=1 2x" />										<figcaption class="wp-caption-text caption">
+					<p>Michael Zeiler watching the 2015 solar eclipse near Longyearbyen, Norway.</p>									</figcaption>
+			
+		</figure>
+		
+<p><b>You call yourselves eclipse chasers. Have you ever had to actually chase an eclipse?</b></p>
+<p>Zeiler: So far I have a perfect record, eight out of eight eclipses. But during three of them I had to maneuver to get to clear skies. In Austria, I wanted to see the eclipse from near Munich with relatives in Germany. But the weather forecast the day before was rather poor, so I got in my rental car and drove to Vienna, which was near the path. That morning I drove past lots of crowds of people gathering to see the eclipse, but the weather was still patchy. I kept driving and driving until I got to the border of Hungary and I couldn’t drive any further. I stopped only about 10 minutes before the event. Luckily I had driven far enough, and I saw the glorious eclipse in a farmer’s field.</p>
+		<figure id="attachment_159968" class="wp-caption aligncenter "
+				style="max-width: 575px">
+							<img class="size-full wp-image-159968" src="https://espnfivethirtyeight.files.wordpress.com/2017/08/1654_august_12_tse_erhard_weigel.jpg?quality=90&#038;strip=info&#038;w=575&#038;ssl=1" alt="" width="575" height="453" srcset="https://espnfivethirtyeight.files.wordpress.com/2017/08/1654_august_12_tse_erhard_weigel.jpg?quality=90&amp;strip=info&amp;w=575&amp;ssl=1 1x, https://espnfivethirtyeight.files.wordpress.com/2017/08/1654_august_12_tse_erhard_weigel.jpg?quality=90&amp;strip=info&amp;w=1150&amp;ssl=1 2x" />										<figcaption class="wp-caption-text caption">
+					<p>Michael Zeiler also collects historical eclipse maps. This 1654 example by German mathematician Erhard Weigel is the oldest known map of a solar eclipse, Zeiler says. “I think about the design decisions that the cartographers made. As we transition from old traditions to newer computer-based mapmaking, a lot of the artistry is lost because it’s so easy to generate graphics with the computer,” he says.</p>									</figcaption>
+			
+		</figure>
+		
+<p><b>What are your plans for the eclipse later this month?</b></p>
+<p>Zeiler: Our plan is to drive to Casper, Wyoming, with part of our family. Casper is a great location because it’s got very good weather odds and it has highways several hundred miles to the east and west that stay fairly close to the center of the path of totality. We’re going to have tents and sleeping bags in the car and we’ll strike wherever the optimum location is. My daughter and her boyfriend are going to be climbing the tallest mountain in Wyoming, which is Gannet Peak in the Wind River Range. If they’re successful, they’re going to have the amazing sight of seeing the moon’s shadow racing across the landscape toward them, enveloping them in darkness and then proceeding out to the east.</p>
+<p><i>You can use the </i><a href="https://tse2017.maps.arcgis.com/apps/webappviewer/index.html?id=d4cf0c22a2df4b6683acc4cd621aca7a"><i>Great American Eclipse interactive map</i></a><i> to find viewing events along the path of totality.</i></p>
+<p><em>Read more about <a href="https://fivethirtyeight.com/features/eclipse-towns-planning/">watching an eclipse</a>.</em></p><img alt="" border="0" src="https://pixel.wp.com/b.gif?host=fivethirtyeight.com&#038;blog=64146350&#038;post=159967&#038;subd=espnfivethirtyeight&#038;ref=&#038;feed=1" width="1" height="1" />]]></content:encoded>
+		<dc:contributor><![CDATA[By Gus Wezerek]]></dc:contributor>
+
+		<atom:author>
+			<atom:name>Gus Wezerek</atom:name>
+			<atom:uri>https://fivethirtyeight.com/contributors/gus-wezerek/</atom:uri>
+			<atom:email>gus.wezerek@fivethirtyeight.com</atom:email>
+		</atom:author>
+
+		<media:thumbnail url="https://espnfivethirtyeight.files.wordpress.com/2017/08/pollyandmichaelingabon-copy1.jpg" />
+		<media:content url="http://espnfivethirtyeight.files.wordpress.com/2017/08/pollyandmichaelingabon-copy1.jpg" medium="image">
+			<media:title type="html">PollyAndMichaelInGabon-copy</media:title>
+		</media:content>
+
+		<media:content url="http://1.gravatar.com/avatar/7d8728a3143fe225df6247743e72bcde?s=96&#38;d=https%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=G" medium="image">
+			<media:title type="html">wezerekg</media:title>
+		</media:content>
+
+		<media:content url="http://espnfivethirtyeight.files.wordpress.com/2017/08/dsc_2457.jpg" medium="image" />
+
+		<media:content url="http://espnfivethirtyeight.files.wordpress.com/2017/08/1654_august_12_tse_erhard_weigel.jpg" medium="image" />
+	</item>
+		<item>
+		<title>How Gender, Age And Race Shape Our View Of What Makes A Great Black Athlete</title>
+		<link>https://fivethirtyeight.com/features/how-gender-age-and-race-shape-our-view-of-what-makes-a-great-black-athlete/</link>
+		<pubDate>Tue, 08 Aug 2017 13:08:11 +0000</pubDate>
+		<dc:creator><![CDATA[Neil Paine and Mai Nguyen]]></dc:creator>
+				<category><![CDATA[The Undefeated]]></category>
+
+		<guid isPermaLink="false">https://fivethirtyeight.com/?post_type=fte_features&#038;p=159937</guid>
+		<description><![CDATA[After a month of counting down the list, our friends at The Undefeated have finally reached the top 10 in their ranking of the 50 greatest black athletes of all time. The top of the heap includes some easy calls but also a few surprises. You can read more about the ranking methodology here, but [&#8230;]<img alt="" border="0" src="https://pixel.wp.com/b.gif?host=fivethirtyeight.com&#038;blog=64146350&#038;post=159937&#038;subd=espnfivethirtyeight&#038;ref=&#038;feed=1" width="1" height="1" />]]></description>
+				<content:encoded><![CDATA[<p>After a month of counting down the list, our friends at <a href="https://theundefeated.com/">The Undefeated</a> have finally reached the top 10 in their ranking of the <a href="http://theundefeated.com/features/50-greatest-black-athletes/">50 greatest black athletes of all time</a>. The top of the heap includes some easy calls but also a few surprises.</p>
+<p>You can read more about the ranking methodology <a href="http://theundefeated.com/features/50-greatest-black-athletes/#story-content">here</a>, but in essence, The Undefeated and SurveyMonkey <a href="https://www.surveymonkey.com/mp/undefeated-surveymonkey-poll-50-greatest-black-athletes/">conducted a poll</a> of American adults, asking them to rate a pool of celebrated black athletes in categories including their on-field<a class="espn-footnote-link" data-footnote-id="3" href="#fn-3" data-footnote-content="&lt;p&gt;Or on-court, or on-ice, or &amp;#8212; well, you get the idea.&lt;/p&gt;
+"><sup id="ss-3">3</sup></a> dominance and their influence on society. Those results were then used to create a composite score that eventually determined the top 50.</p>
+<p>The poll’s responses were <a href="https://hbr.org/2016/08/how-todays-political-polling-works">weighted</a> to make sure they reflect the demographics of the country as a whole, but not every segment of society agreed on how every player should be ranked. Using the survey’s composite scores,<a class="espn-footnote-link" data-footnote-id="4" href="#fn-4" data-footnote-content="&lt;p&gt;Which are made up of a player&rsquo;s grades in each component category and range from about 18 to 21.&lt;/p&gt;
+"><sup id="ss-4">4</sup></a> we broke down how voting groups differed when grading the athletes:</p>
+<h2>By gender</h2>
+<section class="viz">
+<header class="viz">
+<h5 class="title">Differences in ratings of black athletes by rater’s gender</h5>
+</header>
+<table class="viz full" data-carpenter-slug="paine.undefeated.2">
+<thead style="border-bottom:none;">
+<tr>
+<th class="text" style="border-bottom:2px solid #222222;" colspan="1">FEMALE VOTERS</th>
+<th class="heat number" style="border-bottom:2px solid #222222;" colspan="1">DIFF.</th>
+<th class="boolean" style="width:2%;text-align:center;border-bottom:2px solid #222222;" colspan="1">SIG.*</th>
+<th class="text" colspan="1"></th>
+<th class="text" style="border-bottom:2px solid #222222;" colspan="1">MALE VOTERS</th>
+<th class="heat number" style="border-bottom:2px solid #222222;" colspan="1">DIFF.</th>
+<th class="boolean" style="width:2%;text-align:center;border-bottom:2px solid #222222;" colspan="1">SIG.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text">Serena Williams</td>
+<td class="heat number highlight" style="color:#222222;background-color:#f6b89c;">1.1</td>
+<td class="boolean" style="width:2%;text-align:center;">✓</td>
+<td class="text" style="border-bottom:none;"></td>
+<td class="text">Walter Payton</td>
+<td class="heat number highlight" style="color:#222222;background-color:#f29e78;">1.5</td>
+<td class="boolean" style="width:2%;text-align:center;">✓</td>
+</tr>
+<tr>
+<td class="text">Simone Biles</td>
+<td class="heat number highlight" style="color:#222222;background-color:#f6b89c;">1.1</td>
+<td class="boolean" style="width:2%;text-align:center;"></td>
+<td class="text" style="border-bottom:none;"></td>
+<td class="text">Bill Russell</td>
+<td class="heat number highlight" style="color:#222222;background-color:#f4ab8a;">1.3</td>
+<td class="boolean" style="width:2%;text-align:center;"></td>
+</tr>
+<tr>
+<td class="text">Wilma Rudolph</td>
+<td class="heat number highlight" style="color:#222222;background-color:#f8cbb7;">0.8</td>
+<td class="boolean" style="width:2%;text-align:center;"></td>
+<td class="text" style="border-bottom:none;"></td>
+<td class="text">Pele</td>
+<td class="heat number highlight" style="color:#222222;background-color:#f7c4ae;">0.9</td>
+<td class="boolean" style="width:2%;text-align:center;"></td>
+</tr>
+<tr>
+<td class="text">Arthur Ashe</td>
+<td class="heat number highlight" style="color:#222222;background-color:#f8cbb7;">0.8</td>
+<td class="boolean" style="width:2%;text-align:center;"></td>
+<td class="text" style="border-bottom:none;"></td>
+<td class="text">Jim Brown</td>
+<td class="heat number highlight" style="color:#222222;background-color:#f8cbb7;">0.8</td>
+<td class="boolean" style="width:2%;text-align:center;"></td>
+</tr>
+<tr>
+<td class="text">Gabby Douglas</td>
+<td class="heat number highlight" style="color:#222222;background-color:#f8cbb7;">0.8</td>
+<td class="boolean" style="width:2%;text-align:center;"></td>
+<td class="text" style="border-bottom:none;"></td>
+<td class="text">Gale Sayers</td>
+<td class="heat number highlight" style="color:#222222;background-color:#f8cbb7;">0.8</td>
+<td class="boolean" style="width:2%;text-align:center;"></td>
+</tr>
+<tr>
+<td class="text">Magic Johnson</td>
+<td class="heat number highlight" style="color:#222222;background-color:#f9d1c0;">0.7</td>
+<td class="boolean" style="width:2%;text-align:center;"></td>
+<td class="text" style="border-bottom:none;"></td>
+<td class="text">Jerry Rice</td>
+<td class="heat number highlight" style="color:#222222;background-color:#f8cbb7;">0.8</td>
+<td class="boolean" style="width:2%;text-align:center;"></td>
+</tr>
+<tr>
+<td class="text">Reggie Jackson</td>
+<td class="heat number highlight" style="color:#222222;background-color:#f9d1c0;">0.7</td>
+<td class="boolean" style="width:2%;text-align:center;"></td>
+<td class="text" style="border-bottom:none;"></td>
+<td class="text">Carl Lewis</td>
+<td class="heat number highlight" style="color:#222222;background-color:#f9d1c0;">0.7</td>
+<td class="boolean" style="width:2%;text-align:center;"></td>
+</tr>
+<tr>
+<td class="text">LeBron James</td>
+<td class="heat number highlight" style="color:#222222;background-color:#fad8c9;">0.6</td>
+<td class="boolean" style="width:2%;text-align:center;"></td>
+<td class="text" style="border-bottom:none;"></td>
+<td class="text">Derek Jeter</td>
+<td class="heat number highlight" style="color:#222222;background-color:#f9d1c0;">0.7</td>
+<td class="boolean" style="width:2%;text-align:center;"></td>
+</tr>
+<tr>
+<td class="text">Jackie Joyner-Kersee</td>
+<td class="heat number highlight" style="color:#222222;background-color:#faded2;">0.5</td>
+<td class="boolean" style="width:2%;text-align:center;"></td>
+<td class="text" style="border-bottom:none;"></td>
+<td class="text">Ken Griffey Jr.</td>
+<td class="heat number highlight" style="color:#222222;background-color:#faded2;">0.5</td>
+<td class="boolean" style="width:2%;text-align:center;"></td>
+</tr>
+<tr>
+<td class="text">Scottie Pippen</td>
+<td class="heat number highlight" style="color:#222222;background-color:#faded2;">0.5</td>
+<td class="boolean" style="width:2%;text-align:center;"></td>
+<td class="text" style="border-bottom:none;"></td>
+<td class="text">Wilt Chamberlain</td>
+<td class="heat number highlight" style="color:#222222;background-color:#faded2;">0.5</td>
+<td class="boolean" style="width:2%;text-align:center;"></td>
+</tr>
+</tbody>
+</table>
+<footer class="viz">
+<p class="notes">* Significant if higher than 90% confidence level. Poll for The Undefeated’s “50 Greatest Black Athletes.”</p>
+<p class="source">Source: Surveymonkey</p>
+</footer>
+</section>
+<p>As we’ll see throughout this exercise, not all of the differences in voting between groups were <a href="https://en.wikipedia.org/wiki/Statistical_significance">statistically significant</a>.<a class="espn-footnote-link" data-footnote-id="5" href="#fn-5" data-footnote-content="&lt;p&gt;Using the &lt;a href=&quot;https://en.wikipedia.org/wiki/Standard_error&quot;&gt;standard errors&lt;/a&gt; of the poll data sent to us by SurveyMonkey, we set up &lt;a href=&quot;https://en.wikipedia.org/wiki/Confidence_interval&quot;&gt;confidence intervals&lt;/a&gt; around the difference in each group&rsquo;s average composite score. Then we used those intervals to determine which differences in an athlete&rsquo;s ratings were significant at the 90 and 95 percent levels &amp;#8212; meaning we are reasonably confident that the true difference in ratings between groups is not zero.&lt;/p&gt;
+"><sup id="ss-5">5</sup></a> However, some were &#8212; and few more so than the male-female split over Serena Williams, one of history’s greatest athletes (<a href="http://www.telegraph.co.uk/tennis/2016/07/08/serena-williams-brilliant-response-to-journalist-goes-viral/">full stop</a>). Women ranked Williams as the third-best black athlete of all time; men slotted her at No. 13. She wasn’t alone in experiencing this kind of ratings gap: The five female athletes in the top 25<a class="espn-footnote-link" data-footnote-id="6" href="#fn-6" data-footnote-content="&lt;p&gt;Serena and Venus Williams, Simone Biles, Gabby Douglas and Wilma Rudolph.&lt;/p&gt;
+"><sup id="ss-6">6</sup></a> were all rated higher on average by women who took the survey than by men. Apparently even data sets can’t avoid the <a href="https://fivethirtyeight.com/features/serena-williams-is-not-the-700th-best-tennis-player-on-the-planet/">argument</a> over where the top female athletes would rank in comparison with their male counterparts.</p>
+<p>On the opposite side, legendary running back Walter Payton was rated much higher by men than by women &#8212; in fact, when you sort athletes by how much better they were ranked by men than women, four of the top six were football players.</p>
+<h2>By age</h2>
+<section class="viz">
+<header class="viz">
+<h5 class="title">Differences in ratings of black athletes by rater’s age</h5>
+</header>
+<table class="viz full" data-carpenter-slug="paine.undefeated.3">
+<thead style="border-bottom:none;">
+<tr>
+<th class="text" style="border-bottom:2px solid #222222;" colspan="1">VOTERS UNDER 35</th>
+<th class="heat number" style="border-bottom:2px solid #222222;" colspan="1">DIFF.</th>
+<th class="boolean" style="width:2%;text-align:center;border-bottom:2px solid #222222;" colspan="1">SIG.*</th>
+<th class="text" colspan="1"></th>
+<th class="text" style="border-bottom:2px solid #222222;" colspan="1">VOTERS 35 AND UP</th>
+<th class="heat number" style="border-bottom:2px solid #222222;" colspan="1">DIFF.</th>
+<th class="boolean" style="width:2%;text-align:center;border-bottom:2px solid #222222;" colspan="1">SIG.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text">Kobe Bryant</td>
+<td class="heat number highlight" style="color:#222222;background-color:#f08a5d;">1.8</td>
+<td class="boolean" style="width:2%;text-align:center;">✓</td>
+<td class="text" style="border-bottom:none;"></td>
+<td class="text">Hank Aaron</td>
+<td class="heat number highlight" style="color:#222222;background-color:#ed713a;">2.2</td>
+<td class="boolean" style="width:2%;text-align:center;">✓</td>
+</tr>
+<tr>
+<td class="text">Derek Jeter</td>
+<td class="heat number highlight" style="color:#222222;background-color:#fad8c9;">0.6</td>
+<td class="boolean" style="width:2%;text-align:center;"></td>
+<td class="text" style="border-bottom:none;"></td>
+<td class="text">Pele</td>
+<td class="heat number highlight" style="color:#222222;background-color:#ef8454;">1.9</td>
+<td class="boolean" style="width:2%;text-align:center;"></td>
+</tr>
+<tr>
+<td class="text">LeBron James</td>
+<td class="heat number highlight" style="color:#222222;background-color:#fad8c9;">0.6</td>
+<td class="boolean" style="width:2%;text-align:center;"></td>
+<td class="text" style="border-bottom:none;"></td>
+<td class="text">Gale Sayers</td>
+<td class="heat number highlight" style="color:#222222;background-color:#f08a5d;">1.8</td>
+<td class="boolean" style="width:2%;text-align:center;"></td>
+</tr>
+<tr>
+<td class="text">Shaquille O&#8217;Neal</td>
+<td class="heat number highlight" style="color:#222222;background-color:#faded2;">0.5</td>
+<td class="boolean" style="width:2%;text-align:center;"></td>
+<td class="text" style="border-bottom:none;"></td>
+<td class="text">Arthur Ashe</td>
+<td class="heat number highlight" style="color:#222222;background-color:#f19166;">1.7</td>
+<td class="boolean" style="width:2%;text-align:center;"></td>
+</tr>
+<tr>
+<td class="text">Michael Johnson</td>
+<td class="heat number highlight" style="color:#222222;background-color:#fbe5db;">0.4</td>
+<td class="boolean" style="width:2%;text-align:center;"></td>
+<td class="text" style="border-bottom:none;"></td>
+<td class="text">Roberto Clemente</td>
+<td class="heat number highlight" style="color:#222222;background-color:#f1976f;">1.6</td>
+<td class="boolean" style="width:2%;text-align:center;"></td>
+</tr>
+<tr>
+<td class="text">Usain Bolt</td>
+<td class="heat number highlight" style="color:#222222;background-color:#fdf2ed;">0.2</td>
+<td class="boolean" style="width:2%;text-align:center;"></td>
+<td class="text" style="border-bottom:none;"></td>
+<td class="text">Ernie Banks</td>
+<td class="heat number highlight" style="color:#222222;background-color:#f3a481;">1.4</td>
+<td class="boolean" style="width:2%;text-align:center;"></td>
+</tr>
+<tr>
+<td class="text">Serena Williams</td>
+<td class="heat number highlight" style="color:#222222;background-color:#fdf2ed;">0.2</td>
+<td class="boolean" style="width:2%;text-align:center;"></td>
+<td class="text" style="border-bottom:none;"></td>
+<td class="text">Ray Robinson</td>
+<td class="heat number highlight" style="color:#222222;background-color:#f3a481;">1.4</td>
+<td class="boolean" style="width:2%;text-align:center;"></td>
+</tr>
+<tr>
+<td class="text">Muhammad Ali</td>
+<td class="heat number highlight" style="color:#222222;background-color:#fef8f6;">0.1</td>
+<td class="boolean" style="width:2%;text-align:center;"></td>
+<td class="text" style="border-bottom:none;"></td>
+<td class="text">Joe Frazier</td>
+<td class="heat number highlight" style="color:#222222;background-color:#f5b193;">1.2</td>
+<td class="boolean" style="width:2%;text-align:center;"></td>
+</tr>
+<tr>
+<td class="text">Bo Jackson</td>
+<td class="heat number highlight" style="color:#222222;background-color:#fef8f6;">0.1</td>
+<td class="boolean" style="width:2%;text-align:center;"></td>
+<td class="text" style="border-bottom:none;"></td>
+<td class="text">Willie Mays</td>
+<td class="heat number highlight" style="color:#222222;background-color:#f5b193;">1.2</td>
+<td class="boolean" style="width:2%;text-align:center;"></td>
+</tr>
+<tr>
+<td class="text">Stephen Curry</td>
+<td class="heat number highlight" style="color:#222222;background-color:#fef8f6;">0.1</td>
+<td class="boolean" style="width:2%;text-align:center;"></td>
+<td class="text" style="border-bottom:none;"></td>
+<td class="text">Jim Brown</td>
+<td class="heat number highlight" style="color:#222222;background-color:#f5b193;">1.2</td>
+<td class="boolean" style="width:2%;text-align:center;"></td>
+</tr>
+</tbody>
+</table>
+<footer class="viz">
+<p class="notes">* Significant if higher than 90% confidence level. Poll for The Undefeated’s “50 Greatest Black Athletes.”</p>
+<p class="source">Source: Surveymonkey</p>
+</footer>
+</section>
+<p>When we split voters up by age (voters under 35 versus voters age 35 and up), a few interesting trends emerge. The most obvious is that younger respondents tended to give higher marks to younger players: Aside from Muhammad Ali and Bo Jackson &#8212; <a href="https://www.youtube.com/watch?v=80wMMFAcweQ">both</a> <a href="https://www.youtube.com/watch?v=RYT0vS4Z2d4">icons</a> &#8212; every member of the list of players most favored by younger fans is under 50; conversely, the youngest member of the group most favored by older fans is Joe Frazier, who would be 73 if he hadn’t passed away in 2011.</p>
+<p>The older cohort of voters also seemed to have a higher opinion of athletes in general, rating the entire pool about 0.6 points better, on average, than their younger counterparts did, and rating 14 players at least a full point higher than the under-35 group did.</p>
+<h2>By race</h2>
+<section class="viz">
+<header class="viz">
+<h5 class="title">Differences in ratings of black athletes by rater’s race</h5>
+</header>
+<table class="viz full" data-carpenter-slug="paine.undefeated.4">
+<thead style="border-bottom:none;">
+<tr>
+<th class="text" style="border-bottom:2px solid #222222;" colspan="1">NONWHITE VOTERS</th>
+<th class="heat number" style="border-bottom:2px solid #222222;" colspan="1">DIFF.</th>
+<th class="boolean" style="width:2%;text-align:center;border-bottom:2px solid #222222;" colspan="1">SIG.*</th>
+<th class="text" colspan="1"></th>
+<th class="text" style="border-bottom:2px solid #222222;" colspan="1">WHITE VOTERS</th>
+<th class="heat number" style="border-bottom:2px solid #222222;" colspan="1">DIFF.</th>
+<th class="text" style="width:2%;text-align:center;border-bottom:2px solid #222222;" colspan="1">SIG.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text">Kobe Bryant</td>
+<td class="heat number highlight" style="color:#222222;background-color:#f1976f;">1.6</td>
+<td class="boolean" style="width:2%;text-align:center;">✓</td>
+<td class="text" style="border-bottom:none;"></td>
+<td class="text">Jesse Owens</td>
+<td class="heat number highlight" style="color:#222222;background-color:#f9d1c0;">0.7</td>
+<td class="text" style="width:2%;text-align:center;"></td>
+</tr>
+<tr>
+<td class="text">Serena Williams</td>
+<td class="heat number highlight" style="color:#222222;background-color:#f4ab8a;">1.3</td>
+<td class="boolean" style="width:2%;text-align:center;">✓</td>
+<td class="text" style="border-bottom:none;"></td>
+<td class="text">Bill Russell</td>
+<td class="heat number highlight" style="color:#222222;background-color:#f9d1c0;">0.7</td>
+<td class="text" style="width:2%;text-align:center;"></td>
+</tr>
+<tr>
+<td class="text">LeBron James</td>
+<td class="heat number highlight" style="color:#222222;background-color:#f5b193;">1.2</td>
+<td class="boolean" style="width:2%;text-align:center;"></td>
+<td class="text" style="border-bottom:none;"></td>
+<td class="text">Jackie Robinson</td>
+<td class="heat number highlight" style="color:#222222;background-color:#fad8c9;">0.6</td>
+<td class="text" style="width:2%;text-align:center;"></td>
+</tr>
+<tr>
+<td class="text">Kevin Durant</td>
+<td class="heat number highlight" style="color:#222222;background-color:#f7c4ae;">0.9</td>
+<td class="boolean" style="width:2%;text-align:center;"></td>
+<td class="text" style="border-bottom:none;"></td>
+<td class="text">Pele</td>
+<td class="heat number highlight" style="color:#222222;background-color:#faded2;">0.5</td>
+<td class="text" style="width:2%;text-align:center;"></td>
+</tr>
+<tr>
+<td class="text">Isiah Thomas</td>
+<td class="heat number highlight" style="color:#222222;background-color:#f7c4ae;">0.9</td>
+<td class="boolean" style="width:2%;text-align:center;"></td>
+<td class="text" style="border-bottom:none;"></td>
+<td class="text">Arthur Ashe</td>
+<td class="heat number highlight" style="color:#222222;background-color:#fbe5db;">0.4</td>
+<td class="text" style="width:2%;text-align:center;"></td>
+</tr>
+<tr>
+<td class="text">Sugar Ray Leonard</td>
+<td class="heat number highlight" style="color:#222222;background-color:#f7c4ae;">0.9</td>
+<td class="boolean" style="width:2%;text-align:center;"></td>
+<td class="text" style="border-bottom:none;"></td>
+<td class="text">Walter Payton</td>
+<td class="heat number highlight" style="color:#222222;background-color:#fbe5db;">0.4</td>
+<td class="text" style="width:2%;text-align:center;"></td>
+</tr>
+<tr>
+<td class="text">Wilma Rudolph</td>
+<td class="heat number highlight" style="color:#222222;background-color:#f7c4ae;">0.9</td>
+<td class="boolean" style="width:2%;text-align:center;"></td>
+<td class="text" style="border-bottom:none;"></td>
+<td class="text">Floyd Mayweather</td>
+<td class="heat number highlight" style="color:#222222;background-color:#fbe5db;">0.4</td>
+<td class="text" style="width:2%;text-align:center;"></td>
+</tr>
+<tr>
+<td class="text">Julius Erving</td>
+<td class="heat number highlight" style="color:#222222;background-color:#f8cbb7;">0.8</td>
+<td class="boolean" style="width:2%;text-align:center;"></td>
+<td class="text" style="border-bottom:none;"></td>
+<td class="text">Gale Sayers</td>
+<td class="heat number highlight" style="color:#222222;background-color:#fcebe4;">0.3</td>
+<td class="text" style="width:2%;text-align:center;"></td>
+</tr>
+<tr>
+<td class="text">Stephen Curry</td>
+<td class="heat number highlight" style="color:#222222;background-color:#f9d1c0;">0.7</td>
+<td class="boolean" style="width:2%;text-align:center;"></td>
+<td class="text" style="border-bottom:none;"></td>
+<td class="text">Larry Fitzgerald</td>
+<td class="heat number highlight" style="color:#222222;background-color:#fcebe4;">0.3</td>
+<td class="text" style="width:2%;text-align:center;"></td>
+</tr>
+<tr>
+<td class="text">Muhammad Ali</td>
+<td class="heat number highlight" style="color:#222222;background-color:#fad8c9;">0.6</td>
+<td class="boolean" style="width:2%;text-align:center;"></td>
+<td class="text" style="border-bottom:none;"></td>
+<td class="text">Bo Jackson</td>
+<td class="heat number highlight" style="color:#222222;background-color:#fdf2ed;">0.2</td>
+<td class="text" style="width:2%;text-align:center;"></td>
+</tr>
+</tbody>
+</table>
+<footer class="viz">
+<p class="notes">* Significant if higher than 90% confidence level. Poll for The Undefeated’s “50 Greatest Black Athletes.”</p>
+<p class="source">Source: Surveymonkey</p>
+</footer>
+</section>
+<p>Two athletes stand out as having significantly more support among nonwhite voters than white ones: Serena Williams and Kobe Bryant. Out of the 60 athletes who received composite scores, Bryant was ranked dead last by white voters, which was one of the big reasons he &#8212; shockingly &#8212; didn’t crack The Undefeated’s top 50. (Nonwhite voters ranked him at No. 34.)</p>
+<p>Williams was arguably even more affected by white voters. Nonwhite respondents placed her as first on the entire list, while white voters placed her 11th overall; the two groups’ combined numbers put her as No. 6 overall in The Undefeated’s ranking.</p>
+<p>It&#8217;s also interesting to note that although none of the white voters&#8217; preferences rise to the level of statistical significance, the top three athletes rated notably higher by white respondents &#8212; Jesse Owens, Bill Russell and Jackie Robinson &#8212; each took major strides in <a href="https://www.olympic.org/videos/jesse-owens-s-inspiring-history">breaking</a> <a href="http://www.espn.com/blog/truehoop/post/_/id/23432/bill-russell-the-jackie-robinson-of-basketball">down</a> <a href="http://www.history.com/this-day-in-history/jackie-robinson-breaks-color-barrier">barriers</a> that kept African-Americans from full and equal participation in their sports. The question of how race shaped Americans’ notion of what makes a great black athlete deserves a longer look, and our colleague Jerry Bembry is diving into that later today at The Undefeated.</p>
+<hr />
+<p>Taken together, all these differences in voting patterns tell a complex story about how race, gender and culture help determine how an athlete is viewed &#8212; and ultimately how his or her legacy is appraised. Although some biases are predictable (for instance, older fans think athletes were better back in their day), some are more surprising. Measuring these trends serves as an invitation to a broader conversation about what we value most in sports and why.</p>
+<p><strong>Read more: </strong><a href="http://theundefeated.com/features/50-greatest-black-athletes/">The Undefeated&#8217;s list of the 50 greatest black athletes</a></p><img alt="" border="0" src="https://pixel.wp.com/b.gif?host=fivethirtyeight.com&#038;blog=64146350&#038;post=159937&#038;subd=espnfivethirtyeight&#038;ref=&#038;feed=1" width="1" height="1" />]]></content:encoded>
+		<dc:contributor><![CDATA[By Neil Paine and Mai Nguyen]]></dc:contributor>
+
+		<atom:author>
+			<atom:name>Neil Paine</atom:name>
+			<atom:uri>https://fivethirtyeight.com/contributors/neil-paine/</atom:uri>
+			<atom:email>neil.paine@fivethirtyeight.com</atom:email>
+		</atom:author>
+
+		<media:thumbnail url="https://espnfivethirtyeight.files.wordpress.com/2017/08/gettyimages-545684944-4x3.jpg" />
+		<media:content url="http://espnfivethirtyeight.files.wordpress.com/2017/08/gettyimages-545684944-4x3.jpg" medium="image">
+			<media:title type="html">TOPSHOT-TENNIS-GBR-WIMBLEDON</media:title>
+		</media:content>
+
+		<media:content url="http://2.gravatar.com/avatar/5ffc546732ff8ae09970e8e92eb98d6e?s=96&#38;d=https%3A%2F%2F2.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=G" medium="image">
+			<media:title type="html">neil21paine</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Rachel Lindsay’s &#8216;Bachelorette&#8217; Season, In Three Charts</title>
+		<link>https://fivethirtyeight.com/features/rachel-lindsays-bachelorette-season-in-three-charts/</link>
+		<pubDate>Mon, 07 Aug 2017 17:06:19 +0000</pubDate>
+		<dc:creator><![CDATA[Ella Koeze and Gus Wezerek]]></dc:creator>
+				<category><![CDATA[Bachelorette]]></category>
+		<category><![CDATA[TV]]></category>
+
+		<guid isPermaLink="false">https://fivethirtyeight.com/?post_type=fte_features&#038;p=159825</guid>
+		<description><![CDATA[Oof, what a finale. The three-hour, live conclusion to Season 13 of “The Bachelorette” and Rachel Lindsay’s quest for love didn’t come down to a typical choice between two men &#8212; she sent suitors Eric and Peter home early before accepting last-man-standing Bryan Abasolo’s proposal amongst the windswept vineyards of La Rioja, Spain. It seems [&#8230;]<img alt="" border="0" src="https://pixel.wp.com/b.gif?host=fivethirtyeight.com&#038;blog=64146350&#038;post=159825&#038;subd=espnfivethirtyeight&#038;ref=&#038;feed=1" width="1" height="1" />]]></description>
+				<content:encoded><![CDATA[<p>Oof, what a finale. The three-hour, live conclusion to Season 13 of “The Bachelorette” and Rachel Lindsay’s quest for love didn’t come down to a typical choice between two men &#8212; she sent suitors <a href="https://www.instagram.com/ericbigger/">Eric</a> and <a href="https://www.instagram.com/peterkrauswi/?hl=en">Peter</a> home early before accepting last-man-standing <a href="https://www.instagram.com/thebryanabasolo/?hl=en">Bryan Abasolo’s</a> proposal amongst the windswept vineyards of La Rioja, Spain. It seems like 11 <i>years</i> ago that 31 hopeful men and <a href="http://abc.go.com/shows/the-bachelorette/video/most-recent/VDKA3854763">one doll</a> stepped out of that limo looking for love, and yet only 11 weeks have passed. How did we end up with Eric, Peter and, in the end, Bryan? What happened to all those other men?</p>
+		<figure id="attachment_159893" class="wp-caption aligncenter "
+				style="max-width: 1024px">
+							<img class="wp-image-159893 hide-mobile" src="https://espnfivethirtyeight.files.wordpress.com/2017/08/koeze-wezerek-bachelorette-final-0803-3-update.png?quality=90&#038;strip=info&#038;w=575&#038;ssl=1" alt="" width="1024" height="922" srcset="https://espnfivethirtyeight.files.wordpress.com/2017/08/koeze-wezerek-bachelorette-final-0803-3-update.png?quality=90&amp;strip=info&amp;w=575&amp;ssl=1 1x, https://espnfivethirtyeight.files.wordpress.com/2017/08/koeze-wezerek-bachelorette-final-0803-3-update.png?quality=90&amp;strip=info&amp;w=1150&amp;ssl=1 2x" />						
+		</figure>
+		
+		<figure id="attachment_159891" class="wp-caption aligncenter "
+				style="max-width: 575px">
+							<img class="size-full wp-image-159891 show-mobile" src="https://espnfivethirtyeight.files.wordpress.com/2017/08/koeze-wezerek-bachelorette-final-0803-3-mobile-update.png?quality=90&#038;strip=info&#038;w=575&#038;ssl=1" alt="" width="575" height="1784" srcset="https://espnfivethirtyeight.files.wordpress.com/2017/08/koeze-wezerek-bachelorette-final-0803-3-mobile-update.png?quality=90&amp;strip=info&amp;w=575&amp;ssl=1 1x, https://espnfivethirtyeight.files.wordpress.com/2017/08/koeze-wezerek-bachelorette-final-0803-3-mobile-update.png?quality=90&amp;strip=info&amp;w=1150&amp;ssl=1 2x" />						
+		</figure>
+		
+<p>Looking back at the men eliminated this season, we get a fresh appreciation for everything Rachel had to endure. Remember how <a href="https://www.youtube.com/watch?v=tweGkXK_-qo">Whaboom</a> and <a href="https://www.youtube.com/watch?v=hRGqojShAMs">the Ticklemonster</a> weren’t eliminated IMMEDIATELY? Remember <a href="http://abc.go.com/shows/the-bachelorette/video/most-recent/VDKA3946221">Jack Stone’s</a> dream to just “lock the door” and “lay in bed” with Rachel? *Shudders* Despite all this, Rachel persevered.</p>
+<p>Rachel focused on the men who made strong first impressions and didn’t waste much time on the others. Of the 18 date roses that Rachel gave out during the season, only five went to suitors who didn’t end up in the final four. She was similarly selective in picking who she would go on dates with. In Week 7, for example, Rachel could have given one of the three available one-on-one dates to Matt or Adam, who had only been on group dates. Instead, she spent them with Dean, Bryan and Peter, who had already gone on one-on-ones.</p>
+		<figure id="attachment_159853" class="wp-caption aligncenter "
+				style="max-width: 575px">
+							<img class="size-full wp-image-159853 show-mobile" src="https://espnfivethirtyeight.files.wordpress.com/2017/08/koeze-wezerek-bachelorette-3-mobile.png?quality=90&#038;strip=info&#038;w=575&#038;ssl=1" alt="" width="575" height="1497" srcset="https://espnfivethirtyeight.files.wordpress.com/2017/08/koeze-wezerek-bachelorette-3-mobile.png?quality=90&amp;strip=info&amp;w=575&amp;ssl=1 1x, https://espnfivethirtyeight.files.wordpress.com/2017/08/koeze-wezerek-bachelorette-3-mobile.png?quality=90&amp;strip=info&amp;w=1150&amp;ssl=1 2x" />						
+		</figure>
+		
+		<figure id="attachment_159885" class="wp-caption aligncenter "
+				style="max-width: 1024px">
+							<img class="hide-mobile wp-image-159885" src="https://espnfivethirtyeight.files.wordpress.com/2017/08/koeze-wezerek-bachelorette-31.png?quality=90&#038;strip=info&#038;w=575&#038;ssl=1" alt="" width="1024" height="669" srcset="https://espnfivethirtyeight.files.wordpress.com/2017/08/koeze-wezerek-bachelorette-31.png?quality=90&amp;strip=info&amp;w=575&amp;ssl=1 1x, https://espnfivethirtyeight.files.wordpress.com/2017/08/koeze-wezerek-bachelorette-31.png?quality=90&amp;strip=info&amp;w=1150&amp;ssl=1 2x" />						
+		</figure>
+		
+<p>As the chart shows, Rachel concentrated her attention on a limited number of suitors &#8212; not the worst strategy if you’re trying to find a husband, but it made for predictable TV. Almost everyone in the FiveThirtyEight &#8220;Bachelorette&#8221; bracket pool had Dean, Bryan and Peter in their final four.</p>
+<p>Throughout all the drama, Rachel and her men were also roaming the globe — no metaphorical journey to find love would be worth watching without actual travel. This season’s international destinations were all in Western Europe and pretty boring (though there was some <a href="https://www.bustle.com/p/how-kenny-kenny-got-hurt-on-the-bachelorette-was-literally-nbd-67175">Viking fighting</a>). But Rachel did get to see a substantial slice of the good ol’ USA by choosing a geographically diverse final four for hometown dates.</p>
+		<figure id="attachment_159862" class="wp-caption aligncenter "
+				style="max-width: 575px">
+							<img class="size-full wp-image-159862 hide-mobile" src="https://espnfivethirtyeight.files.wordpress.com/2017/08/koeze-wezerek-bachelorette-final-0803-4.png?quality=90&#038;strip=info&#038;w=575&#038;ssl=1" alt="" width="575" height="394" srcset="https://espnfivethirtyeight.files.wordpress.com/2017/08/koeze-wezerek-bachelorette-final-0803-4.png?quality=90&amp;strip=info&amp;w=575&amp;ssl=1 1x, https://espnfivethirtyeight.files.wordpress.com/2017/08/koeze-wezerek-bachelorette-final-0803-4.png?quality=90&amp;strip=info&amp;w=1150&amp;ssl=1 2x" />						
+		</figure>
+		
+		<figure id="attachment_159861" class="wp-caption aligncenter "
+				style="max-width: 575px">
+							<img class="size-full wp-image-159861 show-mobile" src="https://espnfivethirtyeight.files.wordpress.com/2017/08/koeze-wezerek-bachelorette-final-0803-4-mobile.png?quality=90&#038;strip=info&#038;w=575&#038;ssl=1" alt="" width="575" height="586" srcset="https://espnfivethirtyeight.files.wordpress.com/2017/08/koeze-wezerek-bachelorette-final-0803-4-mobile.png?quality=90&amp;strip=info&amp;w=575&amp;ssl=1 1x, https://espnfivethirtyeight.files.wordpress.com/2017/08/koeze-wezerek-bachelorette-final-0803-4-mobile.png?quality=90&amp;strip=info&amp;w=1150&amp;ssl=1 2x" />						
+		</figure>
+		
+<p>It’s been a wild ride for Rachel and Bachelor Nation, but we’re ready to move on to a new love story. So … who’s going to be the next Bachelor?<a class="espn-footnote-link" data-footnote-id="14" href="#fn-14" data-footnote-content="&lt;p&gt;Peter? Probably Peter, right?&lt;/p&gt;
+"><sup id="ss-14">14</sup></a></p>
+<p><strong>UPDATE</strong> (Aug. 7, 11:03 p.m.): This article was updated after the season finale.</p>
+<p><i>Additional reporting contributions by Walt Hickey.</i></p><img alt="" border="0" src="https://pixel.wp.com/b.gif?host=fivethirtyeight.com&#038;blog=64146350&#038;post=159825&#038;subd=espnfivethirtyeight&#038;ref=&#038;feed=1" width="1" height="1" />]]></content:encoded>
+		<dc:contributor><![CDATA[By Ella Koeze and Gus Wezerek]]></dc:contributor>
+
+		<atom:author>
+			<atom:name>Ella Koeze</atom:name>
+			<atom:uri>https://fivethirtyeight.com/contributors/ella-koeze/</atom:uri>
+			<atom:email>ella.koeze@fivethirtyeight.com</atom:email>
+		</atom:author>
+	<subtitle>She wasn&#8217;t messing around.</subtitle>
+		<media:thumbnail url="https://espnfivethirtyeight.files.wordpress.com/2017/08/promo_4x3_bachelorette.jpg" />
+		<media:content url="http://espnfivethirtyeight.files.wordpress.com/2017/08/promo_4x3_bachelorette.jpg" medium="image">
+			<media:title type="html">promo_4x3_BACHELORETTE</media:title>
+		</media:content>
+
+		<media:content url="http://1.gravatar.com/avatar/408e1b718cd6770ca10ffec47d43ce66?s=96&#38;d=https%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=G" medium="image">
+			<media:title type="html">ellakoeze</media:title>
+		</media:content>
+
+		<media:content url="http://espnfivethirtyeight.files.wordpress.com/2017/08/koeze-wezerek-bachelorette-final-0803-3-update.png" medium="image" />
+
+		<media:content url="http://espnfivethirtyeight.files.wordpress.com/2017/08/koeze-wezerek-bachelorette-final-0803-3-mobile-update.png" medium="image" />
+
+		<media:content url="http://espnfivethirtyeight.files.wordpress.com/2017/08/koeze-wezerek-bachelorette-3-mobile.png" medium="image" />
+
+		<media:content url="http://espnfivethirtyeight.files.wordpress.com/2017/08/koeze-wezerek-bachelorette-31.png" medium="image" />
+
+		<media:content url="http://espnfivethirtyeight.files.wordpress.com/2017/08/koeze-wezerek-bachelorette-final-0803-4.png" medium="image" />
+
+		<media:content url="http://espnfivethirtyeight.files.wordpress.com/2017/08/koeze-wezerek-bachelorette-final-0803-4-mobile.png" medium="image" />
+	</item>
+		<item>
+		<title>Significant Digits For Monday, August 7, 2017</title>
+		<link>https://fivethirtyeight.com/features/significant-digits-for-monday-august-7-2017/</link>
+		<pubDate>Mon, 07 Aug 2017 12:48:15 +0000</pubDate>
+		<dc:creator><![CDATA[Walt Hickey]]></dc:creator>
+				<category><![CDATA[Significant Digits]]></category>
+
+		<guid isPermaLink="false">https://fivethirtyeight.com/?post_type=fte_features&#038;p=159818</guid>
+		<description><![CDATA[You’re reading Significant Digits, a daily digest of the numbers tucked inside the news. 9 applications There have been at least nine applications for trademarks incorporating racially charged words and symbols filed since a June 19 Supreme Court ruling that tossed out a federal law prohibiting them. Most of those are related to the N-word. [&#8230;]<img alt="" border="0" src="https://pixel.wp.com/b.gif?host=fivethirtyeight.com&#038;blog=64146350&#038;post=159818&#038;subd=espnfivethirtyeight&#038;ref=&#038;feed=1" width="1" height="1" />]]></description>
+				<content:encoded><![CDATA[<p><em>You’re reading Significant Digits, a daily digest of the numbers tucked inside the news.</em></p>
+<hr />
+<h2>9 applications</h2>
+<p>There have been at least nine applications for trademarks incorporating racially charged words and symbols filed since a June 19 Supreme Court ruling that tossed out a federal law prohibiting them. Most of those are related to the N-word. [<a href="http://uk.reuters.com/article/uk-usa-court-slur-idUKKBN1A80KX">Reuters</a>]</p>
+<hr />
+<h2>36.2 days</h2>
+<p>Median amount of time a U.S. state could run government operations with their 2016 levels of money reserves. This is down from 2007&#8217;s mark of 41.3 days, and 2017 could see the median decline to 27.5 days of rainy-day fund runway. [<a href="http://www.pewtrusts.org/en/multimedia/data-visualizations/2014/fiscal-50#ind5">Pew Charitable Trusts</a>]</p>
+<hr />
+<h2>$37 in gross profit</h2>
+<p>Middlemen called pharmacy-benefit managers hugely profit from the sale of brand name drugs. According to a consulting group, a brand-name drug with a $300 list price may deliver $37 to third parties, with pharmacy-benefit managers getting $18 of it. [<a href="https://www.wsj.com/articles/behind-the-push-to-keep-higher-priced-epipen-in-consumers-hands-1502036741">The Wall Street Journal</a>]</p>
+<hr />
+<h2>32,000</h2>
+<p>The subways in New York City are in a state of dire disrepair after decades of governors ignored or deferred maintenance on the system. Now mayor Bill de Blasio is suggesting the city increase the upper-most tax rate by about a half-point to generate $800 million a year to fix the subways. There are about 32,000 New Yorkers who are either single individuals who make more than $500,000 per year or part of a married couple who make more than $1,000,000 annually. Their city tax rate would go from 3.9 percent to 4.4 percent. [<a href="https://www.bloomberg.com/news/articles/2017-08-06/nyc-mayor-pushes-for-tax-on-the-1-percent-to-fund-subway-fix">Bloomberg</a>]</p>
+<hr />
+<h2>$10 million</h2>
+<p>Just when he was finally getting out, Jay Cutler keeps being pulled back into the NFL. With the Dolphins confronting the loss of their starting quarterback Ryan Tannehill to knee surgery, the ex-Bears quarterback and recent Fox Sports hire signed a $10 million one-year deal with Miami. [<a href="http://www.espn.com/nfl/story/_/id/20267198/miami-dolphins-jay-cutler-agree-one-year-deal">ESPN</a>]</p>
+<hr />
+
+<h2>184 million</h2>
+<p>Number of farms in China with cropland, compared to 1.6 million in the United States. That abundance of small suppliers means that China is particularly vulnerable to food fraud, for instance when lower-quality meats are passed off as the real deal. This has led to some serious tech solutions to confront the problem. [<a href="https://www.bloomberg.com/news/articles/2017-08-06/spies-blockchain-and-alibaba-beating-china-s-fake-food-scourge">Bloomberg</a>]</p>
+<hr />
+<p><i>If you see a significant digit in the wild, send it to <a href="https://twitter.com/WaltHickey">@WaltHickey</a>.</i></p><img alt="" border="0" src="https://pixel.wp.com/b.gif?host=fivethirtyeight.com&#038;blog=64146350&#038;post=159818&#038;subd=espnfivethirtyeight&#038;ref=&#038;feed=1" width="1" height="1" />]]></content:encoded>
+		<dc:contributor><![CDATA[By Walt Hickey]]></dc:contributor>
+
+		<atom:author>
+			<atom:name>Walt Hickey</atom:name>
+			<atom:uri>https://fivethirtyeight.com/contributors/walt-hickey/</atom:uri>
+			<atom:email>walter.hickey@fivethirtyeight.com</atom:email>
+		</atom:author>
+
+		<media:thumbnail url="https://espnfivethirtyeight.files.wordpress.com/2016/03/sigdig-1monday.jpg" />
+		<media:content url="http://espnfivethirtyeight.files.wordpress.com/2016/03/sigdig-1monday.jpg" medium="image">
+			<media:title type="html">SIGDIG-1MONDAY</media:title>
+		</media:content>
+
+		<media:content url="http://1.gravatar.com/avatar/155cf58d809abb60ab1959a71ff558cf?s=96&#38;d=https%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=G" medium="image">
+			<media:title type="html">walthickey</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>The Congressional Map Has A Record-Setting Bias Against Democrats</title>
+		<link>https://fivethirtyeight.com/features/the-congressional-map-is-historically-biased-toward-the-gop/</link>
+		<pubDate>Mon, 07 Aug 2017 09:54:43 +0000</pubDate>
+		<dc:creator><![CDATA[David Wasserman]]></dc:creator>
+				<category><![CDATA[2018 Election]]></category>
+		<category><![CDATA[2020 Election]]></category>
+		<category><![CDATA[Congress]]></category>
+		<category><![CDATA[Electoral College]]></category>
+
+		<guid isPermaLink="false">https://fivethirtyeight.com/?post_type=fte_features&#038;p=159806</guid>
+		<description><![CDATA[When Democrats think about their party’s problems on the political map, they tend to think of President Trump&#8217;s ability to win the White House despite losing the popular vote and Republicans&#8217; potent efforts to gerrymander congressional districts. But their problems extend beyond the Electoral College and the House: The Senate hasn&#8217;t had such a strong [&#8230;]<img alt="" border="0" src="https://pixel.wp.com/b.gif?host=fivethirtyeight.com&#038;blog=64146350&#038;post=159806&#038;subd=espnfivethirtyeight&#038;ref=&#038;feed=1" width="1" height="1" />]]></description>
+				<content:encoded><![CDATA[<p>When Democrats think about their party’s problems on the political map, they tend to think of President Trump&#8217;s <a href="https://fivethirtyeight.com/features/how-trump-could-win-the-white-house-while-losing-the-popular-vote/">ability</a> to win the White House despite losing the popular vote and Republicans&#8217; potent efforts to <a href="https://www.apnews.com/fa6478e10cda4e9cbd75380e705bd380">gerrymander</a> congressional districts. But their problems extend beyond the Electoral College and the House: The Senate hasn&#8217;t had such a strong pro-GOP bias since the ratification of direct Senate elections in 1913.</p>
+<p>Even if Democrats were to win every single 2018 House and Senate race for seats representing places that Hillary Clinton won or that Trump won by less than 3 percentage points &#8212; a pretty good midterm by historical standards &#8212; they could still fall short of the House majority and <i>lose</i> five Senate seats.</p>
+<p>This is partly attributable to the nature of House districts: GOP gerrymandering and Democratic voters&#8217; <a href="https://www.nytimes.com/2016/10/23/opinion/campaign-stops/go-midwest-young-hipster.html?_r=0">clustering</a> in urban districts has moved the median House seat well to the right of the nation. Part of it is bad timing. Democrats have been cursed by a <a href="https://fivethirtyeight.com/features/why-the-2018-senate-elections-are-looking-bad-for-both-parties/">terrible Senate map</a> in 2018: They must defend 25 of their 48 seats<a class="espn-footnote-link" data-footnote-id="15" href="#fn-15" data-footnote-content="&lt;p&gt;Counting the two independents who caucus with the Democrats.&lt;/p&gt;
+"><sup id="ss-15">15</sup></a> while Republicans must defend just eight of their 52.</p>
+<p>But there&#8217;s a larger, long-term trend at work too &#8212; one that should alarm Democrats preoccupied with the future of Congress and the Supreme Court.</p>
+<p>In the last few decades, Democrats have expanded their advantages in <a href="http://uselectionatlas.org/RESULTS/compare.php?year=2016&amp;fips=6&amp;f=0&amp;off=0&amp;elect=0&amp;type=state">California</a> and <a href="http://uselectionatlas.org/RESULTS/comparegraphs.php?year=2016&amp;fips=36&amp;f=0&amp;off=0&amp;elect=0">New York</a> &#8212; states with huge urban centers that combined to give Clinton a <a href="https://docs.google.com/spreadsheets/d/133Eb4qQmOxNvtesw2hdVns073R68EZx4SfCnP4IGQf8/edit#gid=19">6 million vote edge</a>, more than twice her national margin. But those two states elect only 4 percent of the Senate. Meanwhile, Republicans have made huge advances in small rural states &#8212; think <a href="http://uselectionatlas.org/RESULTS/compare.php?year=2016&amp;fips=5&amp;f=0&amp;off=0&amp;elect=0&amp;type=state">Arkansas</a>, <a href="http://uselectionatlas.org/RESULTS/compare.php?year=2016&amp;fips=38&amp;f=0&amp;off=0&amp;elect=0&amp;type=state">North</a> and <a href="http://uselectionatlas.org/RESULTS/compare.php?year=2016&amp;fips=46&amp;f=0&amp;off=0&amp;elect=0&amp;type=state">South Dakota</a>, <a href="http://uselectionatlas.org/RESULTS/compare.php?year=2016&amp;fips=19&amp;f=0&amp;off=0&amp;elect=0&amp;type=state">Iowa</a>, <a href="http://uselectionatlas.org/RESULTS/compare.php?year=2016&amp;fips=22&amp;f=0&amp;off=0&amp;elect=0&amp;type=state">Louisiana</a>, <a href="http://uselectionatlas.org/RESULTS/compare.php?year=2016&amp;fips=30&amp;f=0&amp;off=0&amp;elect=0&amp;type=state">Montana</a> and <a href="http://uselectionatlas.org/RESULTS/compare.php?year=2016&amp;fips=54&amp;f=0&amp;off=0&amp;elect=0&amp;type=state">West Virginia</a> &#8212; that wield disproportionate power in the upper chamber compared to their populations.</p>
+<p>We can quantify the partisan bias of Congress over time by measuring the distance between each <i>national</i> presidential result and each year&#8217;s presidential result in the <i>median</i> House and Senate seats. So in 2008, for example, Barack Obama won the popular vote by <a href="http://uselectionatlas.org/RESULTS/national.php?year=2008&amp;f=0&amp;off=0&amp;elect=0">7.3 percentage points</a>, but Democrats won the median House seat by 4.4 points &#8212; a pro-GOP bias of 2.9 points.</p>
+<p>Today, the pro-GOP biases in <i>both</i> chambers are at historic highs:</p>
+		<figure id="attachment_159904" class="wp-caption aligncenter "
+				style="max-width: 575px">
+							<img class="size-full wp-image-159904" src="https://espnfivethirtyeight.files.wordpress.com/2017/08/wasserman_geo-12.png?quality=90&#038;strip=info&#038;w=575&#038;ssl=1" alt="" width="575" height="512" srcset="https://espnfivethirtyeight.files.wordpress.com/2017/08/wasserman_geo-12.png?quality=90&amp;strip=info&amp;w=575&amp;ssl=1 1x, https://espnfivethirtyeight.files.wordpress.com/2017/08/wasserman_geo-12.png?quality=90&amp;strip=info&amp;w=1150&amp;ssl=1 2x" />						
+		</figure>
+		
+<p>In 2016, Trump lost the national <a href="https://docs.google.com/spreadsheets/d/133Eb4qQmOxNvtesw2hdVns073R68EZx4SfCnP4IGQf8/edit#gid=19">popular vote</a> by 2.1 percentage points, but Republicans won the median House seat by 3.4 points and the median Senate seat by 3.6 points &#8212; that’s the widest Senate gap in at least a century and tied with 2012 for the widest House disparity in the last half-century. That doesn’t mean Democrats can’t win the House and Senate back &#8212; they <a href="http://www.washingtonpost.com/wp-srv/politics/interactives/campaign06/">won control of both chambers in 2006</a> despite a Republican-bias that year, for example &#8212; but they’re starting from a truly historic geographic disadvantage, even with the political wind at their back.</p>
+<p>Consider: In <a href="http://uselectionatlas.org/RESULTS/data.php?year=1980&amp;datatype=national&amp;def=1&amp;f=0&amp;off=0&amp;elect=0">1980</a>, there were 18 states where the presidential margin was at least 5 points more Democratic than the national result, 18 states where it was at least 5 points more Republican than the national result and 14 states in between. Hypothetically, over three successive election cycles, all either party needed to do to win a Senate majority was win all 36 of the seats in the friendly states plus at least 15 of the 28 swing-state seats.</p>
+<p>Today, Republicans don&#8217;t even need to win any &#8220;swing states&#8221; to win a Senate majority: 52 seats are in states where the 2016 presidential margin was at least 5 percentage points more Republican than the national outcome. By contrast, there are just 28 seats in states where the margin was at least 5 points more Democratic, and only 20 seats in swing states.</p>
+		<figure id="attachment_159807" class="wp-caption aligncenter "
+				style="max-width: 575px">
+							<img class="size-full wp-image-159807" src="https://espnfivethirtyeight.files.wordpress.com/2017/08/wasserman_geo-2.png?quality=90&#038;strip=info&#038;w=575&#038;ssl=1" alt="" width="575" height="1031" srcset="https://espnfivethirtyeight.files.wordpress.com/2017/08/wasserman_geo-2.png?quality=90&amp;strip=info&amp;w=575&amp;ssl=1 1x, https://espnfivethirtyeight.files.wordpress.com/2017/08/wasserman_geo-2.png?quality=90&amp;strip=info&amp;w=1150&amp;ssl=1 2x" />						
+		</figure>
+		
+<p>The GOP&#8217;s current 52-seat majority makes the Senate look tantalizingly competitive. But a look at the map reveals that the Democrats hold far more seats on borrowed time than Republicans do. The GOP doesn’t hold a single Senate seat in those 14 states that are more Democratic-leaning than the country overall. Meanwhile, Democrats hold six seats in the 26 more-Republican-than-average states, and all six are at risk in 2018.</p>
+<p>In 2010, when Democrats passed the health care law Republicans are now seeking to repeal, they needed “yes” votes from all 60 of their senators, including 13 from states that then-President Barack Obama had lost in 2008. What did it take for the party to be able to obtain 60 seats? The Iraq War, Hurricane Katrina and a stock market crash, which generated a huge backlash against President George W. Bush and Republicans in 2008.</p>
+<p>Today, it would take even more cataclysmic events under GOP rule to propel Democrats to a supermajority over the next six years. (Of course, those events sometimes happen, particularly given a long enough time frame.) Meanwhile, all Republicans would need to obtain 60 seats would be to win every seat in the 30 states that Trump won &#8212; no Clinton states needed. That&#8217;s a plausible outcome over a few election cycles, thanks to today’s extraordinarily high rates of <a href="https://fivethirtyeight.com/features/there-were-no-purple-states-on-tuesday/">straight-ticket voting</a> &#8212; if the basic contours of the nation’s political geography don’t drastically change in the next decade.</p>
+<p>The implications beyond Congress, especially for the Supreme Court, should deeply worry Democrats. Even if there&#8217;s a Democrat in the White House in 2021, the Senate majority that is so critical to confirming his or her nominee could be much harder to come by than it has been in decades past.</p><img alt="" border="0" src="https://pixel.wp.com/b.gif?host=fivethirtyeight.com&#038;blog=64146350&#038;post=159806&#038;subd=espnfivethirtyeight&#038;ref=&#038;feed=1" width="1" height="1" />]]></content:encoded>
+		<dc:contributor><![CDATA[By David Wasserman]]></dc:contributor>
+
+		<atom:author>
+			<atom:name>David Wasserman</atom:name>
+			<atom:uri>https://fivethirtyeight.com/contributors/david-wasserman/</atom:uri>
+			<atom:email></atom:email>
+		</atom:author>
+	<subtitle>And it’s not just 2018.</subtitle>
+		<media:thumbnail url="https://espnfivethirtyeight.files.wordpress.com/2017/08/wasserman_geo_crop.png" />
+		<media:content url="http://espnfivethirtyeight.files.wordpress.com/2017/08/wasserman_geo_crop.png" medium="image">
+			<media:title type="html">wasserman_geo_crop</media:title>
+		</media:content>
+
+		<media:content url="http://1.gravatar.com/avatar/a5ffee70795912de4bc78ad6a72a447a?s=96&#38;d=https%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=G" medium="image">
+			<media:title type="html">micahscohen</media:title>
+		</media:content>
+
+		<media:content url="http://espnfivethirtyeight.files.wordpress.com/2017/08/wasserman_geo-12.png" medium="image" />
+
+		<media:content url="http://espnfivethirtyeight.files.wordpress.com/2017/08/wasserman_geo-2.png" medium="image" />
+	</item>
+		<item>
+		<title>We’re Looking For A Fall 2017 Art And Design Intern</title>
+		<link>https://fivethirtyeight.com/features/were-looking-for-a-fall-2017-art-and-design-intern/</link>
+		<pubDate>Fri, 04 Aug 2017 15:46:07 +0000</pubDate>
+		<dc:creator><![CDATA[Kate LaRue]]></dc:creator>
+				<category><![CDATA[FiveThirtyEight Internships]]></category>
+		<category><![CDATA[FiveThirtyEight Jobs]]></category>
+		<category><![CDATA[Housekeeping]]></category>
+
+		<guid isPermaLink="false">https://fivethirtyeight.com/?post_type=fte_features&#038;p=159621</guid>
+		<description><![CDATA[FiveThirtyEight is hiring an art and design intern for the fall. Are you the kind of candidate we’re looking for? Are you someone who loves telling stories using photography, illustration and design and is considering a career in visual journalism? You probably draw things to demonstrate a point. You probably spend longer editing the photos, [&#8230;]<img alt="" border="0" src="https://pixel.wp.com/b.gif?host=fivethirtyeight.com&#038;blog=64146350&#038;post=159621&#038;subd=espnfivethirtyeight&#038;ref=&#038;feed=1" width="1" height="1" />]]></description>
+				<content:encoded><![CDATA[<p>FiveThirtyEight is hiring an art and design intern for the fall. Are you the kind of candidate we’re looking for? Are you someone who loves telling stories using photography, illustration and design and is considering a career in visual journalism? You probably draw things to demonstrate a point. You probably spend longer editing the photos, captions and hashtags of your Instagram and Snapchat posts than most people do.</p>
+<p>The intern for art and design will work with the art director and editors to decide how to make stories visual, including doing photo research, cropping and captioning photos and making custom illustrations. The intern will help us think through the order and pacing of images within stories to find the best ways to keep our readers engaged. The intern will also help put stories together in WordPress and help write headlines and other display text to make sure an article feels cohesive.</p>
+<p>The internship, which is paid, will run from approximately Sept. 11 through Nov. 17, and the intern will be expected to work from our office in New York City. Current students at U.S. colleges or universities are eligible, as are recent graduates who were enrolled in at least one course in the semester before the internship.</p>
+<p>The intern may work up to 40 hours per week (with some flexibility in schedule as needed).</p>
+<p>Click <a href="https://jobs.espncareers.com/job/new-york/art-design-fivethirtyeight-internship-ny-espn-fall-2017/5216/5062713">here to apply</a> and to get more details about the position. Applications must be submitted online, but feel free to <a href="mailto:kate.larue@fivethirtyeight.com">email Kate LaRue</a>, FiveThirtyEight’s art director, with any questions. We encourage you to apply as soon as possible!</p><img alt="" border="0" src="https://pixel.wp.com/b.gif?host=fivethirtyeight.com&#038;blog=64146350&#038;post=159621&#038;subd=espnfivethirtyeight&#038;ref=&#038;feed=1" width="1" height="1" />]]></content:encoded>
+		<dc:contributor><![CDATA[By Kate LaRue]]></dc:contributor>
+
+		<atom:author>
+			<atom:name>Kate LaRue</atom:name>
+			<atom:uri>https://fivethirtyeight.com/contributors/kate-larue/</atom:uri>
+			<atom:email>kate.larue@fivethirtyeight.com</atom:email>
+		</atom:author>
+
+		<media:content url="http://1.gravatar.com/avatar/a5ffee70795912de4bc78ad6a72a447a?s=96&#38;d=https%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=G" medium="image">
+			<media:title type="html">micahscohen</media:title>
+		</media:content>
+	</item>
+	</channel>
+</rss>

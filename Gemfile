@@ -8,6 +8,11 @@ gem 'coffee-rails', '~> 4.1.0'
 
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'httparty'
+
+group :test do
+  gem 'fakeweb'
+end
 
 group :development, :test do
   gem 'byebug'

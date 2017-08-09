@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" media="screen" href="/~d/styles/rss2enclosuresfull.xsl"?><?xml-stylesheet type="text/css" media="screen" href="http://feeds.feedburner.com/~d/styles/itemcontent.css"?><rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0">
+  <channel>
+    <title>The Bill Simmons Podcast</title>
+    <description>
+      <![CDATA[HBO's Bill Simmons relaunches the most downloaded sports podcast of all-time with a rotating crew of celebrities, athletes and media members, as well as mainstays like Cousin Sal, Joe House and other friends and family members who always happen to be suspiciously available.]]>
+    </description>
+    <managingEditor>info@theringer.com (The Ringer)</managingEditor>
+    <copyright>© All rights reserved.</copyright>
+    
+    <link>https://art19.com/shows/the-bill-simmons-podcast</link>
+    <itunes:new-feed-url>https://rss.art19.com/the-bill-simmons-podcast</itunes:new-feed-url>
+    <itunes:owner>
+      <itunes:name>The Ringer</itunes:name>
+      <itunes:email>info@theringer.com</itunes:email>
+    </itunes:owner>
+    <itunes:author>The Bill Simmons Podcast</itunes:author>
+    <itunes:summary>
+      <![CDATA[HBO's Bill Simmons relaunches the most downloaded sports podcast of all-time with a rotating crew of celebrities, athletes and media members, as well as mainstays like Cousin Sal, Joe House and other friends and family members who always happen to be suspiciously available.]]>
+    </itunes:summary>
+    <language>en</language>
+    <itunes:explicit>yes</itunes:explicit>
+    <itunes:category text="Sports &amp; Recreation">
+    </itunes:category>
+    <itunes:image href="https://dfkfj8j276wwv.cloudfront.net/images/dc/c7/0e/7a/dcc70e7a-ac71-4110-a8af-20cdaa21df66/b7fd0a5e631b77edbdae3da250a7b5310c190d5c3ac24a333819f059a036cca196bc0c42b5a19ba32e11a29b6a746288fcdca19263d98b5c6329e5974154fa35.jpeg" />
+    <image>
+      <url>https://dfkfj8j276wwv.cloudfront.net/images/dc/c7/0e/7a/dcc70e7a-ac71-4110-a8af-20cdaa21df66/b7fd0a5e631b77edbdae3da250a7b5310c190d5c3ac24a333819f059a036cca196bc0c42b5a19ba32e11a29b6a746288fcdca19263d98b5c6329e5974154fa35.jpeg</url>
+      <link>https://art19.com/shows/the-bill-simmons-podcast</link>
+      <title>The Bill Simmons Podcast</title>
+    </image>
+    <atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="http://feeds.feedburner.com/TheBillSimmonsPodcast" /><feedburner:info xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" uri="thebillsimmonspodcast" /><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/" /><media:copyright>© All rights reserved.</media:copyright><media:thumbnail url="https://dfkfj8j276wwv.cloudfront.net/images/dc/c7/0e/7a/dcc70e7a-ac71-4110-a8af-20cdaa21df66/b7fd0a5e631b77edbdae3da250a7b5310c190d5c3ac24a333819f059a036cca196bc0c42b5a19ba32e11a29b6a746288fcdca19263d98b5c6329e5974154fa35.jpeg" /><media:category scheme="http://www.itunes.com/dtds/podcast-1.0.dtd">Sports &amp; Recreation</media:category><itunes:subtitle>HBO's Bill Simmons relaunches the most downloaded sports podcast of all-time with a rotating crew of celebrities, athletes and media members, as well as mainstays like Cousin Sal, Joe House and other friends and family members who always happen to be susp</itunes:subtitle><item>
+      <title>The 25 Greatest Patriots Wins of the Brady-Belichick Era (Ep. 245)</title>
+      <description>
+        <![CDATA[<p>HBO and The Ringer’s Bill Simmons is joined by fellow Boston diehard Kevin Hench to discuss the birth of the Brady-Belichick dynasty, the duo's best Super Bowl victory, the best team the Pats beat during their run together, the most important pass of Brady's career, the most improbable comebacks, and the most rewarding moments for Patriots fans since 2001.</p>]]>
+      </description>
+      <itunes:summary>
+        <![CDATA[<p>HBO and The Ringer’s Bill Simmons is joined by fellow Boston diehard Kevin Hench to discuss the birth of the Brady-Belichick dynasty, the duo's best Super Bowl victory, the best team the Pats beat during their run together, the most important pass of Brady's career, the most improbable comebacks, and the most rewarding moments for Patriots fans since 2001.</p>]]>
+      </itunes:summary>
+      <guid isPermaLink="false">gid://art19-episode-locator/V0/5S41tg20a7NkZfbRA6hEhfsKs2CO3TLBkWjqm35MMF8</guid>
+      <pubDate>Tue, 08 Aug 2017 18:27:56 -0000</pubDate>
+      <itunes:explicit>yes</itunes:explicit>
+      <itunes:image href="https://dfkfj8j276wwv.cloudfront.net/images/dc/c7/0e/7a/dcc70e7a-ac71-4110-a8af-20cdaa21df66/b7fd0a5e631b77edbdae3da250a7b5310c190d5c3ac24a333819f059a036cca196bc0c42b5a19ba32e11a29b6a746288fcdca19263d98b5c6329e5974154fa35.jpeg" />
+      <itunes:duration>01:52:37</itunes:duration>
+      <enclosure url="http://rss.art19.com/episodes/71e589d6-92e5-4536-83ca-af3cbbd1bfc9.mp3" type="audio/mpeg" length="108120607" />
+    <media:content url="http://rss.art19.com/episodes/71e589d6-92e5-4536-83ca-af3cbbd1bfc9.mp3" fileSize="108120607" type="audio/mpeg" /><itunes:subtitle> HBO and The Ringer’s Bill Simmons is joined by fellow Boston diehard Kevin Hench to discuss the birth of the Brady-Belichick dynasty, the duo's best Super Bowl victory, the best team the Pats beat during their run together, the most important pass of Bra</itunes:subtitle></item>
+    <item>
+      <title>Smart-Guy Friday: Cycle CEO/Founder Jason Stein and Bill's Dad on 'Game of Thrones' (Ep. 244)</title>
+      <description>
+        <![CDATA[<p>HBO and The Ringer's Bill Simmons is joined by Cycle CEO/founder Jason Stein to discuss the evolution of branded content (5:00), Joel Embiid's Twitter personality (11:00), Facebook curating content (21:00), the YouTube generation (32:30), the reinvention of sports (42:00), monetizing Twitter (52:00), the Rock's social media dominance (1:01:00), and the chances of Amazon one day owning the NFL (1:07:00). Then, Bill's dad joins to talk about the Red Sox's resurgence (1:27:00) and his best guesses for what's next on 'Game of Thrones' (1:30:00).</p>]]>
+      </description>
+      <itunes:summary>
+        <![CDATA[<p>HBO and The Ringer's Bill Simmons is joined by Cycle CEO/founder Jason Stein to discuss the evolution of branded content (5:00), Joel Embiid's Twitter personality (11:00), Facebook curating content (21:00), the YouTube generation (32:30), the reinvention of sports (42:00), monetizing Twitter (52:00), the Rock's social media dominance (1:01:00), and the chances of Amazon one day owning the NFL (1:07:00). Then, Bill's dad joins to talk about the Red Sox's resurgence (1:27:00) and his best guesses for what's next on 'Game of Thrones' (1:30:00).</p>]]>
+      </itunes:summary>
+      <guid isPermaLink="false">gid://art19-episode-locator/V0/0Sdj1zhsoejN50_hDriOfVCYNx8zZHcmqFxtUYEm6IQ</guid>
+      <pubDate>Fri, 04 Aug 2017 00:10:36 -0000</pubDate>
+      <itunes:explicit>yes</itunes:explicit>
+      <itunes:image href="https://dfkfj8j276wwv.cloudfront.net/images/dc/c7/0e/7a/dcc70e7a-ac71-4110-a8af-20cdaa21df66/b7fd0a5e631b77edbdae3da250a7b5310c190d5c3ac24a333819f059a036cca196bc0c42b5a19ba32e11a29b6a746288fcdca19263d98b5c6329e5974154fa35.jpeg" />
+      <itunes:duration>01:50:17</itunes:duration>
+      <enclosure url="http://rss.art19.com/episodes/a2d6e5de-20c2-4038-96eb-fcae73a3ed70.mp3" type="audio/mpeg" length="105873658" />
+    <media:content url="http://rss.art19.com/episodes/a2d6e5de-20c2-4038-96eb-fcae73a3ed70.mp3" fileSize="105873658" type="audio/mpeg" /><itunes:subtitle> HBO and The Ringer's Bill Simmons is joined by Cycle CEO/founder Jason Stein to discuss the evolution of branded content (5:00), Joel Embiid's Twitter personality (11:00), Facebook curating content (21:00), the YouTube generation (32:30), the reinvention</itunes:subtitle></item>
+    <item>
+      <title>Ep. 156: Holiday NFL/NBA + Basketball Unicorns With Joe House</title>
+      <description>
+        <![CDATA[HBO and The Ringer's Bill Simmons brings on Joe House to
+discuss the best bets for NFL Week 16, Matt Barkley's friskiness (17:00),
+the best NBA Christmas Day games (24:00), LeBron's extended playing time (28:00), potential Nuggets trade options (32:00), Blake Griffin's injury history (36:00), NBA unicorns throughout history (47:00), Shaq and Wilt Chamberlain (1:02:00), Kareem's sky hook (1:05:00), George Gervin's finger roll (1:08:00), and the best college basketball class in decades (1:12:00).]]>
+      </description>
+      <itunes:summary>
+        <![CDATA[HBO and The Ringer's Bill Simmons brings on Joe House to
+discuss the best bets for NFL Week 16, Matt Barkley's friskiness (17:00),
+the best NBA Christmas Day games (24:00), LeBron's extended playing time (28:00), potential Nuggets trade options (32:00), Blake Griffin's injury history (36:00), NBA unicorns throughout history (47:00), Shaq and Wilt Chamberlain (1:02:00), Kareem's sky hook (1:05:00), George Gervin's finger roll (1:08:00), and the best college basketball class in decades (1:12:00).]]>
+      </itunes:summary>
+      <guid isPermaLink="false">tag:soundcloud,2010:tracks/299105426</guid>
+      <pubDate>Thu, 22 Dec 2016 05:10:08 -0000</pubDate>
+      <itunes:explicit>yes</itunes:explicit>
+      <itunes:image href="https://dfkfj8j276wwv.cloudfront.net/images/7d/1d/80/6a/7d1d806a-7e9d-4c77-8708-32695f052808/2ca7eb6ad50aa6b7aa48ea4704cfe5224097fbccce443f91107048b655bb4fdacce4e068f5f03e4197c2647ff08c093811fa6e02232c1ab5f2d42e8ff40a0a8e.jpeg" />
+      <itunes:duration>01:19:45</itunes:duration>
+      <enclosure url="http://rss.art19.com/episodes/264cd418-4c10-4d0b-a09d-841e8db08101.mp3" type="audio/mpeg" length="76573884" />
+    <media:content url="http://rss.art19.com/episodes/264cd418-4c10-4d0b-a09d-841e8db08101.mp3" fileSize="76573884" type="audio/mpeg" /><itunes:subtitle> HBO and The Ringer's Bill Simmons brings on Joe House to discuss the best bets for NFL Week 16, Matt Barkley's friskiness (17:00), the best NBA Christmas Day games (24:00), LeBron's extended playing time (28:00), potential Nuggets trade options (32:00), </itunes:subtitle></item>
+    <item>
+      <title>Episode 0: 2 Minute Preview Teaser</title>
+      <description>
+        <![CDATA[Episode 0 of the Bill Simmons Podcast...]]>
+      </description>
+      <itunes:summary>
+        <![CDATA[Episode 0 of the Bill Simmons Podcast...]]>
+      </itunes:summary>
+      <guid isPermaLink="false">tag:soundcloud,2010:tracks/225545491</guid>
+      <pubDate>Fri, 25 Sep 2015 16:27:20 -0000</pubDate>
+      <itunes:explicit>yes</itunes:explicit>
+      <itunes:image href="https://dfkfj8j276wwv.cloudfront.net/images/eb/56/5a/60/eb565a60-b146-42c5-adbe-a300a2fedcc0/0c87f42f1d7d33507068156e1952cfb920a372dea9e67fbe264b690bf8160213b915e5036a448d255eb5270de5f8b01363aef6035ed3dc71f46bf1183a454644.jpeg" />
+      <itunes:duration>00:02:09</itunes:duration>
+      <enclosure url="http://rss.art19.com/episodes/41ae75a8-b7d1-411c-8abe-4b4850d6e36e.mp3" type="audio/mpeg" length="2073913" />
+    <media:content url="http://rss.art19.com/episodes/41ae75a8-b7d1-411c-8abe-4b4850d6e36e.mp3" fileSize="2073913" type="audio/mpeg" /><itunes:subtitle> Episode 0 of the Bill Simmons Podcast... </itunes:subtitle></item>
+  <media:credit role="author">The Bill Simmons Podcast</media:credit><media:rating>adult</media:rating></channel>
+</rss>

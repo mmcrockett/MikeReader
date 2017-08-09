@@ -1,7 +1,48 @@
 require 'test_helper'
 
 class FeedTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  ATOM_URL = "https://www.test.com/atom/"
+  RSS_URL  = "https://www.test.com/rss/"
+  POD_URL  = "https://www.test.com/pod/"
+
+  def setup
+    FakeWeb.register_uri(:get, ATOM_URL, fakeweb_response(body: atom_file, status: 200, plain: true))
+    FakeWeb.register_uri(:get, RSS_URL, fakeweb_response(body: rss_file, status: 200, plain: true))
+    FakeWeb.register_uri(:get, POD_URL, fakeweb_response(body: rss_podcast_file, status: 200, plain: true))
+
+    @atom_feed = Feed.new(name: 'atom', url: ATOM_URL).retrieve
+    @rss_feed  = Feed.new(name: 'rss', url: RSS_URL).retrieve
+    @pod_feed  = Feed.new(name: 'pod', url: POD_URL).retrieve
+
+    @feeds = []
+    @feeds << @atom_feed
+    @feeds << @rss_feed
+    @feeds << @pod_feed
+
+    super
+  end
+
+  test "can detect feed type" do
+    assert(@atom_feed.atom?)
+    assert_equal(false, @atom_feed.rss?)
+    assert(@rss_feed.rss?)
+    assert_equal(false, @rss_feed.atom?)
+    assert(@pod_feed.rss?)
+    assert_equal(false, @pod_feed.atom?)
+  end
+
+  test "can process the entries" do
+    @feeds.each do |feed|
+      feed.process
+    end
+
+    @feeds.each do |feed|
+      feed.save!
+      feed.reload
+    end
+
+    assert_equal(2, @atom_feed.entries.size)
+    assert_equal(7, @rss_feed.entries.size)
+    assert_equal(4, @pod_feed.entries.size)
+  end
 end

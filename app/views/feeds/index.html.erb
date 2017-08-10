@@ -1,31 +1,34 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Feeds</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Url</th>
-      <th>Display</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @feeds.each do |feed| %>
-      <tr>
-        <td><%= feed.name %></td>
-        <td><%= feed.url %></td>
-        <td><%= feed.display %></td>
-        <td><%= link_to 'Show', feed %></td>
-        <td><%= link_to 'Edit', edit_feed_path(feed) %></td>
-        <td><%= link_to 'Destroy', feed, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Feed', new_feed_path %>
+<div class="container" ng-controller="FeedsController" ng-init="initialize()">
+  <p id="notice" class="notice"><%= notice %></p>
+  <p class="alert alert-danger" ng-show="notice">{{notice}}</p>
+  <div class="input-group">
+    <input class="form-control" placeholder="feed url" ng-model="new_url" type="text">
+    <div class="input-group-btn">
+      <button type="button" class="btn btn-default" ng-click="add_feed()">
+        <span class="glyphicon glyphicon-plus"></span>
+      </button>
+    </div>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-condensed table-striped">
+      <thead>
+        <tr>
+          <th ng-repeat="column in columns()">{{column | humanize}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="feed in feeds">
+          <td>{{feed.id}}</td>
+          <td>{{feed.name}}</td>
+          <td>{{feed.url}}</td>
+          <td>
+            <span ng-class="['btn', 'btn-xs', 'glyphicon', {'glyphicon-ok':feed.display, 'glyphicon-minus':!feed.display}]" ng-click="toggle_display(feed)"></span>
+          </td>
+          <td>
+            <span ng-class="['btn', 'btn-xs', 'glyphicon', {'glyphicon-ok':feed.pod, 'glyphicon-minus':!feed.pod}]" ng-click="toggle_pod(feed)"></span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

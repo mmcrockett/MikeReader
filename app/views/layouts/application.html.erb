@@ -1,14 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="MikeReader">
 <head>
-  <title>MikeReader</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <meta name="description" content="Mike's reader!" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="shortcut icon"  type="image/x-icon" href="/favicon.ico?version=3">
+  <title>Mike Reader</title>
+
+  <%= render :partial => "common/header/header_includes" %>
+  <%= javascript_include_tag("application") %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <% if (true == Rails.env.development?) %>
+    <%= javascript_tag("jQuery.development = true;") %>
+  <% end %>
 
+  <div class="navbar navbar-default">
+    <div class="container-fluid <% if (false == Rails.env.production?) %>bg-warning<% end %>">
+      <div class="navbar-header">
+        <a class="navbar-brand">Mike Reader</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><%= link_to('Feeds', feeds_path) %></li>
+        <li><%= link_to('Entries', entries_path) %></li>
+      </ul>
+    </div>
+  </div>
+  <div id="main">
+    <div class="container">
 <%= yield %>
-
+    </div>
+  </div>
 </body>
 </html>

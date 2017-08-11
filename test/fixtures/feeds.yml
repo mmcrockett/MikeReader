@@ -1,11 +1,12 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+default: &default
+  name: MyString
+  url: MyString
+  display: false
+  pod: false
 
 one:
-  name: MyString
-  url: MyString
-  display: false
+  <<: *default
 
 two:
-  name: MyString
-  url: MyString
-  display: false
+  <<: *default

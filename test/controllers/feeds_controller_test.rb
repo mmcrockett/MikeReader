@@ -3,6 +3,17 @@ require 'test_helper'
 class FeedsControllerTest < ActionController::TestCase
   setup do
     @feed = feeds(:one)
+    @feeds = []
+
+    Feed.all.each do |feed|
+      @feeds << {
+        id: feed.id,
+        name: feed.name,
+        url: feed.url,
+        display: feed.display,
+        pod: feed.pod
+      }
+    end
   end
 
   test "should get index" do
@@ -11,39 +22,39 @@ class FeedsControllerTest < ActionController::TestCase
     assert_not_nil assigns(:feeds)
   end
 
-  test "should get new" do
-    get :new
+  test "should get index as json" do
+    request_json
+    get :index
     assert_response :success
+    assert_not_nil assigns(:feeds)
+    assert_equal(JSON.parse(@feeds.to_json), JSON.parse(@response.body))
   end
 
   test "should create feed" do
+    request_json
+
     assert_difference('Feed.count') do
-      post :create, feed: { display: @feed.display, name: @feed.name, url: @feed.url }
+      post :create, feed: { name: @feed.name, url: @feed.url, id: 99 }
     end
 
-    assert_redirected_to feed_path(assigns(:feed))
-  end
-
-  test "should show feed" do
-    get :show, id: @feed
     assert_response :success
-  end
+    feed = Feed.new(JSON.parse(@response.body))
 
-  test "should get edit" do
-    get :edit, id: @feed
-    assert_response :success
+    assert_equal(@feed.name, feed.name)
+    assert_equal(@feed.url, feed.url)
+    assert_not_equal(@feed.id, feed.id)
   end
 
   test "should update feed" do
-    patch :update, id: @feed, feed: { display: @feed.display, name: @feed.name, url: @feed.url }
-    assert_redirected_to feed_path(assigns(:feed))
-  end
+    request_json
+    patch :update, id: @feed.id, feed: { display: !@feed.display, name: @feed.name.upcase, url: @feed.url.upcase }
 
-  test "should destroy feed" do
-    assert_difference('Feed.count', -1) do
-      delete :destroy, id: @feed
-    end
+    assert_response :success
+    feed = Feed.new(JSON.parse(@response.body))
 
-    assert_redirected_to feeds_path
+    assert_equal(@feed.name.upcase, feed.name)
+    assert_equal(@feed.url.upcase, feed.url)
+    assert_equal(@feed.id, feed.id)
+    assert_equal(!@feed.display, feed.display)
   end
 end

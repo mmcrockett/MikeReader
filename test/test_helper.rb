@@ -8,6 +8,11 @@ class ActiveSupport::TestCase
 
   FakeWeb.allow_net_connect = false
 
+  def request_json
+    @request.headers["Content-Type"] = 'application/json'
+    @request.headers["Accept"]     = 'application/json'
+  end
+
   def fakeweb_response(params = {})
     response = {}
 

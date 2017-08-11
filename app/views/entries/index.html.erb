@@ -1,24 +1,16 @@
 <div class="container-fluid" ng-controller="EntriesController" ng-init="initialize()">
   <p id="notice" class="notice"><%= notice %></p>
   <p class="alert alert-danger" ng-show="notice">{{notice}}</p>
-  <div class="table-responsive">
-    <table class="table table-condensed table-striped">
-      <thead>
-        <tr>
-          <th ng-repeat="column in columns()">{{column | humanize}}</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr ng-repeat="entry in entries">
-          <td>{{entry.feed_id}}</td>
-          <td>{{entry.post_date}}</td>
-          <td>{{entry.subject}}</td>
-          <td><a href="{{entry.link}}" target="_blank">{{entry.link}}</a></td>
-          <td>
-            <span class="btn btn-xs glyphicon glyphicon-remove"></span>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+  <div ng-class="['row', 'entry', {'read':entry.read}]" ng-repeat="entry in entries">
+    <div class="col-xs-1">
+      <button type="button" class="no-background btn btn-default btn-xs" ng-click="mark_read(entry)">
+        <span class="glyphicon glyphicon-remove"></span>
+      </button>
+    </div>
+    <a href="{{entry.link}}">
+      <div class="col-xs-1 hidden-xs">{{entry.feed_id}}</div>
+      <div class="col-xs-1 hidden-xs">{{entry.post_date}}</div>
+      <div class="col-xs-9">{{entry.subject | limitTo: 80}}</div>
+    </a>
   </div>
 </div>

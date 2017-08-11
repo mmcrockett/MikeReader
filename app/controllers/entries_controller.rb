@@ -5,7 +5,7 @@ class EntriesController < ApplicationController
   # GET /entries.json
   def index
     if (true == request.format.json?)
-      @entries = Entry.all
+      @entries = Entry.where(:read => false)
     end
   end
 

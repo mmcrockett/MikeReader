@@ -19,16 +19,9 @@ function($scope, Logger, Restangular) {
       }
     ).finally ();
   };
-  $scope.toggle_pod = function(entry) {
-    if (true == entry.pod) {
-      entry.pod = false;
-    } else {
-      entry.pod = true;
-    }
-    $scope.save_entry(entry);
-  };
-  $scope.save_entry = function(entry) {
+  $scope.mark_read = function(entry) {
     $scope.notice = "";
+    entry.read = true;
 
     entry.save()
     .then()
@@ -39,8 +32,5 @@ function($scope, Logger, Restangular) {
       }
     )
     .finally();
-  };
-  $scope.columns = function() {
-    return ["feed_id", "post_date", "subject", "read"];
   };
 }]);

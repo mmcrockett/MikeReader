@@ -14,6 +14,10 @@ group :test do
   gem 'fakeweb'
 end
 
+group :production do
+  gem 'therubyracer', :platforms => :ruby
+end
+
 group :development, :test do
   gem 'byebug'
 end
@@ -21,5 +25,11 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
-end
 
+  gem 'capistrano', '3.6.0'
+  gem 'capistrano-secrets-generate', '>= 1.0.0'
+  gem 'capistrano-sqlite-reuse', '>= 1.0.0'
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rvm'
+end

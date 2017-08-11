@@ -21,7 +21,7 @@ function($scope, Logger, Restangular) {
       }
     ).finally ();
   };
-  $scope.mark_read = function(entry) {
+  $scope.mark_read = function(entry, eventHandler) {
     $scope.notice = "";
     entry.read = true;
 

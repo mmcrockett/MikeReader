@@ -4,8 +4,8 @@ app.filter('synopsis', function() {
   var VIEWPORT_EST  = _.constant((jQuery(window).width() - TOTAL_PADDING()) * DIV_WIDTH());
   var LETTER_SIZE_EST = _.constant(8);
 
-  return function(input, size_reducer = 0) {
-    var width     = size_reducer;
+  return function(input, size_reducer) {
+    var width     = size_reducer || 0;
     var i         = 0;
 
     var words  = input.split(" ");

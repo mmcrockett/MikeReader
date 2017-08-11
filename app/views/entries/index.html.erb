@@ -1,4 +1,4 @@
-<div class="container-fluid" ng-controller="EntriesController" ng-init="initialize()">
+<div class="container-fluid" ng-controller="EntriesController" ng-init="initialize('entries')">
   <p id="notice" class="notice"><%= notice %></p>
   <p class="alert alert-danger" ng-show="notice">{{notice}}</p>
   <div ng-class="['row', 'entry', {'read':entry.read}]" ng-repeat="entry in entries">

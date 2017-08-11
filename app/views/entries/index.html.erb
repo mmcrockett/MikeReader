@@ -1,114 +1,24 @@
-<div class="container" ng-controller="UpgradesController">
-  <div class="row">
-  </div>
+<div class="container-fluid" ng-controller="EntriesController" ng-init="initialize()">
   <p id="notice" class="notice"><%= notice %></p>
   <p class="alert alert-danger" ng-show="notice">{{notice}}</p>
-  <div class="panel panel-info">
-    <div class="panel-heading">{{filtered_upgrades.length | upgrade_summary:upgrades.length}}</div>
-    <div class="panel-body">
-      <div class="input-group">
-        <input class="form-control" ng-model="filter_settings.text_filter" placeholder="filter" type="text">
-        <div class="input-group-btn" ng-click="clear_filter('text_filter')">
-          <button type="button" class="btn btn-default">
-          <span class="glyphicon glyphicon-remove"></span>
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="panel-body">
-      <table class="table table-condensed">
-        <thead>
-          <tr>
-            <th>details</th>
-            <th>request id</th>
-            <th>user id</th>
-            <th>git repo</th>
-            <th>request time</th>
-            <th>status</th>
-            <th>progress</th>
-            <th></th>
-            <th></th>
-            <th>PR</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr ng-repeat-start="upgrade in filtered_upgrades" ng-class="[get_state_class(upgrade.overall_status).summary]">
-            <td>
-              <a class="btn btn-xs collapsed" data-toggle="collapse" data-target="#details-{{upgrade.id}}">
-                <span class="glyphicon glyphicon-collapse-down"></span>
-                <span class="glyphicon glyphicon-collapse-up"></span>
-              </a>
-            </td>
-            <td><a href="<%= feeds_path %>/{{upgrade.id}}">{{upgrade.id}}</a></td>
-            <td>{{upgrade.git_users[0]}}</td>
-            <td><a href="https://github.paypal.com/{{upgrade.git_location}}" target="_blank">{{upgrade.git_location}}</a></td>
-            <td>{{upgrade.created_at | time_ago_in_words}}</td>
-            <td>{{upgrade.overall_status | ui_status:valid_statuses}}</td>
-            <td>
-              <div uib-tooltip="{{upgrade.overall_status | ui_message | humanize}}" class="progress">
-                <div ng-class="['active', 'progress-bar', get_state_class(upgrade.overall_status).progress_bar]"
-                     role="progressbar"
-                     aria-valuenow="{{upgrade.progress}}"
-                     aria-valuemin="0"
-                     aria-valuemax="100"
-                     style="width: {{upgrade.progress}}%">
-                </div>
-              </div>
-            </td>
-            <td>
-              <a href="{{upgrade.jenkins_job_console_url}}"
-                 target="_blank"
-                 class="btn btn-default btn-xs no-background"
-                 uib-tooltip="Show butterfly logs"
-                 ng-show="upgrade.jenkins_job_console_url">
-                <span class="glyphicon butterfly-background"></span>
-              </a>
-            </td>
-            <td>
-              <div ng-show="UpgradeStatus.isFailed(upgrade.overall_status.status)">
-                <a class="no-background btn btn-default btn-xs" uib-tooltip="Resubmit" ng-show="!upgrade.resubmit_running" ng-click="resubmit(upgrade)">
-                  <span class="glyphicon glyphicon-repeat"></span>
-                </a>
-                <div class="btn btn-xs" style="cursor:none;" ng-show="upgrade.resubmit_running">
-                  <span us-spinner="{radius:4, width:1, length: 5, position:'relative'}"></span>
-                </div>
-              </div>
-            </td>
-            <td>
-              <span ng-show="(null == upgrade.git_pr)">---</span>
-              <a href="{{upgrade.git_pr}}" target="_blank" class="no-background btn btn-default btn-xs" ng-show="(null != upgrade.git_pr)">
-                <span uib-tooltip="{{upgrade.git_merge_state | humanize}} pull request" ng-class="[get_merge_state_classes(upgrade.git_merge_state)]"></span>
-              </a>
-            </td>
-          </tr>
-          <tr ng-repeat-end style="padding: 0px; border: none">
-            <td colspan="10" style="padding: 0px; border: none">
-              <div id="details-{{upgrade.id}}" class="collapse">
-                <table ng-class="[get_state_class(upgrade.overall_status).background, 'table', 'table-condensed', 'table-bordered', 'table-details']">
-                  <thead>
-                    <tr>
-                      <th>Git Branch</th>
-                      <th>Notification Users</th>
-                      <th>Status Message</th>
-                      <th>Request Date</th>
-                      <th>Details</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>{{upgrade.git_branch}}</td>
-                      <td>{{upgrade.git_users.join(' ')}}</td>
-                      <td>{{upgrade.overall_status | ui_message | humanize}}</td>
-                      <td>{{upgrade.created_at.toDateString()}}</td>
-                      <td><a href="<%= feeds_path %>/{{upgrade.id}}">more...</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+  <div class="table-responsive">
+    <table class="table table-condensed table-striped">
+      <thead>
+        <tr>
+          <th ng-repeat="column in columns()">{{column | humanize}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="entry in entries">
+          <td>{{entry.feed_id}}</td>
+          <td>{{entry.post_date}}</td>
+          <td>{{entry.subject}}</td>
+          <td><a href="{{entry.link}}" target="_blank">{{entry.link}}</a></td>
+          <td>
+            <span class="btn btn-xs glyphicon glyphicon-remove"></span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>

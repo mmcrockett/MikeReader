@@ -3,47 +3,48 @@ require 'test_helper'
 class EntriesControllerTest < ActionController::TestCase
   setup do
     @entry = entries(:one)
+    @entries = []
+
+    Entry.all.each do |entry|
+      @entries << {
+        id: entry.id,
+        subject: entry.subject,
+        link: entry.link,
+        data: entry.data,
+        read: entry.read,
+        post_date: entry.post_date,
+        feed_id: entry.feed_id
+      }
+    end
   end
 
   test "should get index" do
     get :index
     assert_response :success
+    assert_nil assigns(:entries)
+  end
+
+  test "should get index as json" do
+    request_json
+    get :index
+    assert_response :success
     assert_not_nil assigns(:entries)
-  end
-
-  test "should get new" do
-    get :new
-    assert_response :success
-  end
-
-  test "should create entry" do
-    assert_difference('Entry.count') do
-      post :create, entry: { data: @entry.data, feed_id: @entry.feed_id, link: @entry.link, post_date: @entry.post_date, read: @entry.read, subject: @entry.subject }
-    end
-
-    assert_redirected_to entry_path(assigns(:entry))
-  end
-
-  test "should show entry" do
-    get :show, id: @entry
-    assert_response :success
-  end
-
-  test "should get edit" do
-    get :edit, id: @entry
-    assert_response :success
+    assert_equal(JSON.parse(@entries.to_json), JSON.parse(@response.body))
   end
 
   test "should update entry" do
-    patch :update, id: @entry, entry: { data: @entry.data, feed_id: @entry.feed_id, link: @entry.link, post_date: @entry.post_date, read: @entry.read, subject: @entry.subject }
-    assert_redirected_to entry_path(assigns(:entry))
-  end
+    request_json
+    patch :update, id: @entry, entry: { data: "bob", feed_id: 93, link: "blah", post_date: "27", read: !@entry.read, subject: "lll" }
 
-  test "should destroy entry" do
-    assert_difference('Entry.count', -1) do
-      delete :destroy, id: @entry
+    assert_response :success
+    entry = Entry.new(JSON.parse(@response.body))
+
+    @entries.first.each_pair do |k,v|
+      if (:read != k)
+        assert_equal(@entry.send(k), entry.send(k))
+      else
+        assert_equal(!@entry.send(k), entry.send(k))
+      end
     end
-
-    assert_redirected_to entries_path
   end
 end

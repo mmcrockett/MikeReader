@@ -7,7 +7,7 @@ class Feed < ActiveRecord::Base
     if (200 == response.code)
       @feed = RSS::Parser.parse(response.body, false)
     else
-      raise "!ERROR: Unable to get '#{self.url}' '#{reponse}'."
+      raise "!ERROR: Unable to get '#{self.url}' '#{response}'."
     end
 
     return self
@@ -25,7 +25,11 @@ class Feed < ActiveRecord::Base
     items.each do |entry|
       new_entry = create_entry(entry)
 
-      self.entries << new_entry
+      if (false == new_entry.exists?)
+        self.entries << new_entry
+      else
+        Rails.logger.info("Already exists '#{new_entry.link}'.")
+      end
     end
 
     return self

@@ -50,4 +50,19 @@ class EntryTest < ActiveSupport::TestCase
     assert_nil(@entries[:rss].data)
     assert_equal(false, @entries[:rss].pod)
   end
+
+  test "can tell if already exists" do
+    data = {subject: "hello", link: "https://blah.com/abc123/my-article/", post_date: entries(:one).post_date}
+
+    Entry.new(data).save!
+
+    assert_equal(true, Entry.new({link: "https://blah.com/abc123/my-article/"}).exists?)
+    assert_equal(true, Entry.new({link: "http://blah.com/abc123/my-article/"}).exists?)
+    assert_equal(true, Entry.new({link: "https://www.blah.com/abc123/my-article/"}).exists?)
+    assert_equal(true, Entry.new({link: "https://blerg.com/abc123/my-article/"}).exists?)
+    assert_equal(true, Entry.new({link: "https://blerg.com//abc123/my-article/"}).exists?)
+    assert_equal(true, Entry.new({link: "https://blerg.com/abc123/my-article"}).exists?)
+    assert_equal(true, Entry.new({link: "abc123/my-article"}).exists?)
+    assert_equal(false, Entry.new({link: "https://blah.com/abc123/my-article-hi/"}).exists?)
+  end
 end

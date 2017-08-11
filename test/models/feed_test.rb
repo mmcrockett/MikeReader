@@ -6,7 +6,10 @@ class FeedTest < ActiveSupport::TestCase
   POD_URL  = "https://www.test.com/pod/"
 
   def setup
-    FakeWeb.register_uri(:get, ATOM_URL, fakeweb_response(body: atom_file, status: 200, plain: true))
+    FakeWeb.register_uri(:get, ATOM_URL, [
+      fakeweb_response(body: atom_file, status: 200, plain: true),
+      fakeweb_response(body: read_file('atom_feed_with_updates.xml'), status:200, plain: true)
+    ])
     FakeWeb.register_uri(:get, RSS_URL, fakeweb_response(body: rss_file, status: 200, plain: true))
     FakeWeb.register_uri(:get, POD_URL, fakeweb_response(body: rss_podcast_file, status: 200, plain: true))
 
@@ -42,6 +45,21 @@ class FeedTest < ActiveSupport::TestCase
     end
 
     assert_equal(2, @atom_feed.entries.size)
+    assert_equal(7, @rss_feed.entries.size)
+    assert_equal(4, @pod_feed.entries.size)
+  end
+
+  test "can process the entries and ignore duplicates" do
+    @feeds.each do |feed|
+      feed.process
+      feed.save!
+      feed.reload
+      feed.retrieve.process
+      feed.save!
+      feed.reload
+    end
+
+    assert_equal(9, @atom_feed.entries.size)
     assert_equal(7, @rss_feed.entries.size)
     assert_equal(4, @pod_feed.entries.size)
   end

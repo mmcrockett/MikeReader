@@ -5,6 +5,21 @@ class Entry < ActiveRecord::Base
 
   serialize :data, JSON
 
+  def exists?
+    uri = URI::parse(self.link)
+    search_path = "#{uri.path}"
+
+    while (true == search_path.end_with?("/"))
+      search_path.chop!
+    end
+
+    while ((true == search_path.start_with?("/")) && (0 < search_path.size))
+      search_path = search_path[1..-1]
+    end
+
+    return Entry.exists?(['link LIKE ?', "%#{search_path}%"])
+  end
+
   def self.from_rss(rss)
     entry = Entry.new()
     entry.post_date = rss.pubDate

@@ -44,7 +44,10 @@ class EntryTest < ActiveSupport::TestCase
 
   test "can retrieve the length of podcasts" do
     assert_nil(@entries[:atom].data)
+    assert_equal(false, @entries[:atom].pod)
     assert_match(/01:52:37/, @entries[:pod].data[:length])
+    assert(@entries[:pod].pod)
     assert_nil(@entries[:rss].data)
+    assert_equal(false, @entries[:rss].pod)
   end
 end

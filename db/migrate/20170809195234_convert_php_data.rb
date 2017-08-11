@@ -36,6 +36,7 @@ class PhpEntry < Entry
       link: self.link,
       data: fixed_data,
       read: false,
+      pod: (false == fixed_data.empty?),
       post_date: self.post_date
     }
   end
@@ -48,10 +49,6 @@ class ConvertPhpData < ActiveRecord::Migration
       feed    = Feed.new(php_feed.to_h)
 
       if (0 != entries.size)
-        if (true == entries.first.link.end_with?(".mp3"))
-          feed.pod = true
-        end
-
         entries.each do |php_entry|
           feed.entries << Entry.new(php_entry.to_h)
         end

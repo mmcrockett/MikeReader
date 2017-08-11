@@ -5,7 +5,15 @@ class EntriesController < ApplicationController
   # GET /entries.json
   def index
     if (true == request.format.json?)
-      @entries = Entry.where(:read => false).order(:post_date => :desc)
+      @entries = Entry.articles
+    end
+  end
+
+  # GET /pods
+  # GET /pods.json
+  def pods
+    if (true == request.format.json?)
+      @entries = Entry.pods
     end
   end
 

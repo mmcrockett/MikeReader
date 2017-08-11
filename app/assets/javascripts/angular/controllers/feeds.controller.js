@@ -29,14 +29,6 @@ function($scope, Logger, Restangular) {
     }
     $scope.save_feed(feed);
   };
-  $scope.toggle_pod = function(feed) {
-    if (true == feed.pod) {
-      feed.pod = false;
-    } else {
-      feed.pod = true;
-    }
-    $scope.save_feed(feed);
-  };
   $scope.save_feed = function(feed) {
     $scope.notice = "";
 
@@ -51,7 +43,7 @@ function($scope, Logger, Restangular) {
     .finally();
   };
   $scope.columns = function() {
-    return ["id", "name", "url", "active?", "pod?"];
+    return ["id", "name", "url", "active?"];
   };
   $scope.add_feed = function() {
     if (false == _.isEmpty($scope.new_url)) {

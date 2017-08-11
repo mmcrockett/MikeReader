@@ -1,13 +1,13 @@
 app.controller('EntriesController', ['$scope', '$log', 'Restangular',
 function($scope, Logger, Restangular) {
-  var entry = Restangular.all('entries');
-
-  $scope.initialize = function(columns, valid_statuses) {
+  $scope.initialize = function(request_type = 'entries') {
     $scope.notice = "";
+    $scope.Entry  = Restangular.all(request_type);
+
     $scope.load_data();
   };
   $scope.load_data = function() {
-    entry.getList()
+    $scope.Entry.getList()
     .then(
       function(entries) {
         $scope.entries = entries;

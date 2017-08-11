@@ -22,17 +22,17 @@ ActiveRecord::Schema.define(version: 20170809195234) do
     t.integer  "feed_id"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+    t.boolean  "pod",        default: false
   end
 
   add_index "entries", ["feed_id"], name: "index_entries_on_feed_id"
 
   create_table "feeds", force: :cascade do |t|
-    t.string   "name",                       null: false
-    t.string   "url",                        null: false
+    t.string   "name",                      null: false
+    t.string   "url",                       null: false
     t.boolean  "display",    default: true
-    t.boolean  "pod",        default: false
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
 end

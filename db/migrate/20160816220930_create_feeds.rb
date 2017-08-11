@@ -4,7 +4,6 @@ class CreateFeeds < ActiveRecord::Migration
       t.string :name, :null => false
       t.string :url, :null => false
       t.boolean :display, :default => true
-      t.boolean :pod, :default => false
 
       t.timestamps null: false
     end

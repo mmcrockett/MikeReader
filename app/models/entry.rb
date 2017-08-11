@@ -14,6 +14,7 @@ class Entry < ActiveRecord::Base
     if (nil != rss.enclosure)
       entry.data ||= {}
       entry.data[:length]  = "#{rss.itunes_duration}"[/\d+[:\d+]*/]
+      entry.pod = true
     end
 
     return entry
@@ -26,6 +27,18 @@ class Entry < ActiveRecord::Base
     entry.link      = atom.link.href
 
     return entry
+  end
+
+  def self.articles
+    return Entry.base_query.where(:pod => false)
+  end
+
+  def self.pods
+    return Entry.base_query.where(:pod => true)
+  end
+
+  def self.base_query
+    return Entry.where(:read => false).order(:post_date => :desc)
   end
 
   private

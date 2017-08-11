@@ -11,7 +11,6 @@ class FeedsControllerTest < ActionController::TestCase
         name: feed.name,
         url: feed.url,
         display: feed.display,
-        pod: feed.pod
       }
     end
   end

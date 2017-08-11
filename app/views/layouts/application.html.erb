@@ -3,7 +3,7 @@
 <head>
   <meta name="description" content="Mike's reader!" />
   <meta name="viewport" content="width=device-width" />
-  <link rel="shortcut icon"  type="image/x-icon" href="/favicon.ico?version=3">
+  <link rel="shortcut icon"  type="image/x-icon" href="/favicon.ico?version=2">
   <title>Mike Reader</title>
 
   <%= render :partial => "common/header/header_includes" %>
@@ -16,7 +16,7 @@
   <% end %>
 
   <div class="navbar navbar-default">
-    <div class="container-fluid <% if (false == Rails.env.production?) %>bg-warning<% end %>">
+    <div class="container-fluid <% if (false == Rails.env.production?) %>bg-warning<% else %>bg-info<% end %>">
       <div class="navbar-header">
         <a class="navbar-brand">Mike Reader</a>
       </div>

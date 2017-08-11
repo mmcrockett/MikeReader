@@ -26,7 +26,7 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
 
-  gem 'capistrano', '3.6.0'
+  gem 'capistrano', '3.8.1'
   gem 'capistrano-secrets-generate', '>= 1.0.0'
   gem 'capistrano-sqlite-reuse', '>= 1.0.0'
   gem 'capistrano-rails'

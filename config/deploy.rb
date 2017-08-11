@@ -1,12 +1,11 @@
 # config valid only for current version of Capistrano
-lock '3.6.0'
+lock '3.8.1'
 
 set :application, 'mikereader'
 set :repo_url, 'git@github.com:mmcrockett/MikeReader.git'
 
 append :linked_dirs, "log"
 append :linked_dirs, "tmp"
-append :linked_files, ".htaccess"
 
 namespace :deploy do
   desc 'Restart application'

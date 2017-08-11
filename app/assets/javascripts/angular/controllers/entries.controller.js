@@ -1,5 +1,7 @@
 app.controller('EntriesController', ['$scope', '$log', 'Restangular',
 function($scope, Logger, Restangular) {
+  var VIEWPORT_EST  = _.constant(jQuery(window).width());
+
   $scope.initialize = function(request_type = 'entries') {
     $scope.notice = "";
     $scope.Entry  = Restangular.all(request_type);
@@ -7,7 +9,7 @@ function($scope, Logger, Restangular) {
     $scope.load_data();
   };
   $scope.load_data = function() {
-    $scope.Entry.getList()
+    $scope.Entry.getList({viewport: VIEWPORT_EST()})
     .then(
       function(entries) {
         $scope.entries = entries;

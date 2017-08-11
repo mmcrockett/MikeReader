@@ -37,7 +37,24 @@ class EntriesControllerTest < ActionController::TestCase
     get :index
     assert_response :success
     assert_not_nil assigns(:entries)
+    assert_equal(7, JSON.parse(@response.body).size)
     assert_equal(JSON.parse(@entries.to_json), JSON.parse(@response.body))
+  end
+
+  test "should get index as json with limited size" do
+    request_json
+    get :index, {viewport: 750}
+    assert_response :success
+    assert_not_nil assigns(:entries)
+    assert_equal(5, JSON.parse(@response.body).size)
+  end
+
+  test "should get index as json with invalid viewport" do
+    request_json
+    get :index, {viewport: 'hello'}
+    assert_response :success
+    assert_not_nil assigns(:entries)
+    assert_equal(7, JSON.parse(@response.body).size)
   end
 
   test "should get pods" do
@@ -51,6 +68,7 @@ class EntriesControllerTest < ActionController::TestCase
     get :pods
     assert_response :success
     assert_not_nil assigns(:entries)
+    assert_equal(1, JSON.parse(@response.body).size)
     assert_equal(JSON.parse(@pods.to_json), JSON.parse(@response.body))
   end
 

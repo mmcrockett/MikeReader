@@ -5,7 +5,13 @@ class EntriesController < ApplicationController
   # GET /entries.json
   def index
     if (true == request.format.json?)
-      @entries = Entry.articles
+      viewport = params[:viewport].to_i
+
+      if ((0 == viewport) || (viewport > 800))
+        @entries = Entry.articles
+      else
+        @entries = Entry.articles.limit(5)
+      end
     end
   end
 

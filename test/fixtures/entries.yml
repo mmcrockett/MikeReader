@@ -5,6 +5,7 @@ default: &default
   data: <%= {}.to_json.inspect %>
   read: false
   post_date: 2016-08-16
+  pod: false
   feed_id: 
 
 one:
@@ -12,3 +13,7 @@ one:
 
 two:
   <<: *default
+
+three:
+  <<: *default
+  pod: true

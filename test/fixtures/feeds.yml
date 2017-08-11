@@ -3,7 +3,6 @@ default: &default
   name: MyString
   url: MyString
   display: false
-  pod: false
 
 one:
   <<: *default

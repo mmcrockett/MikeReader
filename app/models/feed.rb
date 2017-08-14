@@ -21,7 +21,19 @@ class Feed < ActiveRecord::Base
     return ("rss" == @feed.feed_type)
   end
 
+  def title
+    if (true == self.rss?)
+      return @feed.channel.title
+    else
+      return @feed.title.content()
+    end
+  end
+
   def process
+    if ((nil == name) || (true == name.empty?))
+      self.name = self.title
+    end
+
     items.each do |entry|
       new_entry = create_entry(entry)
 

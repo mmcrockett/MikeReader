@@ -25,6 +25,16 @@ class FeedTest < ActiveSupport::TestCase
     super
   end
 
+  test "can get title" do
+    @feeds.each do |feed|
+      feed.process
+    end
+
+    assert_equal("The Ringer -  All Posts", @atom_feed.title)
+    assert_equal("FiveThirtyEight", @rss_feed.title)
+    assert_equal("The Bill Simmons Podcast", @pod_feed.title)
+  end
+
   test "can detect feed type" do
     assert(@atom_feed.atom?)
     assert_equal(false, @atom_feed.rss?)
@@ -47,6 +57,9 @@ class FeedTest < ActiveSupport::TestCase
     assert_equal(2, @atom_feed.entries.size)
     assert_equal(7, @rss_feed.entries.size)
     assert_equal(4, @pod_feed.entries.size)
+    assert_equal("The Ringer -  All Posts", @atom_feed.title)
+    assert_equal("FiveThirtyEight", @rss_feed.title)
+    assert_equal("The Bill Simmons Podcast", @pod_feed.title)
   end
 
   test "can process the entries and ignore duplicates" do

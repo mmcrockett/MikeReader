@@ -18,7 +18,9 @@
       </thead>
       <tbody>
         <tr ng-repeat="feed in feeds">
-          <td>{{feed.id}}</td>
+          <td>{{feed.id}}
+            <span class="glyphicon glyphicon-asterisk" style="{{feed.id | distinct_color}}"></span>
+          </td>
           <td>{{feed.name}}</td>
           <td>{{feed.url}}</td>
           <td>

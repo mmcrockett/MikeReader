@@ -1,17 +1,1 @@
-<div class="container-fluid" ng-controller="EntriesController" ng-init="initialize('pods')">
-  <p id="notice" class="notice"><%= notice %></p>
-  <p class="alert alert-danger" ng-show="notice">{{notice}}</p>
-  <div ng-class="['row', 'entry', {'read':entry.read}]" ng-repeat="entry in entries" ng-click="mark_read(entry, $event)">
-    <div class="col-xs-1">
-      <button type="button" class="no-background btn btn-default btn-xs" ng-click="mark_read(entry)">
-        <span class="glyphicon glyphicon-remove"></span>
-      </button>
-    </div>
-    <a href="{{entry.link}}">
-      <div class="col-xs-1 hidden-xs">{{entry.feed_id}}</div>
-      <div class="col-xs-1 hidden-xs">{{entry.post_date}}</div>
-      <div class="col-xs-1 hidden-xs text-right">{{entry.data.length}}</div>
-      <div class="col-xs-8">{{entry.subject | synopsis:80}}</div>
-    </a>
-  </div>
-</div>
+<%= render(partial: 'entries', locals: {type: 'pods'}) %>

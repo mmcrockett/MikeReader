@@ -6,7 +6,7 @@ one: &default
   read: false
   post_date: 2016-08-16
   pod: false
-  feed_id: 
+  feed: one
 
 two:
   <<: *default

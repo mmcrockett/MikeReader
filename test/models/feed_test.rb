@@ -13,9 +13,9 @@ class FeedTest < ActiveSupport::TestCase
     FakeWeb.register_uri(:get, RSS_URL, fakeweb_response(body: rss_file, status: 200, plain: true))
     FakeWeb.register_uri(:get, POD_URL, fakeweb_response(body: rss_podcast_file, status: 200, plain: true))
 
-    @atom_feed = Feed.new(name: 'atom', url: ATOM_URL).retrieve
-    @rss_feed  = Feed.new(name: 'rss', url: RSS_URL).retrieve
-    @pod_feed  = Feed.new(name: 'pod', url: POD_URL).retrieve
+    @atom_feed = Feed.new(url: ATOM_URL).retrieve
+    @rss_feed  = Feed.new(url: RSS_URL).retrieve
+    @pod_feed  = Feed.new(url: POD_URL).retrieve
 
     @feeds = []
     @feeds << @atom_feed
@@ -57,9 +57,9 @@ class FeedTest < ActiveSupport::TestCase
     assert_equal(2, @atom_feed.entries.size)
     assert_equal(7, @rss_feed.entries.size)
     assert_equal(4, @pod_feed.entries.size)
-    assert_equal("The Ringer -  All Posts", @atom_feed.title)
-    assert_equal("FiveThirtyEight", @rss_feed.title)
-    assert_equal("The Bill Simmons Podcast", @pod_feed.title)
+    assert_equal("The Ringer -  All Posts", @atom_feed.name)
+    assert_equal("FiveThirtyEight", @rss_feed.name)
+    assert_equal("The Bill Simmons Podcast", @pod_feed.name)
   end
 
   test "can process the entries and ignore duplicates" do

@@ -8,24 +8,8 @@ one: &default
   pod: false
   feed: one
 
-two:
+<% 12.times do |i| %>
+<%= i %>:
   <<: *default
-
-three:
-  <<: *default
-
-four:
-  <<: *default
-
-five:
-  <<: *default
-
-six:
-  <<: *default
-
-seven:
-  <<: *default
-
-eight:
-  <<: *default
-  pod: true
+  pod: <%= (0 == (i % 2)) %>
+<% end %>

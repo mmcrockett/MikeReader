@@ -3,7 +3,7 @@ app.filter('abbreviate', function() {
   var IGNORE_WORDS = _.constant(['the']);
 
   return function(input) {
-    var words  = input.replace(/-_/g, ' ').split(' ');
+    var words  = input.replace(/[-_]/g, ' ').split(' ');
     var output = '';
     var index  = 0;
 

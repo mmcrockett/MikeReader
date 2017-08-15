@@ -2,11 +2,14 @@ app.controller('EntriesController', ['$scope', '$log', 'Restangular', '$interval
 function($scope, Logger, Restangular, $interval) {
   var VIEWPORT_EST  = _.constant(jQuery(window).width());
   $scope.refresh_interval = _.constant(1000 * 60 * 60);
+  $scope.filter = 'Unknown';
+  $scope.loading = false;
   var update_interval = null;
 
-  $scope.initialize = function(request_type, feeds) {
+  $scope.initialize = function(filter, feeds) {
     $scope.notice = "";
-    $scope.Entry  = Restangular.all(request_type);
+    $scope.filter = filter;
+    $scope.Entry  = Restangular.all('entries');
     $scope.feeds  = feeds;
     $scope.setup_updates();
 
@@ -27,7 +30,8 @@ function($scope, Logger, Restangular, $interval) {
     return name;
   };
   $scope.load_data = function() {
-    $scope.Entry.getList({viewport: VIEWPORT_EST()})
+    $scope.loading = true;
+    $scope.Entry.getList({viewport: VIEWPORT_EST(), filter: $scope.filter})
     .then(
       function(entries) {
         $scope.entries = entries;
@@ -37,7 +41,9 @@ function($scope, Logger, Restangular, $interval) {
         $scope.notice = "Error loading entries.";
         Logger.error("Couldn't load entries." + e);
       }
-    ).finally ();
+    ).finally (function(){
+      $scope.loading = false;
+    });
   };
   $scope.mark_read = function(entry, eventHandler) {
     if (3 != eventHandler.which) {

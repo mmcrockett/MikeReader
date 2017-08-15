@@ -6,11 +6,16 @@ class EntriesController < ApplicationController
   def index
     if (true == request.format.json?)
       viewport = params[:viewport].to_i
+      filter   = params[:filter]
 
-      if ((0 == viewport) || (viewport > 800))
-        @entries = Entry.articles
+      if ('pods' == filter)
+        @entries = Entry.pods
       else
-        @entries = Entry.articles.limit(5)
+        @entries = Entry.articles
+      end
+
+      if ((viewport > 0) && (viewport < 800))
+        @entries = @entries.limit(5)
       end
     end
   end
@@ -18,9 +23,6 @@ class EntriesController < ApplicationController
   # GET /pods
   # GET /pods.json
   def pods
-    if (true == request.format.json?)
-      @entries = Entry.pods
-    end
   end
 
   # PATCH/PUT /entries/1

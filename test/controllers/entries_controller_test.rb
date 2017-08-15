@@ -65,11 +65,19 @@ class EntriesControllerTest < ActionController::TestCase
 
   test "should get pods as json" do
     request_json
-    get :pods
+    get :index, {filter: 'pods'}
     assert_response :success
     assert_not_nil assigns(:entries)
-    assert_equal(1, JSON.parse(@response.body).size)
+    assert_equal(6, JSON.parse(@response.body).size)
     assert_equal(JSON.parse(@pods.to_json), JSON.parse(@response.body))
+  end
+
+  test "should get pods as json with limited size" do
+    request_json
+    get :index, {viewport: 750, filter: 'pods'}
+    assert_response :success
+    assert_not_nil assigns(:entries)
+    assert_equal(5, JSON.parse(@response.body).size)
   end
 
   test "should update entry" do

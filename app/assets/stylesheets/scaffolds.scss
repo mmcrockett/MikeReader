@@ -1,3 +1,10 @@
+.mikefeed-ui-progressbar-overlay {
+    background: url("http://code.jquery.com/ui/1.10.3/themes/smoothness/images/animated-overlay.gif");
+    height: 100%;
+    filter: alpha(opacity=25);
+    opacity: 0.25;
+}
+
 div.entry {
   border-bottom: 1px solid #ddd;
   padding-top: 2px;

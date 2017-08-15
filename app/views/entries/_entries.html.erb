@@ -1,9 +1,9 @@
 <div class="container-fluid" ng-controller="EntriesController" ng-init="initialize('<%= type %>', <%= Feed.all.to_json %>)">
   <p id="notice" class="notice"><%= notice %></p>
   <p class="alert alert-danger" ng-show="notice">{{notice}}</p>
-  <div ng-class="['row', 'entry', {'read':entry.read}]" ng-repeat="entry in entries" ng-click="mark_read(entry, $event)">
+  <div ng-class="['row', 'entry', {'mikefeed-ui-progressbar-overlay':entry.saving, 'read':entry.read}]" ng-repeat="entry in entries" ng-mousedown="mark_read(entry, $event)">
     <div class="col-xs-1">
-      <button type="button" class="no-background btn btn-default btn-xs" ng-click="mark_read(entry)">
+      <button type="button" class="no-background btn btn-default btn-xs">
         <span class="glyphicon glyphicon-remove"></span>
       </button>
     </div>

@@ -25,6 +25,7 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'httparty_with_cookies'
 
   gem 'capistrano', '3.8.1'
   gem 'capistrano-secrets-generate', '>= 1.0.0'
@@ -32,4 +33,5 @@ group :development do
   gem 'capistrano-rails'
   gem 'capistrano-bundler'
   gem 'capistrano-rvm'
+  gem 'highline'
 end

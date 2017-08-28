@@ -1,4 +1,5 @@
 require 'highline/import'
+require 'httparty_with_cookies'
 
 class PodcastApi
   include HTTParty_with_cookies
@@ -80,6 +81,8 @@ namespace :reader do
     }
 
     def ask_about_player_pods(location)
+      rm_files = []
+
       if (false == Dir.exist?(location))
         raise "Podplayer '#{location}'  not connected."
       end
@@ -87,13 +90,14 @@ namespace :reader do
       current_pods = Dir.glob(File.join(location, '*.mp3'))
 
       current_pods.each do |file|
-        stat = File.stat(file)
-        keep = ask("Keep #{stat.ctime} #{stat.atime} #{stat.mtime} #{file}? ")
+        keep = ask("Keep #{file}? ")
 
-        if ('n' == keep.strip.downcase)
-          File.delete(file)
+        if (('n' == keep.strip.downcase) || ('no' == keep.strip.downcase))
+          rm_files << file
         end
       end
+
+      return rm_files
     end
 
     def download_mp3(entry, download_dir)
@@ -164,11 +168,11 @@ namespace :reader do
       podapi       = PodcastApi.new
       poddir       = ENV['poddir'] || PODPLAYER_LOCATION
       download_dir = ENV['downloaddir'] || DOWNLOAD_LOCATION
-      rm_files     = []
+      rm_files     = nil
       mv_files     = []
       entries      = []
 
-      ask_about_player_pods(poddir)
+      rm_files     = ask_about_player_pods(poddir)
 
       podapi.pods.each do |pod|
         entries << Entry.new(pod)
@@ -189,13 +193,13 @@ namespace :reader do
         shortened_file  = File.join(download_dir, "#{File.basename(downloaded_file, '.mp3')}.short.mp3")
         final_file      = File.join("#{trim.title}#{subject_to_filename(entry)}.short.voice.mp3")
 
-        puts "Shortening..."
+        puts "\tShortening '#{trim}'..."
         if (false == system('sox', '-q', '-V1', "#{downloaded_file}", "#{shortened_file}", 'trim', "#{trim.start}", "-#{trim.end}"))
           raise "Failed to shorten file."
         end
         rm_files << downloaded_file
 
-        puts "Reducing quality..."
+        puts "\tReducing quality..."
         if (false == system('lame', '--quiet', '-V 7', "#{shortened_file}", "#{final_file}"))
           raise "Failed to reduce quality"
         end

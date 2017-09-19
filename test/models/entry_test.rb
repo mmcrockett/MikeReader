@@ -31,9 +31,37 @@ class EntryTest < ActiveSupport::TestCase
   end
 
   test "can retrieve the title" do
-    assert_match(/Can Real Life Compete With an Instagram/, @entries[:atom].subject)
-    assert_match(/The 25 Greatest Patriots Wins of the Brady-Belichick Era/, @entries[:pod].subject)
-    assert_match(/Trump Picks A Favorite In Alabama/, @entries[:rss].subject)
+    assert_equal("Can Real Life Compete With an Instagram Playground?", @entries[:atom].subject)
+    assert_equal("The 25 Greatest Patriots Wins of the Brady-Belichick Era (Ep. 245)", @entries[:pod].subject)
+    assert_equal("Trump Picks A Favorite In Alabama’s GOP Senate Primary", @entries[:rss].subject)
+  end
+
+  test "can add description if title is short" do
+    rss_data   = RSS_DATA.items.last
+    rss_entry  = Entry.from_rss(rss_data)
+    assert_equal("Democrats Divided: As the Democratic Party increasingly embraces single payer healthcare and Clinton weighs in on her primary", rss_entry.subject)
+  end
+
+  test "can handle short title and long word description" do
+    long_description = SecureRandom.hex(Entry::MAX_COMPOUND_SUBJECT_SIZE + (Entry::MAX_COMPOUND_SUBJECT_SIZE * 2))
+    rss_entry  = Entry.new.set_subject("Hi", long_description)
+    expected   = "Hi: #{long_description[0..Entry::MAX_COMPOUND_SUBJECT_SIZE - "Hi:".size]}"
+    assert_equal(expected, rss_entry.subject)
+  end
+
+  test "can handle no description and short title" do
+    rss_entry  = Entry.new.set_subject("Hi", nil)
+    assert_equal("Hi", rss_entry.subject)
+  end
+
+  test "can handle no title and short description" do
+    rss_entry  = Entry.new.set_subject(nil, "Hi")
+    assert_equal("Hi", rss_entry.subject)
+  end
+
+  test "can handle no title and no description" do
+    rss_entry  = Entry.new.set_subject(nil, nil)
+    assert_equal("nil Title and nil Description", rss_entry.subject)
   end
 
   test "can retrieve the link" do

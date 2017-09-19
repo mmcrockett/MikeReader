@@ -207,14 +207,14 @@ namespace :reader do
         mv_files << final_file
       end
 
-      mv_files.each do |f|
-        puts("Moving '#{f}' to '#{poddir}'.")
-        FileUtils.mv(f, poddir)
-      end
-
       rm_files.each do |f|
         puts("Removing '#{f}'.")
         FileUtils.rm(f)
+      end
+
+      mv_files.each do |f|
+        puts("Moving '#{f}' to '#{poddir}'.")
+        FileUtils.mv(f, poddir)
       end
 
       if (false == system('diskutil', 'eject', poddir))

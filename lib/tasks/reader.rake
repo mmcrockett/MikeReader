@@ -1,4 +1,3 @@
-require 'highline/import'
 require 'httparty_with_cookies'
 
 class PodcastApi
@@ -171,6 +170,13 @@ namespace :reader do
       rm_files     = nil
       mv_files     = []
       entries      = []
+
+      begin
+        require 'highline/import'
+      rescue
+        puts "Sorry, highline not installed. Likely you're on a production box."
+        exit 1
+      end
 
       rm_files     = ask_about_player_pods(poddir)
 

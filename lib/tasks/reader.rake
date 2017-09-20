@@ -1,5 +1,3 @@
-require 'httparty_with_cookies'
-
 class PodcastApi
   include HTTParty_with_cookies
 
@@ -173,8 +171,9 @@ namespace :reader do
 
       begin
         require 'highline/import'
+        require 'httparty_with_cookies'
       rescue
-        puts "Sorry, highline not installed. Likely you're on a production box."
+        puts "Sorry, highline or httparty_with_cookies not installed. Likely you're on a production box."
         exit 1
       end
 

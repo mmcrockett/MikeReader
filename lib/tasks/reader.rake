@@ -1,59 +1,61 @@
-class PodcastApi
-  include HTTParty_with_cookies
+if (true == Rails.env.development?)
+  class PodcastApi
+    include HTTParty_with_cookies
 
-  base_uri "http://www.reader.mmcrockett.com/entries"
+    base_uri "http://www.reader.mmcrockett.com/entries"
 
-  DEFAULT_QUERY = {
-    query: {
-      viewport: 1,
-      filter: :pods
+    DEFAULT_QUERY = {
+      query: {
+        viewport: 1,
+        filter: :pods
+      }
     }
-  }
 
-  def csrf
-    if (true == @csrf.nil?)
-      response = self.get('/', DEFAULT_QUERY)
+    def csrf
+      if (true == @csrf.nil?)
+        response = self.get('/', DEFAULT_QUERY)
+
+        check_response(response)
+
+        html_data = Nokogiri::HTML.parse(response.body)
+
+        @csrf = html_data.css('[name=csrf-token]').first.attributes['content'].value()
+      end
+
+      return @csrf
+    end
+
+    def mark_read(id)
+      params   = {
+        query: {
+          entry: {
+            read: true
+          }
+        },
+        headers: {
+          'X-CSRF-Token' => self.csrf
+        }
+      }
+      response = self.put("/#{id}.json", params)
 
       check_response(response)
 
-      html_data = Nokogiri::HTML.parse(response.body)
-
-      @csrf = html_data.css('[name=csrf-token]').first.attributes['content'].value()
+      return true
     end
 
-    return @csrf
-  end
+    def pods
+      response = self.get('.json', DEFAULT_QUERY)
 
-  def mark_read(id)
-    params   = {
-      query: {
-        entry: {
-          read: true
-        }
-      },
-      headers: {
-        'X-CSRF-Token' => self.csrf
-      }
-    }
-    response = self.put("/#{id}.json", params)
+      check_response(response)
 
-    check_response(response)
+      return response.parsed_response
+    end
 
-    return true
-  end
-
-  def pods
-    response = self.get('.json', DEFAULT_QUERY)
-
-    check_response(response)
-
-    return response.parsed_response
-  end
-
-  private
-  def check_response(r)
-    if (200 != r.code)
-      raise("Failed '#{response}'.")
+    private
+    def check_response(r)
+      if (200 != r.code)
+        raise("Failed '#{response}'.")
+      end
     end
   end
 end

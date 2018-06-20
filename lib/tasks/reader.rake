@@ -73,8 +73,8 @@ namespace :reader do
     PODPLAYER_LOCATION = File.join('', 'Volumes', 'PODCAST')
     DOWNLOAD_LOCATION  = File.join('', 'tmp')
     TRIM_SETTINGS      = {
-      6 => {start: 57, end: 25, title:'BS'}, #BS
-      8 => {start: 0, end: 0, title:'538'},   #538 politics
+      6 => {start: 67, end: 25, title:'BS'}, #BS
+      8 => {start: 40, end: 0, title:'538'},   #538 politics
       9 => {start: 57, end: 45, title:'WTP'}, #Whats the point
       11 => {start: 57, end: 25, title:'LW'} #Larry Wilmore
     }

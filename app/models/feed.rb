@@ -13,6 +13,10 @@ class Feed < ActiveRecord::Base
     return self
   end
 
+  def from_file(file)
+    @feed = RSS::Parser.parse(File.read(file), false)
+  end
+
   def atom?
     return ("atom" == @feed.feed_type)
   end

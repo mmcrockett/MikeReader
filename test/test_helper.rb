@@ -1,16 +1,17 @@
 ENV['RAILS_ENV'] ||= 'test'
-require File.expand_path('../../config/environment', __FILE__)
+require_relative '../config/environment'
 require 'rails/test_help'
+require 'minitest/spec'
 
 class ActiveSupport::TestCase
-  # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
+
+  extend MiniTest::Spec::DSL
 
   FakeWeb.allow_net_connect = false
 
-  def request_json
-    @request.headers["Content-Type"] = 'application/json'
-    @request.headers["Accept"]     = 'application/json'
+  def response_data
+    JSON.parse(@response.body)
   end
 
   def fakeweb_response(params = {})
@@ -38,33 +39,28 @@ class ActiveSupport::TestCase
     return response
   end
 
-  def read_file(filename)
-    if (false == File.exist?(filename))
-      filename2 = File.join('test', 'fixtures', filename)
+  def read_test_file(file, parse: false)
+    file_contents   = File.open(file).read if File.exist?(file)
+    file_contents ||= file_fixture(file).read
 
-      if (false == File.exist?(filename2))
-        raise "Couldn't find file '#{filename}' or '#{filename2}'."
-      else
-        filename = filename2
+    if (true == parse)
+      if (true == file.to_s.end_with?('.json'))
+        return JSON.parse(file_contents)
       end
     end
 
-    if (true == filename.end_with?(".json"))
-      return JSON.parse(File.read(filename))
-    else
-      return File.read(filename)
-    end
+    return file_contents
   end
 
   def atom_file
-    return read_file('atom_feed.xml')
+    read_test_file('atom_feed.xml')
   end
 
   def rss_file
-    return read_file('rss_feed.xml')
+    read_test_file('rss_feed.xml')
   end
 
   def rss_podcast_file
-    return read_file('rss_feed.podcast.xml')
+    read_test_file('rss_feed.podcast.xml')
   end
 end

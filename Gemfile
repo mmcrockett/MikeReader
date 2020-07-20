@@ -1,37 +1,27 @@
 source 'https://rubygems.org'
+git_source(:github) { |repo| "https://github.com/mmcrockett/MikeReader.git" }
 
-gem 'rails', '4.2.6'
-gem 'sqlite3'
-gem 'sass-rails', '~> 5.0'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.1.0'
+ruby '2.7.1'
 
-gem 'jbuilder', '~> 2.0'
-gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
+gem 'sqlite3', '~> 1.4'
+gem 'bootsnap', '>= 1.4.2', require: false
 gem 'httparty'
+
+group :development, :test do
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+end
+
+group :development do
+  gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'spring'
+  gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'httparty_with_cookies'
+  gem 'puma'
+end
 
 group :test do
   gem 'fakeweb'
 end
 
-group :production do
-  gem 'therubyracer', :platforms => :ruby
-end
-
-group :development, :test do
-  gem 'byebug'
-end
-
-group :development do
-  gem 'web-console', '~> 2.0'
-  gem 'spring'
-  gem 'httparty_with_cookies'
-
-  gem 'capistrano', '3.8.1'
-  gem 'capistrano-secrets-generate', '>= 1.0.0'
-  gem 'capistrano-sqlite-reuse', '>= 1.0.0'
-  gem 'capistrano-rails'
-  gem 'capistrano-bundler'
-  gem 'capistrano-rvm'
-  gem 'highline'
-end
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

@@ -1,4 +1,6 @@
-class Feed < ActiveRecord::Base
+require 'rss'
+
+class Feed < ApplicationRecord
   has_many :entries
 
   def retrieve

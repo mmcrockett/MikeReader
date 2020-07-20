@@ -1,59 +1,59 @@
 require 'test_helper'
 
-class FeedsControllerTest < ActionController::TestCase
-  setup do
-    @feed = feeds(:one)
-    @feeds = []
+class FeedsControllerTest < ActionDispatch::IntegrationTest
+  let(:feed) { feeds(:one) }
 
-    Feed.all.each do |feed|
-      @feeds << {
-        id: feed.id,
-        name: feed.name,
-        url: feed.url,
-        display: feed.display,
+  describe 'index' do
+    it 'returns a list of feeds' do
+      get feeds_path
+
+      assert_response :success
+      assert_equal(Feed.count, response_data.size)
+    end
+  end
+
+  describe 'create' do
+    let(:new_feed) { Feed.new(response_data) }
+    let(:params) {
+      {
+        name: 'great feed',
+        url: 'https://blahblah.com',
+        id: 8123
       }
+    }
+
+    it 'should create a feed' do
+      assert_difference('Feed.count') do
+        post feeds_path, params: { feed: params }
+      end
+
+      assert_response :success
+
+      assert_equal(new_feed.name, params[:name])
+      assert_equal(new_feed.url, params[:url])
+      assert_not_equal(new_feed.id, params[:id])
     end
   end
 
-  test "should get index" do
-    get :index
-    assert_response :success
-    assert_not_nil assigns(:feeds)
-  end
+  describe 'update' do
+    let(:updated_feed) { Feed.new(response_data) }
+    let(:params) {
+      {
+        display: !feed.display,
+        name: feed.name.upcase,
+        url: feed.url.upcase
+      }
+    }
 
-  test "should get index as json" do
-    request_json
-    get :index
-    assert_response :success
-    assert_not_nil assigns(:feeds)
-    assert_equal(JSON.parse(@feeds.to_json), JSON.parse(@response.body))
-  end
+    it "should update feed" do
+      put feed_path(feed.id), params: { feed: params }
 
-  test "should create feed" do
-    request_json
+      assert_response :success
 
-    assert_difference('Feed.count') do
-      post :create, feed: { name: @feed.name, url: @feed.url, id: 99 }
+      assert_equal(feed.name.upcase, updated_feed.name)
+      assert_equal(feed.url.upcase, updated_feed.url)
+      assert_equal(feed.id, updated_feed.id)
+      assert_equal(!feed.display, updated_feed.display)
     end
-
-    assert_response :success
-    feed = Feed.new(JSON.parse(@response.body))
-
-    assert_equal(@feed.name, feed.name)
-    assert_equal(@feed.url, feed.url)
-    assert_not_equal(@feed.id, feed.id)
-  end
-
-  test "should update feed" do
-    request_json
-    patch :update, id: @feed.id, feed: { display: !@feed.display, name: @feed.name.upcase, url: @feed.url.upcase }
-
-    assert_response :success
-    feed = Feed.new(JSON.parse(@response.body))
-
-    assert_equal(@feed.name.upcase, feed.name)
-    assert_equal(@feed.url.upcase, feed.url)
-    assert_equal(@feed.id, feed.id)
-    assert_equal(!@feed.display, feed.display)
   end
 end

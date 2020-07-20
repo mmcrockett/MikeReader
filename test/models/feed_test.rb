@@ -1,79 +1,94 @@
 require 'test_helper'
 
 class FeedTest < ActiveSupport::TestCase
-  ATOM_URL = "https://www.test.com/atom/"
-  RSS_URL  = "https://www.test.com/rss/"
-  POD_URL  = "https://www.test.com/pod/"
+  describe 'feeds' do
+    let(:url) { 'https://www.test.com/feeds/' }
+    let(:feed) { Feed.new(url: url).retrieve }
 
-  def setup
-    FakeWeb.register_uri(:get, ATOM_URL, [
-      fakeweb_response(body: atom_file, status: 200, plain: true),
-      fakeweb_response(body: read_file('atom_feed_with_updates.xml'), status:200, plain: true)
-    ])
-    FakeWeb.register_uri(:get, RSS_URL, fakeweb_response(body: rss_file, status: 200, plain: true))
-    FakeWeb.register_uri(:get, POD_URL, fakeweb_response(body: rss_podcast_file, status: 200, plain: true))
+    setup do
+      FakeWeb.register_uri(:get, url, fakeweb_response(body: file, status: 200, plain: true))
 
-    @atom_feed = Feed.new(url: ATOM_URL).retrieve
-    @rss_feed  = Feed.new(url: RSS_URL).retrieve
-    @pod_feed  = Feed.new(url: POD_URL).retrieve
-
-    @feeds = []
-    @feeds << @atom_feed
-    @feeds << @rss_feed
-    @feeds << @pod_feed
-
-    super
-  end
-
-  test "can get title" do
-    @feeds.each do |feed|
       feed.process
     end
 
-    assert_equal("The Ringer -  All Posts", @atom_feed.title)
-    assert_equal("FiveThirtyEight", @rss_feed.title)
-    assert_equal("The Bill Simmons Podcast", @pod_feed.title)
-  end
+    describe 'atom' do
+      let(:file) { atom_file }
 
-  test "can detect feed type" do
-    assert(@atom_feed.atom?)
-    assert_equal(false, @atom_feed.rss?)
-    assert(@rss_feed.rss?)
-    assert_equal(false, @rss_feed.atom?)
-    assert(@pod_feed.rss?)
-    assert_equal(false, @pod_feed.atom?)
-  end
+      it 'can get title' do
+        assert_equal("The Ringer -  All Posts", feed.title)
+      end
 
-  test "can process the entries" do
-    @feeds.each do |feed|
-      feed.process
+      it 'can detect type' do
+        assert_equal(true, feed.atom?)
+        assert_equal(false, feed.rss?)
+      end
+
+      it 'can save entries' do
+        feed.save!
+
+        assert_equal(2, feed.reload.entries.size)
+      end
+
+      it 'ignores duplicates' do
+        FakeWeb.register_uri(:get, url, fakeweb_response(body: read_test_file('atom_feed_with_updates.xml'), status: 200, plain: true))
+
+        feed.save!
+        feed.reload.retrieve.process
+
+        assert_equal(9, feed.reload.entries.size)
+      end
     end
 
-    @feeds.each do |feed|
-      feed.save!
-      feed.reload
+    describe 'rss' do
+      let(:file) { rss_file }
+
+      it 'can get title' do
+        assert_equal("FiveThirtyEight", feed.title)
+      end
+
+      it 'can detect type' do
+        assert_equal(false, feed.atom?)
+        assert_equal(true, feed.rss?)
+      end
+
+      it 'can save entries' do
+        feed.save!
+
+        assert_equal(7, feed.reload.entries.size)
+      end
+
+      it 'ignores duplicates' do
+        feed.save!
+        feed.reload.retrieve.process
+
+        assert_equal(7, feed.reload.entries.size)
+      end
     end
 
-    assert_equal(2, @atom_feed.entries.size)
-    assert_equal(7, @rss_feed.entries.size)
-    assert_equal(4, @pod_feed.entries.size)
-    assert_equal("The Ringer -  All Posts", @atom_feed.name)
-    assert_equal("FiveThirtyEight", @rss_feed.name)
-    assert_equal("The Bill Simmons Podcast", @pod_feed.name)
-  end
+    describe 'rss podcast' do
+      let(:file) { rss_podcast_file }
 
-  test "can process the entries and ignore duplicates" do
-    @feeds.each do |feed|
-      feed.process
-      feed.save!
-      feed.reload
-      feed.retrieve.process
-      feed.save!
-      feed.reload
+      it 'can get title' do
+        assert_equal("The Bill Simmons Podcast", feed.title)
+      end
+
+      it 'can detect type' do
+        assert_equal(false, feed.atom?)
+        assert_equal(true, feed.rss?)
+      end
+
+      it 'can save entries' do
+        feed.save!
+
+        assert_equal(4, feed.reload.entries.size)
+      end
+
+      it 'ignores duplicates' do
+        feed.save!
+        feed.reload.retrieve.process
+
+        assert_equal(4, feed.reload.entries.size)
+      end
     end
-
-    assert_equal(9, @atom_feed.entries.size)
-    assert_equal(7, @rss_feed.entries.size)
-    assert_equal(4, @pod_feed.entries.size)
   end
 end

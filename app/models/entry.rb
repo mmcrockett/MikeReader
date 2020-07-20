@@ -1,9 +1,14 @@
-class Entry < ActiveRecord::Base
+class Entry < ApplicationRecord
   belongs_to :feed
 
   before_save :set_default_data
 
   serialize :data, JSON
+
+  scope :unread, -> { where(read: false) }
+  scope :by_date, -> { order(post_date: :desc) }
+  scope :pods, -> { where(pod: true) }
+  scope :articles, -> { where(pod: false) }
 
   MAX_COMPOUND_SUBJECT_SIZE = 120
   MIN_COMPOUND_SUBJECT_WORD_COUNT = 5
@@ -47,18 +52,6 @@ class Entry < ActiveRecord::Base
     entry.link      = atom.link.href
 
     return entry
-  end
-
-  def self.articles
-    return Entry.base_query.where(:pod => false)
-  end
-
-  def self.pods
-    return Entry.base_query.where(:pod => true)
-  end
-
-  def self.base_query
-    return Entry.where(:read => false).order(:post_date => :desc)
   end
 
   def set_subject(title, description)

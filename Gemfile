@@ -32,6 +32,6 @@ group :development do
   gem 'capistrano-sqlite-reuse', '>= 1.0.0'
   gem 'capistrano-rails'
   gem 'capistrano-bundler'
-  gem 'capistrano-rvm'
+  gem 'capistrano-rbenv'
   gem 'highline'
 end

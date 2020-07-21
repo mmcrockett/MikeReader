@@ -5,7 +5,7 @@ class FeedsControllerTest < ActionDispatch::IntegrationTest
 
   describe 'index' do
     it 'returns a list of feeds' do
-      get feeds_path
+      get api_feeds_path
 
       assert_response :success
       assert_equal(Feed.count, response_data.size)
@@ -24,7 +24,7 @@ class FeedsControllerTest < ActionDispatch::IntegrationTest
 
     it 'should create a feed' do
       assert_difference('Feed.count') do
-        post feeds_path, params: { feed: params }
+        post api_feeds_path, params: { feed: params }
       end
 
       assert_response :success
@@ -46,7 +46,7 @@ class FeedsControllerTest < ActionDispatch::IntegrationTest
     }
 
     it "should update feed" do
-      put feed_path(feed.id), params: { feed: params }
+      put api_feed_path(feed.id), params: { feed: params }
 
       assert_response :success
 

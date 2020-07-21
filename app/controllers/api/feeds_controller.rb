@@ -1,4 +1,4 @@
-class FeedsController < ApplicationController
+class Api::FeedsController < ActionController::API
   before_action :set_feed, only: [:update]
 
   def index
@@ -11,7 +11,7 @@ class FeedsController < ApplicationController
     @feed = Feed.new(feed_params)
 
     if @feed.save
-      render json: @feed, status: :created, location: @feed
+      render json: @feed, status: :created
     else
       render json: @feed.errors, status: :unprocessable_entity
     end

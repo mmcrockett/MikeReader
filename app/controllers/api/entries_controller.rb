@@ -1,4 +1,4 @@
-class EntriesController < ApplicationController
+class Api::EntriesController < ActionController::API
   before_action :set_entry, only: [:destroy]
   before_action -> { @entries = Entry.unread.by_date }, only: [:index, :pods]
 

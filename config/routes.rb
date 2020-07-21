@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  root :to => redirect('/entries')
+  resources :entries, only: [:index, :destroy] do
+    collection do
+      get :pods
+    end
+  end
 
-  resources :entries
-  resources :feeds
-  match 'pods',  :to => 'entries#pods', :via => [:get]
+  resources :feeds, only: [:index, :update, :create]
 end

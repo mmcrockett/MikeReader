@@ -12,4 +12,5 @@ one: &default
 <%= i %>:
   <<: *default
   pod: <%= (0 == (i % 2)) %>
+  read: <%= (0 == (i % 3)) %>
 <% end %>

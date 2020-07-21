@@ -1,8 +1,9 @@
 require 'test_helper'
 
-class EntriesControllerTest < ActionController::TestCase
+class EntriesControllerTest < ActionDispatch::IntegrationTest
+  let(:entry) { entries(:one) }
+
   setup do
-    @entry = entries(:one)
     @entries = []
     @pods = []
 
@@ -26,73 +27,31 @@ class EntriesControllerTest < ActionController::TestCase
     end
   end
 
-  test "should get index" do
-    get :index
-    assert_response :success
-    assert_nil assigns(:entries)
+  describe 'index' do
+    it 'should return a list of unread entries' do
+      get entries_path
+
+      assert_response :success
+
+      assert_equal(Entry.articles.unread.count, response_data.size)
+    end
   end
 
-  test "should get index as json" do
-    request_json
-    get :index
-    assert_response :success
-    assert_not_nil assigns(:entries)
-    assert_equal(7, JSON.parse(@response.body).size)
-    assert_equal(JSON.parse(@entries.to_json), JSON.parse(@response.body))
+  describe '#pods' do
+    it 'should return pods' do
+      get pods_entries_path
+
+      assert_response :success
+
+      assert_equal(Entry.pods.unread.count, response_data.size)
+    end
   end
 
-  test "should get index as json with limited size" do
-    request_json
-    get :index, {viewport: 750}
-    assert_response :success
-    assert_not_nil assigns(:entries)
-    assert_equal(5, JSON.parse(@response.body).size)
-  end
+  describe '#destroy' do
+    it 'should mark as read' do
+      delete entry_path(entry.id), params: {}
 
-  test "should get index as json with invalid viewport" do
-    request_json
-    get :index, {viewport: 'hello'}
-    assert_response :success
-    assert_not_nil assigns(:entries)
-    assert_equal(7, JSON.parse(@response.body).size)
-  end
-
-  test "should get pods" do
-    get :pods
-    assert_response :success
-    assert_nil assigns(:entries)
-  end
-
-  test "should get pods as json" do
-    request_json
-    get :index, {filter: 'pods'}
-    assert_response :success
-    assert_not_nil assigns(:entries)
-    assert_equal(6, JSON.parse(@response.body).size)
-    assert_equal(JSON.parse(@pods.to_json), JSON.parse(@response.body))
-  end
-
-  test "should get pods as json with limited size" do
-    request_json
-    get :index, {viewport: 750, filter: 'pods'}
-    assert_response :success
-    assert_not_nil assigns(:entries)
-    assert_equal(5, JSON.parse(@response.body).size)
-  end
-
-  test "should update entry" do
-    request_json
-    patch :update, id: @entry, entry: { data: "bob", feed_id: 93, link: "blah", post_date: "27", read: !@entry.read, subject: "lll" }
-
-    assert_response :success
-    entry = Entry.new(JSON.parse(@response.body))
-
-    @entries.first.each_pair do |k,v|
-      if (:read != k)
-        assert_equal(@entry.send(k), entry.send(k))
-      else
-        assert_equal(!@entry.send(k), entry.send(k))
-      end
+      assert_response :success
     end
   end
 end

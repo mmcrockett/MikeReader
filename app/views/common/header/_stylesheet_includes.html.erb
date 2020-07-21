@@ -1,9 +1,0 @@
-<% stylesheet_libraries = [
-  "https://maxcdn.bootstrapcdn.com/bootstrap/#{versions[:bootstrap]}/css/bootstrap#{minified}.css",
-  "https://maxcdn.bootstrapcdn.com/bootstrap/#{versions[:bootstrap]}/css/bootstrap-theme#{minified}.css",
-  "application"
-]
-%>
-  <% stylesheet_libraries.each do |library| %>
-    <%= stylesheet_link_tag "#{library}", :media => "all" %>
-  <% end %>

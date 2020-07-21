@@ -23,6 +23,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'puma', '~> 4.1'
+  gem 'httparty_with_cookies'
   gem 'capistrano', '~> 3.14', require: false
   gem 'capistrano-sqlite-reuse', '>= 1.0.0'
   gem 'capistrano-rails'
@@ -34,6 +35,7 @@ group :test do
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   gem 'webdrivers'
+  gem 'fakeweb'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

@@ -1,2 +1,2 @@
-PassengerRuby /home/washingrvingrails/.rvm/gems/ruby-2.4.2/wrappers/ruby
-SetEnv GEM_PATH /home/washingrvingrails/reader.mmcrockett.com/shared/bundle
+PassengerRuby /home/washingrvingrbenvrails/.rbenv/versions/2.7.1/bin/ruby
+SetEnv GEM_PATH /home/washingrvingrbenvrails/reader.test.mmcrockett.com/shared/bundle

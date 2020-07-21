@@ -18,6 +18,11 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'httparty_with_cookies'
   gem 'puma'
+  gem 'capistrano', '~> 3.14', require: false
+  gem 'capistrano-sqlite-reuse', '>= 1.0.0'
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rbenv'
 end
 
 group :test do

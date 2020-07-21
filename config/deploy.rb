@@ -1,13 +1,17 @@
-# config valid for current version and patch releases of Capistrano
+USER='washingrvingrbenvrails'
+
 lock '~> 3.14.1'
+
+server 'mmcrockett.com', user: USER, roles: %w{app db web}
 
 set :application, 'mikereader'
 set :repo_url, 'git@github.com:mmcrockett/MikeReader.git'
-set :rvm_ruby_version, '2.7.1'
+set :rbenv_ruby_version, '2.7.1'
+set :branch, ENV['BRANCH'] if ENV['BRANCH']
+set :tmp_dir, File.join('', 'home', USER, 'tmp')
 
 append :linked_dirs, 'log'
 append :linked_dirs, 'tmp'
-append :linked_files, 'config/credentials/staging.key'
 
 namespace :deploy do
   desc 'Restart application'

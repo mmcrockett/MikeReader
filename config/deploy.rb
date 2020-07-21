@@ -3,6 +3,7 @@ lock '~> 3.14.1'
 
 set :application, 'mikereader'
 set :repo_url, 'git@github.com:mmcrockett/MikeReader.git'
+set :rvm_ruby_version, '2.7.1'
 
 append :linked_dirs, 'log'
 append :linked_dirs, 'tmp'

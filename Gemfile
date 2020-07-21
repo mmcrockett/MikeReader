@@ -22,7 +22,8 @@ group :development do
   gem 'capistrano-sqlite-reuse', '>= 1.0.0'
   gem 'capistrano-rails'
   gem 'capistrano-bundler'
-  gem 'capistrano-rbenv'
+  #gem 'capistrano-rbenv'
+  gem 'capistrano-rvm'
 end
 
 group :test do

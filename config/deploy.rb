@@ -12,6 +12,9 @@ set :tmp_dir, File.join('', 'home', USER, 'tmp')
 
 append :linked_dirs, 'log'
 append :linked_dirs, 'tmp'
+append :linked_dirs, File.join('public', 'packs')
+append :linked_dirs, '.bundle'
+append :linked_dirs, 'node_modules'
 
 namespace :deploy do
   desc 'Restart application'
@@ -21,5 +24,15 @@ namespace :deploy do
     end
   end
 
+  desc 'Run rake yarn install'
+  task :yarn_install do
+    on roles(:web) do
+      within release_path do
+        execute('cd #{release_path} && yarn install --silent --no-progress --no-audit --no-optional')
+      end
+    end
+  end
+
   after :publishing, :restart
+  before 'assets:precompile', :yarn_install
 end

@@ -10,30 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_23_135619) do
+ActiveRecord::Schema.define(version: 2020_07_24_015643) do
 
   create_table "entries", force: :cascade do |t|
     t.string "subject", null: false
     t.string "link", null: false
     t.string "data", null: false
-    t.boolean "read", default: false
     t.date "post_date", null: false
     t.integer "feed_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "pod", default: false
-    t.boolean "new_pod", default: false
-    t.boolean "new_read", default: false
+    t.boolean "read", default: false
     t.index ["feed_id"], name: "index_entries_on_feed_id"
   end
 
   create_table "feeds", force: :cascade do |t|
     t.string "name", null: false
     t.string "url", null: false
-    t.boolean "display", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "new_display", default: true
+    t.boolean "display", default: true
   end
 
 end

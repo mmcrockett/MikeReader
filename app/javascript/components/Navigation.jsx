@@ -4,9 +4,9 @@ import Nav from 'react-bootstrap/Nav';
 
 function Navigation(props) {
   const getClassNames = () => {
-    if ('production' == process.env.NODE_ENV) {
+    if ('production' == process.env.RAILS_ENV) {
       return 'primary';
-    } else if ('staging' == process.env.NODE_ENV) {
+    } else if ('staging' == process.env.RAILS_ENV) {
       return 'secondary';
     } else {
       return 'warning';

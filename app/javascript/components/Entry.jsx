@@ -79,7 +79,7 @@ function Entry({ updateMessages, entry, isLast }) {
 
   return (
     <Row key={entry.id} className={rowClassNames}>
-      <Col variant={'light'} xs={'auto'} as={Button}>
+      <Col variant={'light'} xs={'auto'} as={Button} onClick={markEntryRead}>
         <BsX />
       </Col>
       <Col xs={'auto'} className={'align-self-center'} onClick={goToUrl}>

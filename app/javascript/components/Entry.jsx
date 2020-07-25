@@ -58,7 +58,9 @@ function Entry({ updateMessages, entry, isLast }) {
     setRowClassNames(prevState => { return [readClassName, ..._.without(prevState, progressClassName)] });
   };
 
-  const goToUrl = () => {
+  const goToUrl = (clickEvent) => {
+    clickEvent.preventDefault();
+
     window.open(entry.link, '_blank');
 
     markEntryRead();

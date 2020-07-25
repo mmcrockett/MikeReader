@@ -15,22 +15,23 @@ ActiveRecord::Schema.define(version: 2020_07_24_015643) do
   create_table "entries", force: :cascade do |t|
     t.string "subject", null: false
     t.string "link", null: false
-    t.string "data", null: false
+    t.text "data", null: false
     t.date "post_date", null: false
-    t.integer "feed_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer "feed_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.boolean "pod", default: false
     t.boolean "read", default: false
     t.index ["feed_id"], name: "index_entries_on_feed_id"
   end
 
   create_table "feeds", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "url", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string "name"
+    t.string "url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.boolean "display", default: true
   end
 
+  add_foreign_key "entries", "feeds"
 end

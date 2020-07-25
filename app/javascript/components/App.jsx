@@ -11,7 +11,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   React.useEffect(() => {
-    console.warn('Node Env: ' + process.env.NODE_ENV);
+    console.warn('ENV: ' + process.env.RAILS_ENV);
   }, []);
 
   const [messages, setMessages] = React.useState({});

@@ -8,7 +8,7 @@ class EntryService {
   };
 
   static get() {
-    return axios.get(baseUrl + '.json');
+    return axios.get(baseUrl + '.json', { params: {timestamp: new Date()} });
   }
 
   static delete(entry) {

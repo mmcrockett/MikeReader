@@ -8,6 +8,7 @@ gem 'sqlite3', '~> 1.4'
 gem 'webpacker', '~> 4.0'
 gem 'jbuilder', '~> 2.7'
 gem 'httparty'
+gem 'redis'
 
 gem 'bootsnap', '>= 1.4.2', require: false
 

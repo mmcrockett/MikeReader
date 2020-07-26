@@ -2,6 +2,9 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Entry from './Entry';
 import EntryService from './EntryService';
+import { API_WS_ROOT } from './Constants';
+import { ActionCableProvider } from 'react-actioncable-provider';
+import { ActionCableConsumer } from 'react-actioncable-provider';
 
 function Entries({ updateMessages }) {
   const [entries, setEntries] = React.useState([]);
@@ -21,8 +24,18 @@ function Entries({ updateMessages }) {
     });
   };
 
+  const handleReceivedEntries = (message) => {
+    setEntries(message);
+  };
+
   return (
     <Container fluid>
+      <ActionCableProvider url={API_WS_ROOT}>
+        <ActionCableConsumer
+          channel="EntriesChannel"
+          onReceived={handleReceivedEntries}
+        />
+      </ActionCableProvider>
       {entryRows()}
     </Container>
   );

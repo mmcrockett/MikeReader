@@ -11,5 +11,6 @@ Rails.application.routes.draw do
     resources :feeds, only: [:index, :update, :create]
   end
 
+  mount ActionCable.server => '/cable'
   get "*path", to: "home#index", constraints: { format: "html" }
 end

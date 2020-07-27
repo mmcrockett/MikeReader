@@ -59,9 +59,9 @@ function Entry({ updateMessages, entry, isLast }) {
   };
 
   const goToUrl = (clickEvent) => {
-    clickEvent.preventDefault();
-
-    window.open(entry.link, '_blank');
+    if ('a' !== clickEvent.target.tagName.toLowerCase()) {
+      window.open(entry.link, '_blank');
+    }
 
     markEntryRead();
   };

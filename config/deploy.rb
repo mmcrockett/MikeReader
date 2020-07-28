@@ -9,6 +9,7 @@ set :repo_url, 'git@github.com:mmcrockett/MikeReader.git'
 set :rbenv_ruby_version, '2.7.1'
 set :branch, ENV['BRANCH'] if ENV['BRANCH']
 set :tmp_dir, File.join('', 'home', USER, 'tmp')
+append :linked_files, 'config/credentials/master.key'
 
 append :linked_dirs, 'log'
 append :linked_dirs, 'tmp'

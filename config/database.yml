@@ -24,7 +24,8 @@ staging: &staging
   <<: *default
   adapter: mysql2
   host: mysql.mmcrockett.com
-  password: <%= Rails.application.credentials.mysql_password %>
+  username: mysql_mmcrockett
+  password: <%= Rails.application.credentials.mysql_password { 'badpassword' } %>
   database: reader_test_mmcrockett
 
 production:

@@ -20,10 +20,13 @@ test:
   <<: *default
   database: db/test.sqlite3
 
-staging:
+staging: &staging
   <<: *default
-  database: db/staging.sqlite3
+  adapter: mysql2
+  host: mysql.mmcrockett.com
+  password: <%= Rails.application.credentials.mysql_password %>
+  database: reader_test_mmcrockett
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+  <<: *staging
+  database: reader_mmcrockett

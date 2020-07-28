@@ -25,7 +25,6 @@ group :development do
   gem 'puma', '~> 4.1'
   gem 'httparty_with_cookies'
   gem 'capistrano', '~> 3.14', require: false
-  gem 'capistrano-sqlite-reuse', '>= 1.0.0'
   gem 'capistrano-rails'
   gem 'capistrano-bundler'
   gem 'capistrano-rbenv'

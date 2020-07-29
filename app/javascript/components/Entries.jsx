@@ -2,11 +2,6 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Entry from './Entry';
 import EntryService from './EntryService';
-import ActionCable from 'actioncable';
-import { ActionCableProvider } from 'react-actioncable-provider';
-import { ActionCableConsumer } from 'react-actioncable-provider';
-
-const cable = ActionCable.createConsumer();
 
 function Entries({ updateMessages }) {
   const [entries, setEntries] = React.useState([]);
@@ -42,12 +37,6 @@ function Entries({ updateMessages }) {
 
   return (
     <Container fluid>
-      <ActionCableProvider cable={cable}>
-        <ActionCableConsumer
-          channel="EntriesChannel"
-          onReceived={handleReceivedEntries}
-        />
-      </ActionCableProvider>
       {entryRows()}
     </Container>
   );

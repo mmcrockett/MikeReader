@@ -2,12 +2,21 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Entry from './Entry';
 import EntryService from './EntryService';
-import { API_WS_ROOT } from './Constants';
 import { ActionCableProvider } from 'react-actioncable-provider';
 import { ActionCableConsumer } from 'react-actioncable-provider';
 
 function Entries({ updateMessages }) {
   const [entries, setEntries] = React.useState([]);
+
+  const getWebsocketsEndpoint = () => {
+    if ('production' == process.env.RAILS_ENV) {
+      return 'ws://reader.mmcrockett.com/cable';
+    } else if ('staging' == process.env.RAILS_ENV) {
+      return 'ws://reader.test.mmcrockett.com/cable';
+    } else {
+      return 'ws://localhost:5000/cable';
+    }
+  };
 
   const errorMessage = React.useCallback((err) => {
     updateMessages({danger: 'There was an error.'});
@@ -30,7 +39,7 @@ function Entries({ updateMessages }) {
 
   return (
     <Container fluid>
-      <ActionCableProvider url={API_WS_ROOT}>
+      <ActionCableProvider url={getWebsocketsEndpoint()}>
         <ActionCableConsumer
           channel="EntriesChannel"
           onReceived={handleReceivedEntries}

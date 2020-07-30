@@ -7,10 +7,10 @@ test:
   adapter: test
 
 staging: &staging
-  adapter: redis
-  host: <%= ENV.fetch('REDIS_HOST') { '127.0.0.1' }%>
-  port: <%= ENV.fetch('REDIS_PORT') { '0000' } %>
-  password: <%= Rails.application.credentials.redis_password %>
+  adapter: inline
+  #host: <%= ENV.fetch('REDIS_HOST') { '127.0.0.1' }%>
+  #port: <%= ENV.fetch('REDIS_PORT') { '0000' } %>
+  #password: <%= Rails.application.credentials.redis_password %>
   channel_prefix: mike_reader_webpack_staging
 
 production:

@@ -2,3 +2,4 @@ PassengerFriendlyErrorPages on
 PassengerRuby /home/washingrvingrbenvrails/.rbenv/versions/2.7.1/bin/ruby
 SetEnv GEM_PATH /home/washingrvingrbenvrails/reader.test.mmcrockett.com/shared/bundle/ruby/2.7.0
 Header always edit Set-Cookie (.*) "$1; SameSite=Lax"
+SetEnv REDIS_HOST 107.180.239.66

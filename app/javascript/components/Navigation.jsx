@@ -1,8 +1,26 @@
 import React from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
+import EntryService from './EntryService';
+import _ from 'lodash';
+
+const tzOptions = {
+  timeZone: 'America/Chicago'
+};
+const dateOptions = {
+  year: 'numeric',
+  month: 'numeric',
+  day: 'numeric',
+  ...tzOptions
+}
+const timeOptions = {
+  hour: 'numeric',
+  minute: 'numeric',
+  ...tzOptions
+};
 
 function Navigation(props) {
+  const [history, setHistory] = React.useState({});
   const getClassNames = () => {
     if ('production' == process.env.RAILS_ENV) {
       return 'primary';
@@ -12,6 +30,31 @@ function Navigation(props) {
       return 'warning';
     }
   };
+  const lastChecked = () => {
+    let lc = '- - -';
+
+    if (history.checked_at) {
+      let lc_date = new Date(history.checked_at);
+      let options = timeOptions;
+      let yesterday = new Date() - 24 * 60 * 60;
+
+      if (yesterday > lc_date) {
+        options = dateOptions;
+      }
+
+      lc = new Intl.DateTimeFormat('en-US', options).format(new Date(lc_date));
+    }
+
+    return (
+      <React.Fragment>
+        <Navbar.Text>{lc}</Navbar.Text>
+      </React.Fragment>
+    );
+  };
+
+  React.useEffect(() => {
+    EntryService.getHistory().then((response) => { setHistory(response.data); }).catch((err) => { console.error(err); });
+  }, []);
 
   return (
     <React.Fragment>
@@ -21,6 +64,7 @@ function Navigation(props) {
           <Nav.Link href="/feeds">Feeds</Nav.Link>
           <Nav.Link href="/entries">Entries</Nav.Link>
         </Nav>
+        {lastChecked()}
       </Navbar>
     </React.Fragment>
   );

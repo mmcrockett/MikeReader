@@ -7,87 +7,123 @@ class FeedTest < ActiveSupport::TestCase
 
     setup do
       FakeWeb.register_uri(:get, url, fakeweb_response(body: file, status: 200, plain: true))
-
-      feed.process
     end
 
-    describe 'atom' do
-      let(:file) { atom_file }
+    describe 'after save hook' do
+      describe 'atom' do
+        let(:file) { atom_file }
 
-      it 'can get title' do
-        assert_equal("The Ringer -  All Posts", feed.title)
+        it 'creates a history object' do
+          assert_difference('History.count') do
+            feed.process.save
+          end
+
+          assert_equal(true, 1.minute.ago < History.last.checked_at)
+          assert_equal(2017, History.last.last_article_at.year)
+          assert_equal(8, History.last.last_article_at.month)
+          assert_equal(9, History.last.last_article_at.mday)
+        end
       end
 
-      it 'can detect type' do
-        assert_equal(true, feed.atom?)
-        assert_equal(false, feed.rss?)
-      end
+      describe 'rss' do
+        let(:file) { rss_file }
 
-      it 'can save entries' do
-        feed.save!
+        it 'creates a history object' do
+          assert_difference('History.count') do
+            feed.process.save
+          end
 
-        assert_equal(2, feed.reload.entries.size)
-      end
-
-      it 'ignores duplicates' do
-        FakeWeb.register_uri(:get, url, fakeweb_response(body: read_test_file('atom_feed_with_updates.xml'), status: 200, plain: true))
-
-        feed.save!
-        feed.reload.retrieve.process
-
-        assert_equal(9, feed.reload.entries.size)
-      end
-    end
-
-    describe 'rss' do
-      let(:file) { rss_file }
-
-      it 'can get title' do
-        assert_equal("FiveThirtyEight", feed.title)
-      end
-
-      it 'can detect type' do
-        assert_equal(false, feed.atom?)
-        assert_equal(true, feed.rss?)
-      end
-
-      it 'can save entries' do
-        feed.save!
-
-        assert_equal(7, feed.reload.entries.size)
-      end
-
-      it 'ignores duplicates' do
-        feed.save!
-        feed.reload.retrieve.process
-
-        assert_equal(7, feed.reload.entries.size)
+          assert_equal(true, 1.minute.ago < History.last.checked_at)
+          assert_equal(2017, History.last.last_article_at.year)
+          assert_equal(8, History.last.last_article_at.month)
+          assert_equal(8, History.last.last_article_at.mday)
+        end
       end
     end
 
-    describe 'rss podcast' do
-      let(:file) { rss_podcast_file }
-
-      it 'can get title' do
-        assert_equal("The Bill Simmons Podcast", feed.title)
+    describe '#process' do
+      before do
+        feed.process
       end
 
-      it 'can detect type' do
-        assert_equal(false, feed.atom?)
-        assert_equal(true, feed.rss?)
+      describe 'atom' do
+        let(:file) { atom_file }
+
+        it 'can get title' do
+          assert_equal("The Ringer -  All Posts", feed.title)
+        end
+
+        it 'can detect type' do
+          assert_equal(true, feed.atom?)
+          assert_equal(false, feed.rss?)
+        end
+
+        it 'can save entries' do
+          feed.save!
+
+          assert_equal(2, feed.reload.entries.size)
+        end
+
+        it 'ignores duplicates' do
+          FakeWeb.register_uri(:get, url, fakeweb_response(body: read_test_file('atom_feed_with_updates.xml'), status: 200, plain: true))
+
+          feed.save!
+          feed.reload.retrieve.process
+
+          assert_equal(9, feed.reload.entries.size)
+        end
       end
 
-      it 'can save entries' do
-        feed.save!
+      describe 'rss' do
+        let(:file) { rss_file }
 
-        assert_equal(4, feed.reload.entries.size)
+        it 'can get title' do
+          assert_equal("FiveThirtyEight", feed.title)
+        end
+
+        it 'can detect type' do
+          assert_equal(false, feed.atom?)
+          assert_equal(true, feed.rss?)
+        end
+
+        it 'can save entries' do
+          feed.save!
+
+          assert_equal(7, feed.reload.entries.size)
+        end
+
+        it 'ignores duplicates' do
+          feed.save!
+          feed.reload.retrieve.process
+
+          assert_equal(7, feed.reload.entries.size)
+        end
       end
 
-      it 'ignores duplicates' do
-        feed.save!
-        feed.reload.retrieve.process
+      describe 'rss podcast' do
+        let(:file) { rss_podcast_file }
 
-        assert_equal(4, feed.reload.entries.size)
+        it 'can get title' do
+          assert_equal("The Bill Simmons Podcast", feed.title)
+        end
+
+        it 'can detect type' do
+          assert_equal(false, feed.atom?)
+          assert_equal(true, feed.rss?)
+        end
+
+        it 'can save entries' do
+          feed.save!
+
+          assert_equal(4, feed.reload.entries.size)
+        end
+
+        it 'ignores duplicates' do
+          feed.save!
+          feed.reload.retrieve.process
+
+          assert_equal(4, feed.reload.entries.size)
+        end
       end
     end
   end

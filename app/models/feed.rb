@@ -3,6 +3,8 @@ require 'rss'
 class Feed < ApplicationRecord
   has_many :entries
 
+  after_save :update_history
+
   def retrieve
     response = HTTParty.get(self.url)
 
@@ -36,6 +38,8 @@ class Feed < ApplicationRecord
   end
 
   def process
+    @published_dates = []
+
     if ((nil == name) || (true == name.empty?))
       self.name = self.title
     end
@@ -44,6 +48,7 @@ class Feed < ApplicationRecord
       new_entry = create_entry(entry)
 
       if (false == new_entry.exists?)
+        @published_dates << (entry.try(:pubDate) || entry.try(:published).try(:content))
         self.entries << new_entry
       else
         Rails.logger.info("Already exists '#{new_entry.link}'.")
@@ -67,6 +72,12 @@ class Feed < ApplicationRecord
       return Entry.from_rss(item)
     else
       return Entry.from_atom(item)
+    end
+  end
+
+  def update_history
+    if @published_dates.present?
+      History.create!(last_article_at: @published_dates.max, checked_at: Time.now)
     end
   end
 end

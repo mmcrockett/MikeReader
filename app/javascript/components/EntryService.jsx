@@ -7,6 +7,10 @@ class EntryService {
     return axios.get([baseUrl, 'pods.json'].join('/'));
   };
 
+  static getHistory() {
+    return axios.get([baseUrl, 'history.json'].join('/'));
+  }
+
   static get() {
     return axios.get(baseUrl + '.json', { params: {timestamp: new Date()} });
   }

@@ -21,6 +21,37 @@ class EntriesControllerTest < ActionDispatch::IntegrationTest
     end
   end
 
+  describe '#history' do
+    describe 'no history' do
+      it 'returns empty' do
+        get history_api_entries_path
+
+        assert_response :success
+
+        assert_nil(response_data['checked_at'])
+        assert_nil(response_data['last_article_at'])
+      end
+    end
+
+    describe 'with history' do
+      let(:last_checked_time) { 3.days.ago }
+
+      before do
+        History.create!(last_article_at: 5.days.ago, checked_at: 5.days.ago)
+        History.create!(last_article_at: last_checked_time, checked_at: last_checked_time)
+      end
+
+      it 'returns last' do
+        get history_api_entries_path
+
+        assert_response :success
+
+        assert_equal(last_checked_time.as_json, response_data['checked_at'])
+        assert_equal(last_checked_time.as_json, response_data['last_article_at'])
+      end
+    end
+  end
+
   describe '#destroy' do
     let(:entry) { entries(:one) }
 

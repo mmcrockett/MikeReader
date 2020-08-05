@@ -14,6 +14,12 @@ class Api::EntriesController < ActionController::API
     render json: @entries.pods
   end
 
+  def history
+    history = History.last || History.new
+
+    render json: history
+  end
+
   private
 
   def set_entry

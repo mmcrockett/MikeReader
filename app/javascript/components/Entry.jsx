@@ -86,7 +86,12 @@ function Entry({ updateMessages, entry, isLast }) {
         <FaAsterisk style={asteriskStyle} />
       </Col>
       <Col className={'text-truncate align-self-center'} onClick={goToUrl}>
-        <a className={'text-decoration-none'} style={{corationLine: 'none', color: 'black'}} rel="noopener noreferrer" target="_blank" href={entry.link}>{entry.subject}</a>
+        <a className={'text-decoration-none'} style={{corationLine: 'none', color: 'black'}} rel="noopener noreferrer" target="_blank" href={entry.link}>
+          {entry.subject}
+        </a>
+      </Col>
+      <Col className={'text-muted align-self-center font-weight-lighter small text-right'}>
+        {entry.post_date}
       </Col>
     </Row>
   );

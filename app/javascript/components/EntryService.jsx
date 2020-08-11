@@ -1,4 +1,5 @@
 import axios from 'axios';
+import _ from 'lodash';
 
 const baseUrl = '/api/entries';
 
@@ -8,11 +9,11 @@ class EntryService {
   };
 
   static getHistory() {
-    return axios.get([baseUrl, 'history.json'].join('/'));
+    return axios.get([baseUrl, 'history.json'].join('/'), { params: {timestamp: _.now()} });
   }
 
   static get() {
-    return axios.get(baseUrl + '.json', { params: {timestamp: new Date()} });
+    return axios.get(baseUrl + '.json', { params: {timestamp: _.now()} });
   }
 
   static delete(entry) {

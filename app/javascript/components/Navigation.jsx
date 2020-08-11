@@ -3,6 +3,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import EntryService from './EntryService';
 import _ from 'lodash';
+import { DateTime } from 'luxon';
 
 const tzOptions = {
   timeZone: 'America/Chicago'
@@ -36,7 +37,7 @@ function Navigation(props) {
     if (history.checked_at) {
       let lc_date = new Date(history.checked_at);
       let options = timeOptions;
-      let yesterday = new Date() - 24 * 60 * 60;
+      let yesterday = DateTime.local().minus({days: 1});
 
       if (yesterday > lc_date) {
         options = dateOptions;

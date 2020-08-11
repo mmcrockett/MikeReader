@@ -23,6 +23,12 @@ function Entries({ updateMessages }) {
 
   React.useEffect(() => {
     EntryService.get().then((response) => { setEntries(response.data); }).catch(errorMessage);
+
+    const interval = setInterval(() => {
+      EntryService.get().then((response) => { setEntries(response.data); }).catch(errorMessage);
+    }, 60 * 60 * 1000);
+
+    return () => clearInterval(interval);
   }, [errorMessage]);
 
   const entryRows = () => {

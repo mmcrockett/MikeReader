@@ -10,6 +10,7 @@
     "axios": "^0.19.2",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "bootstrap": "^4.5.0",
+    "luxon": "^1.24.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-actioncable-provider": "^2.0.0",

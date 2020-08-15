@@ -19,9 +19,6 @@ class FeedTest < ActiveSupport::TestCase
           end
 
           assert_equal(true, 1.minute.ago < History.last.checked_at)
-          assert_equal(2017, History.last.last_article_at.year)
-          assert_equal(8, History.last.last_article_at.month)
-          assert_equal(9, History.last.last_article_at.mday)
         end
       end
 
@@ -34,9 +31,6 @@ class FeedTest < ActiveSupport::TestCase
           end
 
           assert_equal(true, 1.minute.ago < History.last.checked_at)
-          assert_equal(2017, History.last.last_article_at.year)
-          assert_equal(8, History.last.last_article_at.month)
-          assert_equal(8, History.last.last_article_at.mday)
         end
       end
     end

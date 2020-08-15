@@ -76,8 +76,6 @@ class Feed < ApplicationRecord
   end
 
   def update_history
-    if @published_dates.present?
-      History.create!(last_article_at: @published_dates.max, checked_at: Time.now)
-    end
+    History.create!(checked_at: Time.now)
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_04_014628) do
+ActiveRecord::Schema.define(version: 2020_08_15_151642) do
 
   create_table "entries", force: :cascade do |t|
     t.string "subject", null: false
@@ -35,7 +35,6 @@ ActiveRecord::Schema.define(version: 2020_08_04_014628) do
 
   create_table "histories", force: :cascade do |t|
     t.datetime "checked_at"
-    t.datetime "last_article_at"
   end
 
 end

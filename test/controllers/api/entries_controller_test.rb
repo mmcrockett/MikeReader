@@ -29,7 +29,6 @@ class EntriesControllerTest < ActionDispatch::IntegrationTest
         assert_response :success
 
         assert_nil(response_data['checked_at'])
-        assert_nil(response_data['last_article_at'])
       end
     end
 
@@ -37,8 +36,8 @@ class EntriesControllerTest < ActionDispatch::IntegrationTest
       let(:last_checked_time) { 3.days.ago }
 
       before do
-        History.create!(last_article_at: 5.days.ago, checked_at: 5.days.ago)
-        History.create!(last_article_at: last_checked_time, checked_at: last_checked_time)
+        History.create!(checked_at: 5.days.ago)
+        History.create!(checked_at: last_checked_time)
       end
 
       it 'returns last' do
@@ -47,7 +46,6 @@ class EntriesControllerTest < ActionDispatch::IntegrationTest
         assert_response :success
 
         assert_equal(last_checked_time.as_json, response_data['checked_at'])
-        assert_equal(last_checked_time.as_json, response_data['last_article_at'])
       end
     end
   end

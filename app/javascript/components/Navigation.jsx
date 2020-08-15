@@ -55,6 +55,10 @@ function Navigation(props) {
 
   React.useEffect(() => {
     EntryService.getHistory().then((response) => { setHistory(response.data); }).catch((err) => { console.error(err); });
+
+    const interval = setInterval(() => {
+      EntryService.getHistory().then((response) => { setHistory(response.data); }).catch((err) => { console.error(err); });
+    }, 60 * 60 * 1000);
   }, []);
 
   return (

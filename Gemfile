@@ -22,7 +22,7 @@ group :development do
   gem 'listen', '~> 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'puma', '~> 4.1'
+  gem 'puma', '~> 4.3'
   gem 'httparty_with_cookies'
   gem 'capistrano', '~> 3.14', require: false
   gem 'capistrano-rails'

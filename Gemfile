@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/mmcrockett/MikeReader.git" }
 
-ruby '2.7.1'
+ruby '2.7.8'
 
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 gem 'mysql2', '>= 0.5'

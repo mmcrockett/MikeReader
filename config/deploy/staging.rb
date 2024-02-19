@@ -1,4 +1,4 @@
-set :deploy_to, File.join('', 'home', USER, 'reader.test.mmcrockett.com')
+set :deploy_to, File.join('', 'home', USER, 'saml.mmcrockett.com')
 
 append :linked_files, 'config/credentials/staging.key'
 

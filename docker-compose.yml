@@ -1,0 +1,12 @@
+version: '3'
+services:
+  mikereader:
+    build:
+      dockerfile: Dockerfile
+    container_name: mikereader
+    command: bash
+    ports:
+      - "3002:3002"
+    stdin_open: true
+    tty: true
+

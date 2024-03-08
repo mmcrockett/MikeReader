@@ -20,7 +20,7 @@ RUN yarn install --check-files
 
 COPY . .
 
-ENV PORT 3002
-EXPOSE 3002
+ENV PORT 3100
+EXPOSE 3100
 
-RUN /bin/bash
+CMD rails server --port=3100

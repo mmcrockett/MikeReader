@@ -8,7 +8,8 @@ gem 'mysql2', '>= 0.5'
 gem 'webpacker', '~> 4.0'
 gem 'jbuilder', '~> 2.7'
 gem 'httparty'
-gem 'redis'
+
+gem "puma", "~> 4.3"
 
 gem 'bootsnap', '>= 1.4.2', require: false
 
@@ -22,7 +23,6 @@ group :development do
   gem 'listen', '~> 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'puma', '~> 4.1'
   gem 'httparty_with_cookies'
   gem 'capistrano', '~> 3.14', require: false
   gem 'capistrano-rails'

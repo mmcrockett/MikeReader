@@ -183,7 +183,6 @@ GEM
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
-    redis (4.2.1)
     regexp_parser (1.7.1)
     rubyzip (2.3.0)
     selenium-webdriver (3.142.7)
@@ -246,9 +245,8 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   listen (~> 3.2)
   mysql2 (>= 0.5)
-  puma (~> 4.1)
+  puma (~> 4.3)
   rails (~> 6.0.3, >= 6.0.3.2)
-  redis
   selenium-webdriver
   spring
   spring-watcher-listen (~> 2.0.0)

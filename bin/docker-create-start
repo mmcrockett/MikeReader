@@ -1,0 +1,12 @@
+#!/bin/bash
+
+APP_NAME=mikereader
+DTAG="$(date +%F)"
+TAG="mikereader:${DTAG}"
+TAR_FILE="mikereader.${DTAG}.tar"
+TAR_FILE_LOC="reader.mmcrockett.com/${TAR_FILE}"
+
+sudo docker stop "${APP_NAME}"
+sudo docker container prune -f
+wget --output-document "${TAR_FILE_LOC}" "http://mmcrockett.com/${TAR_FILE}" 
+sudo docker load --input "${TAR_FILE_LOC}" && sudo docker create --name mikereader -p 3100:3100 -v mikereader-logs:/var/www/reader/log/ "${TAG}" && sudo docker start mikereader

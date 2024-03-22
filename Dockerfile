@@ -24,7 +24,6 @@ RUN bundle exec rake assets:precompile && ln -s /var/www/reader/public/packs/ pa
 
 RUN rm -rf test/* tmp/* log/* db/* public/assets node_modules
 
-ENV PORT 3100
-EXPOSE 3100
+EXPOSE 3000
 
-CMD rails server --port=3100
+CMD rails server --port 3000 --binding 0.0.0.0

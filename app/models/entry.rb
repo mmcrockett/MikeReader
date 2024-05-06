@@ -47,7 +47,7 @@ class Entry < ApplicationRecord
 
   def self.from_atom(atom)
     entry = Entry.new()
-    content_type = (atom.content&.content&.size || 0) > 5000 ? 'P' : 'A'
+    content_type = (atom.content&.content&.size || 0) > 5000 ? '[a]' : '[p]'
     entry.post_date = atom.published.content
     entry.subject   = "#{content_type} #{atom.title.content}"
     entry.link      = atom.link.href

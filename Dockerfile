@@ -1,4 +1,4 @@
-FROM ruby:2.7-buster
+FROM ruby:3.3-bullseye
 
 ENV RAILS_ROOT /var/www/reader
 ENV RAILS_ENV production

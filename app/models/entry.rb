@@ -55,6 +55,18 @@ class Entry < ApplicationRecord
     return entry
   end
 
+  def self.from_json(data)
+    entry = Entry.new()
+    content_type = (atom.content&.content&.size || 0) > 5000 ? '' : '(pod)'
+    entry.post_date = atom.published.content
+    entry.subject   = "#{content_type} #{atom.title.content}"
+    entry.link      = atom.link.href
+
+    return entry
+  end
+
+  def set_subject(title, description)
+
   def set_subject(title, description)
     description ||= ""
     self.subject = "#{title}"

@@ -15,7 +15,12 @@ class Entry < ApplicationRecord
   MIN_COMPOUND_SUBJECT_SIZE = 30
   LONG_WORD_SIZE            = 12
 
+  before_save -> { self.link = "#{self.feed.origin}/#{self.link}" unless self.link.start_with?("http") }
+
   def exists?
+    puts "#{self.as_json}"
+    return Entry.exists?(reference_identifier: self.reference_identifier) if self.reference_identifier.present?
+
     uri = URI::parse(self.link)
     search_path = "#{uri.path}"
 
@@ -51,6 +56,18 @@ class Entry < ApplicationRecord
     entry.post_date = atom.published.content
     entry.subject   = "#{content_type} #{atom.title.content}"
     entry.link      = atom.link.href
+
+    return entry
+  end
+
+  def self.from_json(data)
+    data = data.with_indifferent_access
+    entry = Entry.new()
+    content_type = data[:__typename]
+    entry.post_date = data[:dateGmt]
+    entry.subject   = data[:title]
+    entry.link      = data[:uri]
+    entry.reference_identifier = data[:databaseId]
 
     return entry
   end

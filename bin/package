@@ -4,4 +4,8 @@ DTAG="$(date +%F)"
 TAG="mikereader:${DTAG}"
 TAR_FILE="/tmp/mikereader.${DTAG}.tar"
 
-ssh-add -t 1H ~/.ssh/mmcrockett.rsa && docker buildx build --tag "${TAG}" . && docker save --output "${TAR_FILE}" "${TAG}" && chmod +r "${TAR_FILE}" && scp "${TAR_FILE}" washingrving@mmcrockett.com:~/mmcrockett.com/
+ssh-add -t 1H ~/.ssh/mmcrockett.rsa && \
+  docker buildx build --progress=plain --file Dockerfile --platform linux/amd64 --tag "${TAG}" . && \
+  docker save --output "${TAR_FILE}" "${TAG}" && \
+  chmod +r "${TAR_FILE}" && \
+  scp "${TAR_FILE}" washingrving@mmcrockett.com:~/mmcrockett.com/

@@ -20,7 +20,7 @@ COPY . .
 
 RUN bundle exec rake assets:precompile && ln -s /var/www/reader/public/packs/ packs && bundle exec rake 'assets:clean[3]'
 
-RUN rm -rf test/* tmp/* log/* db/* public/assets node_modules
+RUN rm -rf test/* tmp/* log/* db/*.* public/assets node_modules
 
 EXPOSE 3000
 

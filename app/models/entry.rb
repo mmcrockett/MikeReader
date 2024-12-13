@@ -18,7 +18,6 @@ class Entry < ApplicationRecord
   before_save -> { self.link = "#{self.feed.origin}/#{self.link}" unless self.link.start_with?("http") }
 
   def exists?
-    puts "#{self.as_json}"
     return Entry.exists?(reference_identifier: self.reference_identifier) if self.reference_identifier.present?
 
     uri = URI::parse(self.link)

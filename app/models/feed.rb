@@ -5,18 +5,23 @@ class Feed < ApplicationRecord
 
   after_save :update_history
 
-  def retrieve(file: nil, url: nil)
-    response = file.present ? Struct.new(:code, :body, :parsed_response).new(200, @f = File.read(file), @f) : HTTParty.get(self.url)
+  def retrieve(file: nil)
+    raise if file.present? && false == File.exist?(file)
+    response = file.present? ? Struct.new(:code, :content_type, :body, :parsed_response).new(200, 'json', @f = File.read(file), @f) : HTTParty.get(self.url)
 
     if (200 == response.code)
-      @feed = RSS::Parser.parse(response.body, false)
+      @feed = Struct.new(:feed_type, :json_data).new('json', response.parsed_response) if response.content_type.include?('json')
 
-      @feed = Struct.new(:feed_type, :json_data).new('json', response.parsed_response) if @feed.nil?
+      @feed ||= RSS::Parser.parse(response.body, false)
     else
       raise "!ERROR: Unable to get '#{self.url}' '#{response}'."
     end
 
     return self
+  end
+
+  def origin
+    @origin ||= URI.parse(self.url).origin
   end
 
   def atom?
@@ -34,6 +39,8 @@ class Feed < ApplicationRecord
   def title
     if (true == self.rss?)
       return @feed.channel.title
+    elsif (true == self.json?)
+      return 'JSON'
     else
       return @feed.title.content()
     end
@@ -65,7 +72,7 @@ class Feed < ApplicationRecord
     if (true == self.rss?)
       return @feed.items
     elsif (true == self.json?)
-      return @feed.json_data('data', 'contentNodes', 'nodes')
+      return @feed.json_data.dig('data', 'contentNodes', 'nodes')
     else
       return @feed.entries
     end

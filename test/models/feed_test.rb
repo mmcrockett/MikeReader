@@ -6,7 +6,7 @@ class FeedTest < ActiveSupport::TestCase
     let(:feed) { Feed.new(url: url).retrieve }
 
     setup do
-      FakeWeb.register_uri(:get, url, fakeweb_response(body: file, status: 200, plain: true))
+      stub_request(:get, url).to_return(body: file, status: 200, headers: { 'Content-Type' => 'text/plain' })
     end
 
     describe 'after save hook' do
@@ -59,7 +59,7 @@ class FeedTest < ActiveSupport::TestCase
         end
 
         it 'ignores duplicates' do
-          FakeWeb.register_uri(:get, url, fakeweb_response(body: read_test_file('atom_feed_with_updates.xml'), status: 200, plain: true))
+          stub_request(:get, url).to_return(body: read_test_file('atom_feed_with_updates.xml'), status: 200, headers: { 'Content-Type' => 'text/plain' })
 
           feed.save!
           feed.reload.retrieve.process

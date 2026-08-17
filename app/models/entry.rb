@@ -53,7 +53,7 @@ class Entry < ApplicationRecord
     entry = Entry.new()
     content_type = (atom.content&.content&.size || 0) > 5000 ? '' : '(pod)'
     entry.post_date = atom.published.content
-    entry.subject   = "#{content_type} #{atom.title.content}"
+    entry.subject   = [content_type, atom.title.content].select(&:present?).join(' ')
     entry.link      = atom.link.href
 
     return entry

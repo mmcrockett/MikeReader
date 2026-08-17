@@ -2,41 +2,17 @@ ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 require 'rails/test_help'
 require 'minitest/spec'
+require 'webmock/minitest'
 
 class ActiveSupport::TestCase
   fixtures :all
 
-  extend MiniTest::Spec::DSL
+  extend Minitest::Spec::DSL
 
-  FakeWeb.allow_net_connect = false
+  WebMock.disable_net_connect!(allow_localhost: true)
 
   def response_data
     JSON.parse(@response.body)
-  end
-
-  def fakeweb_response(params = {})
-    response = {}
-
-    if (nil != params[:body])
-      if (true == params[:plain])
-        response[:body] = params[:body]
-      else
-        response[:body] = params[:body].to_json
-        response[:content_type] = 'application/json'
-      end
-    end
-
-    if (nil != params[:status])
-      status = params[:status]
-
-      if (false == Rack::Utils::HTTP_STATUS_CODES.include?(status))
-        raise "No code for #{status}."
-      end
-
-      response[:status] = [status, Rack::Utils::HTTP_STATUS_CODES[status]]
-    end
-
-    return response
   end
 
   def read_test_file(file, parse: false)

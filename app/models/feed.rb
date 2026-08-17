@@ -10,7 +10,8 @@ class Feed < ApplicationRecord
     response = file.present? ? Struct.new(:code, :content_type, :body, :parsed_response).new(200, 'json', @f = File.read(file), @f) : HTTParty.get(self.url)
 
     if (200 == response.code)
-      @feed = Struct.new(:feed_type, :json_data).new('json', response.parsed_response) if response.content_type.include?('json')
+      @feed = nil
+      @feed = Struct.new(:feed_type, :json_data).new('json', response.parsed_response) if response.content_type.to_s.include?('json')
 
       @feed ||= RSS::Parser.parse(response.body, false)
     else

@@ -1,5 +1,4 @@
 import "@rails/ujs"
-import "./channels/consumer"
 
 import React from 'react';
 import { render } from 'react-dom';

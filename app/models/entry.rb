@@ -3,7 +3,7 @@ class Entry < ApplicationRecord
 
   before_save :set_default_data
 
-  serialize :data, JSON
+  serialize :data, coder: JSON
 
   scope :unread, -> { where(read: false) }
   scope :by_date, -> { order(post_date: :desc) }

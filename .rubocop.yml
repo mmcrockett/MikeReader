@@ -1,8 +1,51 @@
-# Omakase Ruby styling for Rails
-inherit_gem: { rubocop-rails-omakase: rubocop.yml }
+plugins:
+  - rubocop-capybara
+  - rubocop-minitest
+  - rubocop-performance
+  - rubocop-rails
 
-# Overwrite or add rules to create your own house style
-#
-# # Use `[a, [b, c]]` not `[ a, [ b, c ] ]`
-# Layout/SpaceInsideArrayLiteralBrackets:
-#   Enabled: false
+AllCops:
+  NewCops: enable
+
+Layout/LineLength:
+  Exclude:
+    - "db/**/*"
+Metrics/AbcSize:
+  AllowedMethods:
+    - included
+  Exclude:
+    - "db/**/*"
+Metrics/BlockLength:
+  AllowedMethods:
+    - class_eval
+    - describe
+  Exclude:
+    - "db/**/*"
+    - "config/environments/**/*"
+Metrics/ClassLength:
+  Exclude:
+    - "db/**/*"
+    - "test/**/*"
+Metrics/MethodLength:
+  AllowedMethods:
+    - included
+  Max: 20
+  Exclude:
+    - "db/**/*"
+Metrics/ModuleLength:
+  Exclude:
+    - "test/**/*"
+Minitest/AssertTruthy:
+  Enabled: false
+Minitest/MultipleAssertions:
+  Max: 5
+Minitest/RefuteFalse:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Exclude:
+    - "db/**/*"
+    - "test/**/*"
+Style/YodaCondition:
+  Enabled: false

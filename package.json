@@ -5,7 +5,7 @@
     "esbuild": "^0.28.2"
   },
   "scripts": {
-    "build": "esbuild app/javascript/*.* --bundle --sourcemap --format=esm --outdir=app/assets/builds --public-path=/assets --loader:.js=jsx"
+    "build": "esbuild app/javascript/*.* --bundle --sourcemap --format=esm --outdir=app/assets/builds --public-path=/assets --loader:.js=jsx --define:process.env.RAILS_ENV=\"\\\"${RAILS_ENV:-development}\\\"\""
   },
   "dependencies": {
     "@rails/ujs": "^6.0.0",

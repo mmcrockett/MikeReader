@@ -1,9 +1,7 @@
 name: Build and push image
 
 on:
-  push:
-    branches:
-      - mcrockett/8.x-upgrade
+  push: {}
   workflow_dispatch: {}
 
 # Cancel a superseded run (e.g. a quick follow-up push) rather than letting

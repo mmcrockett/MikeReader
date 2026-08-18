@@ -1,7 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 one: &default
   subject: MyString
-  link: MyString
+  link: https://example.com/entry
   data: <%= {}.to_json.inspect %>
   read: false
   post_date: 2016-08-16

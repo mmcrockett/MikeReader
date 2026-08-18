@@ -1,36 +1,41 @@
-class Api::FeedsController < ActionController::API
-  before_action :set_feed, only: [:update]
+# frozen_string_literal: true
 
-  def index
-    @feeds = Feed.all
+module Api
+  class FeedsController < ActionController::API
+    before_action :set_feed, only: [:update]
 
-    render json: @feeds
-  end
+    def index
+      @feeds = Feed.all
 
-  def create
-    @feed = Feed.new(feed_params)
-
-    if @feed.save
-      render json: @feed, status: :created
-    else
-      render json: @feed.errors, status: :unprocessable_entity
+      render json: @feeds
     end
-  end
 
-  def update
-    if @feed.update(feed_params)
-      render json: @feed
-    else
-      render json: @feed.errors, status: :unprocessable_entity
+    def create
+      @feed = Feed.new(feed_params)
+
+      if @feed.save
+        render json: @feed, status: :created
+      else
+        render json: @feed.errors, status: :unprocessable_content
+      end
     end
-  end
 
-  private
-  def set_feed
-    @feed = Feed.find(params[:id])
-  end
+    def update
+      if @feed.update(feed_params)
+        render json: @feed
+      else
+        render json: @feed.errors, status: :unprocessable_content
+      end
+    end
 
-  def feed_params
-    params.require(:feed).permit(:name, :url, :display)
+    private
+
+    def set_feed
+      @feed = Feed.find(params.expect(:id))
+    end
+
+    def feed_params
+      params.expect(feed: %i[name url display])
+    end
   end
 end

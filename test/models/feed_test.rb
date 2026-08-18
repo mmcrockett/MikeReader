@@ -6,7 +6,7 @@ class FeedTest < ActiveSupport::TestCase
     let(:feed) { Feed.new(url: url).retrieve }
 
     setup do
-      FakeWeb.register_uri(:get, url, fakeweb_response(body: file, status: 200, plain: true))
+      stub_request(:get, url).to_return(body: file, status: 200, headers: { 'Content-Type' => 'text/plain' })
     end
 
     describe 'after save hook' do
@@ -44,7 +44,7 @@ class FeedTest < ActiveSupport::TestCase
         let(:file) { atom_file }
 
         it 'can get title' do
-          assert_equal("The Ringer -  All Posts", feed.title)
+          assert_equal('The Ringer -  All Posts', feed.title)
         end
 
         it 'can detect type' do
@@ -59,7 +59,8 @@ class FeedTest < ActiveSupport::TestCase
         end
 
         it 'ignores duplicates' do
-          FakeWeb.register_uri(:get, url, fakeweb_response(body: read_test_file('atom_feed_with_updates.xml'), status: 200, plain: true))
+          stub_request(:get, url).to_return(body: read_test_file('atom_feed_with_updates.xml'), status: 200,
+                                            headers: { 'Content-Type' => 'text/plain' })
 
           feed.save!
           feed.reload.retrieve.process
@@ -72,7 +73,7 @@ class FeedTest < ActiveSupport::TestCase
         let(:file) { rss_file }
 
         it 'can get title' do
-          assert_equal("FiveThirtyEight", feed.title)
+          assert_equal('FiveThirtyEight', feed.title)
         end
 
         it 'can detect type' do
@@ -98,7 +99,7 @@ class FeedTest < ActiveSupport::TestCase
         let(:file) { rss_podcast_file }
 
         it 'can get title' do
-          assert_equal("The Bill Simmons Podcast", feed.title)
+          assert_equal('The Bill Simmons Podcast', feed.title)
         end
 
         it 'can detect type' do

@@ -1,0 +1,72 @@
+plugins:
+  - rubocop-capybara
+  - rubocop-minitest
+  - rubocop-performance
+  - rubocop-rails
+
+AllCops:
+  NewCops: enable
+  # db/**/* is either historical migrations (already run against production,
+  # matched by version number not content -- don't let autocorrect rewrite
+  # them even schema-equivalently) or auto-generated schema dumps (schema.rb,
+  # *_schema.rb) that Rails regenerates on its own. bin/* are framework-
+  # generated binstubs. None of these should be hand-edited by rubocop.
+  # vendor/**/* is third-party gem source (populated by `bundle config set
+  # --local path vendor/bundle` / CI's bundler-cache) -- some gems ship their
+  # own .rubocop.yml requiring plugins we don't have (e.g. rubocop-rspec),
+  # which crashes rubocop's config resolution if it's scanned at all.
+  Exclude:
+    - "db/**/*"
+    - "bin/**/*"
+    - "vendor/**/*"
+
+Metrics/AbcSize:
+  AllowedMethods:
+    - included
+  Exclude:
+    # Feed#retrieve/#process and Entry#from_rss/#set_subject are ported as-is
+    # from the pre-Rails-8 app -- not something to refactor as a side effect
+    # of turning on CI.
+    - "app/models/feed.rb"
+    - "app/models/entry.rb"
+Metrics/CyclomaticComplexity:
+  Exclude:
+    - "app/models/entry.rb"
+Metrics/PerceivedComplexity:
+  Exclude:
+    - "app/models/entry.rb"
+Metrics/BlockLength:
+  AllowedMethods:
+    - class_eval
+    - describe
+  Exclude:
+    - "config/environments/**/*"
+Metrics/ClassLength:
+  Exclude:
+    - "test/**/*"
+Metrics/MethodLength:
+  AllowedMethods:
+    - included
+  Max: 20
+Metrics/ModuleLength:
+  Exclude:
+    - "test/**/*"
+Rails/HasManyOrHasOneDependent:
+  # Feed's has_many :entries has never specified :dependent -- adding one
+  # (e.g. :destroy) would be a real behavior change (cascading deletes),
+  # not something to decide as a side effect of turning on CI.
+  Exclude:
+    - "app/models/feed.rb"
+Minitest/AssertTruthy:
+  Enabled: false
+Minitest/MultipleAssertions:
+  Max: 5
+Minitest/RefuteFalse:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Exclude:
+    - "test/**/*"
+Style/YodaCondition:
+  Enabled: false

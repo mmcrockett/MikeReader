@@ -14,13 +14,13 @@ class FeedsControllerTest < ActionDispatch::IntegrationTest
 
   describe 'create' do
     let(:new_feed) { Feed.new(response_data) }
-    let(:params) {
+    let(:params) do
       {
         name: 'great feed',
         url: 'https://blahblah.com',
         id: 8123
       }
-    }
+    end
 
     it 'should create a feed' do
       assert_difference('Feed.count') do
@@ -37,15 +37,15 @@ class FeedsControllerTest < ActionDispatch::IntegrationTest
 
   describe 'update' do
     let(:updated_feed) { Feed.new(response_data) }
-    let(:params) {
+    let(:params) do
       {
         display: !feed.display,
         name: feed.name.upcase,
         url: feed.url.upcase
       }
-    }
+    end
 
-    it "should update feed" do
+    it 'should update feed' do
       put api_feed_path(feed.id), params: { feed: params }
 
       assert_response :success

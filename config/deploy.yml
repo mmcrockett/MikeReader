@@ -20,12 +20,15 @@ servers:
   #   cmd: bin/jobs
 
 # nginx on this box already owns 80/443 (Certbot-managed for reader.mmcrockett.com,
-# proxying to the old app on 3100). kamal-proxy is rebound to 4000 here so it
-# doesn't collide -- see `builder`/`proxy.run` below. No host/ssl set: this is
-# for direct IP:port validation, not routed through nginx/DNS yet.
+# proxying to the old app on 3100). kamal-proxy binds BOTH an http_port and
+# https_port by default regardless of this app's ssl setting (it's shared,
+# host-wide infra), so both need rebinding away from 80/443, not just the
+# http one. No host/ssl set: this is for direct IP:port validation, not
+# routed through nginx/DNS yet.
 proxy:
   run:
     http_port: 4000
+    https_port: 4443
 
 # Where you keep your container images.
 registry:

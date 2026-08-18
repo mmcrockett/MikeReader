@@ -6,35 +6,52 @@ plugins:
 
 AllCops:
   NewCops: enable
-
-Layout/LineLength:
+  # db/**/* is either historical migrations (already run against production,
+  # matched by version number not content -- don't let autocorrect rewrite
+  # them even schema-equivalently) or auto-generated schema dumps (schema.rb,
+  # *_schema.rb) that Rails regenerates on its own. bin/* are framework-
+  # generated binstubs. None of these should be hand-edited by rubocop.
   Exclude:
     - "db/**/*"
+    - "bin/**/*"
+
 Metrics/AbcSize:
   AllowedMethods:
     - included
   Exclude:
-    - "db/**/*"
+    # Feed#retrieve/#process and Entry#from_rss/#set_subject are ported as-is
+    # from the pre-Rails-8 app -- not something to refactor as a side effect
+    # of turning on CI.
+    - "app/models/feed.rb"
+    - "app/models/entry.rb"
+Metrics/CyclomaticComplexity:
+  Exclude:
+    - "app/models/entry.rb"
+Metrics/PerceivedComplexity:
+  Exclude:
+    - "app/models/entry.rb"
 Metrics/BlockLength:
   AllowedMethods:
     - class_eval
     - describe
   Exclude:
-    - "db/**/*"
     - "config/environments/**/*"
 Metrics/ClassLength:
   Exclude:
-    - "db/**/*"
     - "test/**/*"
 Metrics/MethodLength:
   AllowedMethods:
     - included
   Max: 20
-  Exclude:
-    - "db/**/*"
 Metrics/ModuleLength:
   Exclude:
     - "test/**/*"
+Rails/HasManyOrHasOneDependent:
+  # Feed's has_many :entries has never specified :dependent -- adding one
+  # (e.g. :destroy) would be a real behavior change (cascading deletes),
+  # not something to decide as a side effect of turning on CI.
+  Exclude:
+    - "app/models/feed.rb"
 Minitest/AssertTruthy:
   Enabled: false
 Minitest/MultipleAssertions:
@@ -45,7 +62,6 @@ Style/Documentation:
   Enabled: false
 Style/FrozenStringLiteralComment:
   Exclude:
-    - "db/**/*"
     - "test/**/*"
 Style/YodaCondition:
   Enabled: false

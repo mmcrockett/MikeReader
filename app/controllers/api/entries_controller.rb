@@ -1,28 +1,32 @@
-class Api::EntriesController < ActionController::API
-  before_action :set_entry, only: [:destroy]
-  before_action -> { @entries = Entry.unread.by_date }, only: [:index, :pods]
+# frozen_string_literal: true
 
-  def index
-    render json: @entries.articles
-  end
+module Api
+  class EntriesController < ActionController::API
+    before_action :set_entry, only: [:destroy]
+    before_action -> { @entries = Entry.unread.by_date }, only: %i[index pods]
 
-  def destroy
-    @entry.update!(read: true)
-  end
+    def index
+      render json: @entries.articles
+    end
 
-  def pods
-    render json: @entries.pods
-  end
+    def destroy
+      @entry.update!(read: true)
+    end
 
-  def history
-    history = History.last || History.new
+    def pods
+      render json: @entries.pods
+    end
 
-    render json: history
-  end
+    def history
+      history = History.last || History.new
 
-  private
+      render json: history
+    end
 
-  def set_entry
-    @entry = Entry.find(params[:id])
+    private
+
+    def set_entry
+      @entry = Entry.find(params.expect(:id))
+    end
   end
 end

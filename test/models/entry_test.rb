@@ -3,7 +3,7 @@ require 'test_helper'
 class EntryTest < ActiveSupport::TestCase
   describe 'entry' do
     let(:parsed_response) { RSS::Parser.parse(file, false) }
-    let(:expected_date) { Date.strptime("2017-08-08", "%Y-%m-%d") }
+    let(:expected_date) { Date.strptime('2017-08-08', '%Y-%m-%d') }
     let(:data) { parsed_response.items.first }
     let(:entry) { Entry.from_rss(data) }
 
@@ -17,7 +17,7 @@ class EntryTest < ActiveSupport::TestCase
       end
 
       it 'has a title' do
-        assert_equal("Can Real Life Compete With an Instagram Playground?", entry.subject)
+        assert_equal('Can Real Life Compete With an Instagram Playground?', entry.subject)
       end
 
       it 'has a link' do
@@ -38,7 +38,7 @@ class EntryTest < ActiveSupport::TestCase
       end
 
       it 'has a title' do
-        assert_equal("Trump Picks A Favorite In Alabama’s GOP Senate Primary", entry.subject)
+        assert_equal('Trump Picks A Favorite In Alabama’s GOP Senate Primary', entry.subject)
       end
 
       it 'has a link' do
@@ -59,7 +59,7 @@ class EntryTest < ActiveSupport::TestCase
       end
 
       it 'has a title' do
-        assert_equal("The 25 Greatest Patriots Wins of the Brady-Belichick Era (Ep. 245)", entry.subject)
+        assert_equal('The 25 Greatest Patriots Wins of the Brady-Belichick Era (Ep. 245)', entry.subject)
       end
 
       it 'has a link' do
@@ -91,7 +91,7 @@ class EntryTest < ActiveSupport::TestCase
         let(:description) { SecureRandom.hex(Entry::MAX_COMPOUND_SUBJECT_SIZE + (Entry::MAX_COMPOUND_SUBJECT_SIZE * 2)) }
 
         it 'adds description' do
-          assert_equal([title, description].join(': ')[0..Entry::MAX_COMPOUND_SUBJECT_SIZE + 1], entry.subject)
+          assert_equal([title, description].join(': ')[0..(Entry::MAX_COMPOUND_SUBJECT_SIZE + 1)], entry.subject)
         end
       end
 
@@ -129,41 +129,41 @@ class EntryTest < ActiveSupport::TestCase
     let(:entry) { entries(:one) }
 
     before do
-      entry.update!(link: "https://blah.com/abc123/my-article/")
+      entry.update!(link: 'https://blah.com/abc123/my-article/')
     end
 
     describe 'already exists' do
       it 'matches exactly' do
-        assert_equal(true, Entry.new({link: "https://blah.com/abc123/my-article/"}).exists?)
+        assert_equal(true, Entry.new({ link: 'https://blah.com/abc123/my-article/' }).exists?)
       end
 
       it 'only differs in http(s)' do
-        assert_equal(true, Entry.new({link: "http://blah.com/abc123/my-article/"}).exists?)
+        assert_equal(true, Entry.new({ link: 'http://blah.com/abc123/my-article/' }).exists?)
       end
 
       it 'only differs in www' do
-        assert_equal(true, Entry.new({link: "https://www.blah.com/abc123/my-article/"}).exists?)
+        assert_equal(true, Entry.new({ link: 'https://www.blah.com/abc123/my-article/' }).exists?)
       end
 
       it 'has different hostname' do
-        assert_equal(true, Entry.new({link: "https://blerg.com/abc123/my-article/"}).exists?)
+        assert_equal(true, Entry.new({ link: 'https://blerg.com/abc123/my-article/' }).exists?)
       end
 
       it 'has extra slashes' do
-        assert_equal(true, Entry.new({link: "https://blerg.com//abc123/my-article/"}).exists?)
+        assert_equal(true, Entry.new({ link: 'https://blerg.com//abc123/my-article/' }).exists?)
       end
 
       it 'has no slash on the end' do
-        assert_equal(true, Entry.new({link: "https://blerg.com/abc123/my-article"}).exists?)
+        assert_equal(true, Entry.new({ link: 'https://blerg.com/abc123/my-article' }).exists?)
       end
 
       it 'has no hostname' do
-        assert_equal(true, Entry.new({link: "abc123/my-article"}).exists?)
+        assert_equal(true, Entry.new({ link: 'abc123/my-article' }).exists?)
       end
     end
 
     it 'is different' do
-      assert_equal(false, Entry.new({link: "https://blah.com/abc123/my-article-hi/"}).exists?)
+      assert_equal(false, Entry.new({ link: 'https://blah.com/abc123/my-article-hi/' }).exists?)
     end
   end
 end

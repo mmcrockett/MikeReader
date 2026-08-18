@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Entry < ApplicationRecord
   belongs_to :feed
 
@@ -15,99 +17,92 @@ class Entry < ApplicationRecord
   MIN_COMPOUND_SUBJECT_SIZE = 30
   LONG_WORD_SIZE            = 12
 
-  before_save -> { self.link = "#{self.feed.origin}/#{self.link}" unless self.link.start_with?("http") }
+  before_save -> { self.link = "#{feed.origin}/#{link}" unless link.start_with?('http') }
 
   def exists?
-    return Entry.exists?(reference_identifier: self.reference_identifier) if self.reference_identifier.present?
+    return Entry.exists?(reference_identifier: reference_identifier) if reference_identifier.present?
 
-    uri = URI::parse(self.link)
-    search_path = "#{uri.path}"
+    uri = URI.parse(link)
+    search_path = uri.path.to_s
 
-    while (true == search_path.end_with?("/"))
-      search_path.chop!
-    end
+    search_path.chop! while true == search_path.end_with?('/')
 
-    while ((true == search_path.start_with?("/")) && (0 < search_path.size))
-      search_path = search_path[1..-1]
-    end
+    search_path = search_path[1..] while (true == search_path.start_with?('/')) && search_path.size.positive?
 
-    return Entry.exists?(['link LIKE ?', "%#{search_path}%"])
+    Entry.exists?(['link LIKE ?', "%#{search_path}%"])
   end
 
   def self.from_rss(rss)
-    entry = Entry.new()
+    entry = Entry.new
     entry.post_date = rss.pubDate
     entry.set_subject(rss.title, rss.description)
-    entry.link      = rss.link || rss.enclosure.url
+    entry.link = rss.link || rss.enclosure.url
 
-    if (nil != rss.enclosure)
+    if nil != rss.enclosure
       entry.data ||= {}
-      entry.data[:length]  = "#{rss.itunes_duration}"[/\d+[:\d+]*/]
+      entry.data[:length] = rss.itunes_duration.to_s[/\d+[:\d+]*/]
       entry.pod = true
     end
 
-    return entry
+    entry
   end
 
   def self.from_atom(atom)
-    entry = Entry.new()
+    entry = Entry.new
     content_type = (atom.content&.content&.size || 0) > 5000 ? '' : '(pod)'
     entry.post_date = atom.published.content
-    entry.subject   = [content_type, atom.title.content].select(&:present?).join(' ')
+    entry.subject   = [content_type, atom.title.content].compact_blank.join(' ')
     entry.link      = atom.link.href
 
-    return entry
+    entry
   end
 
   def self.from_json(data)
     data = data.with_indifferent_access
-    entry = Entry.new()
-    content_type = data[:__typename]
+    entry = Entry.new
+    data[:__typename]
     entry.post_date = data[:dateGmt]
     entry.subject   = data[:title]
     entry.link      = data[:uri]
     entry.reference_identifier = data[:databaseId]
 
-    return entry
+    entry
   end
 
   def set_subject(title, description)
-    description ||= ""
-    self.subject = "#{title}"
+    description ||= ''
+    self.subject = title.to_s
 
-    if ((MIN_COMPOUND_SUBJECT_SIZE > self.subject.size) && (MIN_COMPOUND_SUBJECT_WORD_COUNT > self.subject.split(' ').size))
-      words = description.split(' ')
+    if (MIN_COMPOUND_SUBJECT_SIZE > subject.size) && (MIN_COMPOUND_SUBJECT_WORD_COUNT > subject.split.size)
+      words = description.split
       first = true
 
-      while ((false == words.empty?) && (MAX_COMPOUND_SUBJECT_SIZE > self.subject.size))
+      while (false == words.empty?) && (MAX_COMPOUND_SUBJECT_SIZE > subject.size)
         word = words.shift
 
-        if (true == first)
-          if (false == self.subject.empty?)
-            self.subject << ":"
-          end
+        if true == first
+          subject << ':' if false == subject.empty?
 
           first = false
         end
 
-        if ((MAX_COMPOUND_SUBJECT_SIZE < (word.size + self.subject.size)) && (LONG_WORD_SIZE < word.size))
-          word = word[0..MAX_COMPOUND_SUBJECT_SIZE - self.subject.size]
+        if (MAX_COMPOUND_SUBJECT_SIZE < (word.size + subject.size)) && (LONG_WORD_SIZE < word.size)
+          word = word[0..(MAX_COMPOUND_SUBJECT_SIZE - subject.size)]
         end
 
-        self.subject << " #{word}"
+        subject << " #{word}"
       end
     end
 
-    if (true == self.subject.empty?)
-      self.subject = "nil Title and nil Description"
-    end
+    self.subject = 'nil Title and nil Description' if true == subject.empty?
 
-    self.subject.strip!
+    subject.strip!
 
-    return self
+    self
   end
 
   private
+
   def set_default_data
     self.data ||= {}
   end

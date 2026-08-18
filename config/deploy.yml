@@ -5,26 +5,27 @@ service: mikereader
 image: mmcrockett/mikereader
 
 # Deploy to these servers.
+# NOTE: temporarily pointed at the existing Debian 11 box (dreamcompute) for
+# early validation while the new Debian 12 box is still being provisioned --
+# see 07-docker-kamal-deploy.md. This box already serves production traffic
+# for the old app via nginx+Certbot on reader.mmcrockett.com -> 127.0.0.1:3100,
+# so kamal-proxy is rebound to a different port below (3200) rather than the
+# default 80/443, to avoid colliding with nginx or the old app's port.
 servers:
   web:
-    # TODO: fill in the Debian 12 box's IP/hostname once provisioned.
-    - PLACEHOLDER_BOX_IP
+    - 208.113.128.139
   # job:
   #   hosts:
-  #     - PLACEHOLDER_BOX_IP
+  #     - 208.113.128.139
   #   cmd: bin/jobs
 
-# Enable SSL auto certification via Let's Encrypt and allow for multiple apps on a single web server.
-# If used with Cloudflare, set encryption mode in SSL/TLS setting to "Full" to enable CF-to-app encryption.
-#
-# Using an SSL proxy like this requires turning on config.assume_ssl and config.force_ssl in production.rb!
-#
-# Don't use this when deploying to multiple web servers (then you have to terminate SSL at your load balancer).
-#
-# Left disabled during phase-7 validation -- we're accessing the box by IP, not a domain, until DNS cutover.
-# proxy:
-#   ssl: true
-#   host: reader.mmcrockett.com
+# nginx on this box already owns 80/443 (Certbot-managed for reader.mmcrockett.com,
+# proxying to the old app on 3100). kamal-proxy is rebound to 3200 here so it
+# doesn't collide -- see `builder`/`proxy.run` below. No host/ssl set: this is
+# for direct IP:port validation, not routed through nginx/DNS yet.
+proxy:
+  run:
+    http_port: 3200
 
 # Where you keep your container images.
 registry:
@@ -83,9 +84,11 @@ builder:
   # # Build image via remote server (useful for faster amd64 builds on arm64 computers)
   # remote: ssh://docker@docker-builder-server
 
-# Use a different ssh user than root
-# ssh:
-#   user: app
+# This box's SSH access is via a non-root "debian" user + dedicated key
+# (matches the local ssh-dh-compute shell alias).
+ssh:
+  user: debian
+  keys: [ "~/.ssh/dreamcomputeserverpw" ]
 
 # Use accessory services (secrets come from .kamal/secrets).
 # No accessories needed: MySQL is the existing production host (external,

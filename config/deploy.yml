@@ -82,16 +82,16 @@ builder:
   # # Build image via remote server (useful for faster amd64 builds on arm64 computers)
   # remote: ssh://docker@docker-builder-server
 
-# This box's SSH access is via a non-root "debian" user + dedicated key.
+# This box's SSH access is via a non-root "debian" user. Relies on ssh-agent
+# (ssh-add ~/.ssh/dreamcompute-debian-12-pw) rather than an explicit `keys:`
+# file -- specifying `keys:` makes net-ssh decrypt the file itself (prompting
+# for the passphrase every time) instead of delegating to the already-
+# unlocked agent.
 ssh:
   user: debian
-  keys: [ "~/.ssh/dreamcompute-debian-12-pw" ]
-  # Force this specific key rather than letting net-ssh offer every identity
-  # in the local ssh-agent.
-  keys_only: true
   # Agent forwarding isn't needed (the box never needs to SSH anywhere using
-  # our local keys) and caused a real hang: forwarding spawns a fresh
-  # ssh-agent process on the remote box, and if it inherits the session's
+  # our local keys) and caused a real hang on the other box: forwarding spawns
+  # a fresh ssh-agent process remotely, and if it inherits the session's
   # stdout/stderr pipes, the SSH channel never sees EOF -- even after the
   # actual remote command (docker login) finishes and prints its output.
   forward_agent: false

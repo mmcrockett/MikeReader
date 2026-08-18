@@ -85,7 +85,7 @@ builder:
 # This box's SSH access is via a non-root "debian" user + dedicated key.
 ssh:
   user: debian
-  keys: [ "~/.ssh/dreamcompute12" ]
+  keys: [ "~/.ssh/dreamcompute-debian-12-pw" ]
   # Force this specific key rather than letting net-ssh offer every identity
   # in the local ssh-agent.
   keys_only: true

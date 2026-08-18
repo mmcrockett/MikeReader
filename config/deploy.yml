@@ -5,30 +5,25 @@ service: mikereader
 image: mmcrockett/mikereader
 
 # Deploy to these servers.
-# NOTE: temporarily pointed at the existing Debian 11 box (dreamcompute) for
-# early validation while the new Debian 12 box is still being provisioned --
-# see 07-docker-kamal-deploy.md. This box already serves production traffic
-# for the old app via nginx+Certbot on reader.mmcrockett.com -> 127.0.0.1:3100,
-# so kamal-proxy is rebound to a different port below (4000) rather than the
-# default 80/443, to avoid colliding with nginx or the old app's port.
+# This is the real target Debian 12 box (dreamcompute) -- see
+# 07-docker-kamal-deploy.md. Nothing else runs on it, so kamal-proxy can use
+# its default ports (80/443) with no collision to work around.
 servers:
   web:
-    - 208.113.128.139
+    - 208.113.135.206
   # job:
   #   hosts:
-  #     - 208.113.128.139
+  #     - 208.113.135.206
   #   cmd: bin/jobs
 
-# nginx on this box already owns 80/443 (Certbot-managed for reader.mmcrockett.com,
-# proxying to the old app on 3100). kamal-proxy binds BOTH an http_port and
-# https_port by default regardless of this app's ssl setting (it's shared,
-# host-wide infra), so both need rebinding away from 80/443, not just the
-# http one. No host/ssl set: this is for direct IP:port validation, not
-# routed through nginx/DNS yet.
-proxy:
-  run:
-    http_port: 4000
-    https_port: 4443
+# No host/ssl set yet: DNS (reader.mmcrockett.com) still points at the old
+# Debian 11 box, so Let's Encrypt's HTTP-01 challenge would fail here anyway.
+# Validate via direct IP over plain HTTP first; set proxy.ssl/proxy.host once
+# DNS cutover actually happens (kamal-proxy has its own Let's Encrypt client,
+# no nginx/Certbot needed on this box).
+# proxy:
+#   ssl: true
+#   host: reader.mmcrockett.com
 
 # Where you keep your container images.
 registry:
@@ -87,14 +82,12 @@ builder:
   # # Build image via remote server (useful for faster amd64 builds on arm64 computers)
   # remote: ssh://docker@docker-builder-server
 
-# This box's SSH access is via a non-root "debian" user + dedicated key
-# (matches the local ssh-dh-compute shell alias).
+# This box's SSH access is via a non-root "debian" user + dedicated key.
 ssh:
   user: debian
-  keys: [ "~/.ssh/dreamcomputeserverpw" ]
+  keys: [ "~/.ssh/dreamcompute12" ]
   # Force this specific key rather than letting net-ssh offer every identity
-  # in the local ssh-agent (currently 2, including an unrelated GitHub key) --
-  # avoids wasted round-trips on the wrong key over this box's slow link.
+  # in the local ssh-agent.
   keys_only: true
   # Agent forwarding isn't needed (the box never needs to SSH anywhere using
   # our local keys) and caused a real hang: forwarding spawns a fresh

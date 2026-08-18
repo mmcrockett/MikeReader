@@ -11,9 +11,14 @@ AllCops:
   # them even schema-equivalently) or auto-generated schema dumps (schema.rb,
   # *_schema.rb) that Rails regenerates on its own. bin/* are framework-
   # generated binstubs. None of these should be hand-edited by rubocop.
+  # vendor/**/* is third-party gem source (populated by `bundle config set
+  # --local path vendor/bundle` / CI's bundler-cache) -- some gems ship their
+  # own .rubocop.yml requiring plugins we don't have (e.g. rubocop-rspec),
+  # which crashes rubocop's config resolution if it's scanned at all.
   Exclude:
     - "db/**/*"
     - "bin/**/*"
+    - "vendor/**/*"
 
 Metrics/AbcSize:
   AllowedMethods:

@@ -36,18 +36,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: bundle exec kamal build push
 
-      # Every build leaves ~2 untagged attestation/provenance blobs alongside
-      # the real tagged image. Only prune on main (a feature branch pushing
-      # many times shouldn't be able to evict main's own recent, deployable
-      # tags), and only after a real, successful build -- never on a
-      # workflow_dispatch dry run or a failed build.
-      #
-      # continue-on-error: cleanup is best-effort. GHCR can cascade-remove a
-      # sibling manifest when its parent gets deleted, which raced this
-      # action's pre-fetched list on a large first-time prune ("Package not
-      # found" after successfully deleting 34/35) -- a step failure here must
-      # never fail the job, since deploy.yml only triggers on a *successful*
-      # build-push run.
+      # Only main, so a feature branch can't evict main's own deployable tags.
+      # continue-on-error: cleanup is best-effort, must not block deploy.yml.
       - name: Delete untagged image versions (attestation/provenance noise)
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         continue-on-error: true

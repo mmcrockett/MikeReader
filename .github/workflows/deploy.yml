@@ -50,4 +50,5 @@ jobs:
       - name: kamal deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
         run: bundle exec kamal deploy --skip_push

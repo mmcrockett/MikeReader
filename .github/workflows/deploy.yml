@@ -37,7 +37,7 @@ jobs:
       # so kamal relies on whatever agent is running to offer identities.
       - uses: webfactory/ssh-agent@e83874834305fe9a4a2997156cb26c5de65a8555 # v0.10.0
         with:
-          ssh-private-key: ${{ secrets.MIKEREADER_DEPLOY_SSH_KEY }}
+          ssh-private-key: ${{ secrets.DEPLOY_SSH_KEY }}
 
       - name: Add box to known_hosts
         run: |

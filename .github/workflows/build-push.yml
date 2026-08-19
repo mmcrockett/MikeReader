@@ -42,8 +42,16 @@ jobs:
       # many times shouldn't be able to evict main's own recent, deployable
       # tags), and only after a real, successful build -- never on a
       # workflow_dispatch dry run or a failed build.
+      #
+      # continue-on-error: cleanup is best-effort. GHCR can cascade-remove a
+      # sibling manifest when its parent gets deleted, which raced this
+      # action's pre-fetched list on a large first-time prune ("Package not
+      # found" after successfully deleting 34/35) -- a step failure here must
+      # never fail the job, since deploy.yml only triggers on a *successful*
+      # build-push run.
       - name: Delete untagged image versions (attestation/provenance noise)
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        continue-on-error: true
         uses: actions/delete-package-versions@e5bc658cc4c965c472efe991f8beea3981499c55 # v5.0.0
         with:
           package-name: mikereader
@@ -53,6 +61,7 @@ jobs:
 
       - name: Keep only the 5 most recent tagged image builds
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        continue-on-error: true
         uses: actions/delete-package-versions@e5bc658cc4c965c472efe991f8beea3981499c55 # v5.0.0
         with:
           package-name: mikereader

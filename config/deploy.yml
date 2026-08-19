@@ -16,14 +16,11 @@ servers:
   #     - 208.113.135.206
   #   cmd: bin/jobs
 
-# No host/ssl set yet: DNS (reader.mmcrockett.com) still points at the old
-# Debian 11 box, so Let's Encrypt's HTTP-01 challenge would fail here anyway.
-# Validate via direct IP over plain HTTP first; set proxy.ssl/proxy.host once
-# DNS cutover actually happens (kamal-proxy has its own Let's Encrypt client,
-# no nginx/Certbot needed on this box).
-# proxy:
-#   ssl: true
-#   host: reader.mmcrockett.com
+# kamal-proxy has its own Let's Encrypt client (HTTP-01), no nginx/Certbot
+# needed on this box.
+proxy:
+  ssl: true
+  host: reader.mmcrockett.com
 
 # Where you keep your container images.
 registry:

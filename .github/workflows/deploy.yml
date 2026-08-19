@@ -41,7 +41,8 @@ jobs:
       - name: Add box to known_hosts
         run: |
           mkdir -p ~/.ssh
-          ssh-keyscan -H 208.113.135.206 >> ~/.ssh/known_hosts
+          # No -H: net-ssh (kamal's ssh library) fails to match hashed hostnames.
+          ssh-keyscan 208.113.135.206 >> ~/.ssh/known_hosts
 
       - name: kamal deploy
         env:

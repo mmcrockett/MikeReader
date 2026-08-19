@@ -4,8 +4,7 @@ on:
   push: {}
   workflow_dispatch: {}
 
-# Cancel a superseded run (e.g. a quick follow-up push) rather than letting
-# both race to push the image.
+# Avoids two pushes racing to push the same tag.
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -37,13 +36,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: bundle exec kamal build push
 
-      # Every build leaves ~2 untagged attestation/provenance blobs alongside
-      # the real tagged image. Only prune on main (a feature branch pushing
-      # many times shouldn't be able to evict main's own recent, deployable
-      # tags), and only after a real, successful build -- never on a
-      # workflow_dispatch dry run or a failed build.
+      # Only main, so a feature branch can't evict main's own deployable tags.
+      # continue-on-error: cleanup is best-effort, must not block deploy.yml.
       - name: Delete untagged image versions (attestation/provenance noise)
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        continue-on-error: true
         uses: actions/delete-package-versions@e5bc658cc4c965c472efe991f8beea3981499c55 # v5.0.0
         with:
           package-name: mikereader
@@ -53,6 +50,7 @@ jobs:
 
       - name: Keep only the 5 most recent tagged image builds
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        continue-on-error: true
         uses: actions/delete-package-versions@e5bc658cc4c965c472efe991f8beea3981499c55 # v5.0.0
         with:
           package-name: mikereader

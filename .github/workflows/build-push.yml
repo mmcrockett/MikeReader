@@ -4,8 +4,7 @@ on:
   push: {}
   workflow_dispatch: {}
 
-# Cancel a superseded run (e.g. a quick follow-up push) rather than letting
-# both race to push the image.
+# Avoids two pushes racing to push the same tag.
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true

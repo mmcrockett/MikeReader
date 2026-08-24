@@ -42,22 +42,16 @@ jobs:
       # Only main, so a feature branch can't evict main's own deployable tags.
       # continue-on-error: cleanup is best-effort, must not block deploy.yml.
       #
-      # Uses gh api directly instead of actions/delete-package-versions: same
-      # /users/{owner}/packages/container/... endpoints that action calls
-      # under the hood, no third-party action dependency.
+      # A hand-rolled gh api version of this (deleting untagged, then pruning
+      # tagged versions beyond 5) 404'd on every delete: this package has
+      # multi-arch/attestation versions with parent/child links, and deleting
+      # them out of order without manifest awareness breaks. This action is
+      # purpose-built for that (also targets node24, no deprecation warning).
       - name: Prune old image versions in GHCR
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         continue-on-error: true
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          versions=$(gh api --paginate "users/mmcrockett/packages/container/mikereader/versions?per_page=100")
-
-          # All untagged versions (attestation/provenance noise).
-          echo "$versions" | jq -r '.[] | select((.metadata.container.tags // []) | length == 0) | .id' \
-            | xargs -r -n1 -I{} gh api -X DELETE "users/mmcrockett/packages/container/mikereader/versions/{}"
-
-          # Tagged versions beyond the 5 most recent.
-          echo "$versions" | jq -r '[.[] | select((.metadata.container.tags // []) | length > 0)]
-            | sort_by(.created_at) | reverse | .[5:] | .[].id' \
-            | xargs -r -n1 -I{} gh api -X DELETE "users/mmcrockett/packages/container/mikereader/versions/{}"
+        uses: dataaxiom/ghcr-cleanup-action@d52806a0dc70b430571a37da1fde39733ffd640f # v1.2.2
+        with:
+          package: mikereader
+          delete-untagged: true
+          keep-n-tagged: 5

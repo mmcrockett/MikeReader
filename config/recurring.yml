@@ -15,4 +15,4 @@ production:
     schedule: every hour at minute 12
   retrieve_feeds:
     class: RetrieveFeedsJob
-    schedule: every hour
+    schedule: every hour at minute 20

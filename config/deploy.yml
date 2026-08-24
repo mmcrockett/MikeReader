@@ -5,15 +5,16 @@ service: mikereader
 image: mmcrockett/mikereader
 
 # Deploy to these servers.
-# This is the real target Debian 12 box (dreamcompute) -- see
-# 07-docker-kamal-deploy.md. Nothing else runs on it, so kamal-proxy can use
-# its default ports (80/443) with no collision to work around.
+# This is the real target box (moved from the DreamCompute Debian 12 box to
+# this one after the old box went down for good). Nothing else runs on it,
+# so kamal-proxy can use its default ports (80/443) with no collision to
+# work around.
 servers:
   web:
-    - 208.113.135.206
+    - 34.71.24.199
   # job:
   #   hosts:
-  #     - 208.113.135.206
+  #     - 34.71.24.199
   #   cmd: bin/jobs
 
 # kamal-proxy has its own Let's Encrypt client (HTTP-01), no nginx/Certbot
@@ -79,13 +80,12 @@ builder:
   # # Build image via remote server (useful for faster amd64 builds on arm64 computers)
   # remote: ssh://docker@docker-builder-server
 
-# This box's SSH access is via a non-root "debian" user. Relies on ssh-agent
-# (ssh-add ~/.ssh/dreamcompute-debian-12-pw) rather than an explicit `keys:`
-# file -- specifying `keys:` makes net-ssh decrypt the file itself (prompting
-# for the passphrase every time) instead of delegating to the already-
-# unlocked agent.
+# This box's SSH access is via a non-root "google" user. Relies on ssh-agent
+# rather than an explicit `keys:` file -- specifying `keys:` makes net-ssh
+# decrypt the file itself (prompting for the passphrase every time) instead
+# of delegating to the already-unlocked agent.
 ssh:
-  user: debian
+  user: google
   # Agent forwarding isn't needed (the box never needs to SSH anywhere using
   # our local keys) and caused a real hang on the other box: forwarding spawns
   # a fresh ssh-agent process remotely, and if it inherits the session's

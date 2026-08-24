@@ -80,12 +80,15 @@ builder:
   # # Build image via remote server (useful for faster amd64 builds on arm64 computers)
   # remote: ssh://docker@docker-builder-server
 
-# This box's SSH access is via a non-root "google" user. Relies on ssh-agent
-# rather than an explicit `keys:` file -- specifying `keys:` makes net-ssh
-# decrypt the file itself (prompting for the passphrase every time) instead
-# of delegating to the already-unlocked agent.
+# This box's SSH access for Kamal/CI is via a dedicated non-root "github"
+# user (GCP provisions a separate system account per SSH key username in
+# instance metadata; "google" is Mike's personal login, "github" pairs with
+# the DEPLOY_SSH_KEY secret). Relies on ssh-agent rather than an explicit
+# `keys:` file -- specifying `keys:` makes net-ssh decrypt the file itself
+# (prompting for the passphrase every time) instead of delegating to the
+# already-unlocked agent.
 ssh:
-  user: google
+  user: github
   # Agent forwarding isn't needed (the box never needs to SSH anywhere using
   # our local keys) and caused a real hang on the other box: forwarding spawns
   # a fresh ssh-agent process remotely, and if it inherits the session's
